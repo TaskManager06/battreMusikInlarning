@@ -1,0 +1,65 @@
+/* global - mobile*/
+body{
+    font-family: system-ui, sans-serif;
+    font-weight: normal;
+    text-align: center;
+    text-decoration: none;
+    display:grid;
+    grid-template-rows:
+    100px
+    150px
+    auto
+    50px
+    ;
+    grid-template-areas: 
+    "nav"
+    "header"
+    "main"
+    "footer"
+    ;
+}
+nav{
+    grid-area: nav;
+}
+ul{
+    list-style: none;
+}
+header>h2{
+    grid-area: header;
+}
+
+/* index.html*/
+#index{
+    grid-area: main;
+    display:grid;
+    grid-template-rows:
+    100px
+    80px
+    100px
+    auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "aktuellt aktuellt"
+    "hitta hitta"
+    "allaLatar spelrum"
+    "lektioner lektioner"
+    ;
+}
+#index>#aktuellt{
+    grid-area: aktuellt;
+}
+#index> .hittaDinNastaLat{
+    grid-area: hitta;
+}
+#index> .allaLatar{
+    grid-area: allaLatar;
+}
+#index> .spelrum{
+    grid-area: spelrum;
+}
+
+#index> .lektioner{
+    grid-area: lektioner;
+}
+
+
