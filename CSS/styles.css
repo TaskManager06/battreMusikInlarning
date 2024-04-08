@@ -21,9 +21,51 @@ body{
 nav{
     grid-area: nav;
 }
-ul{
+#closedMenu ul{
     list-style: none;
+    overflow:hidden;
+    height: 100%;
+    width: 100%;
+    padding:0;
+    padding-top:3vh;
+    margin:0;
 }
+#closedMenu ul> li{
+    display: inline-block;
+}
+#closedMenu ul img{
+    width:3em;
+    height:3em
+}
+#closedMenu ul> :nth-child(2){
+    float:right;
+    padding-right:3vw;
+}
+
+#closedMenu ul> :nth-child(1){
+    float:left;
+    padding-left:3vw;
+}
+#fullScreenMenu{
+    z-index:1;
+    width: 0;
+    height:80vh;
+    overflow:hidden;
+    position:absolute;
+    top:100px;
+    background:white;
+
+}
+#fullScreenMenu >ul{
+    list-style-type:none;
+    padding:0;
+};
+
+#fullScreenMenu > ul  li {
+    padding-bottom:5em;
+}
+
+
 header>h2{
     grid-area: header;
 }
