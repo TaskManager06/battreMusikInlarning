@@ -3,6 +3,7 @@
     <meta charset="UTF-8">
     <title>Bättre Musik Inlärning </title>
     <link rel="stylesheet" href="CSS/styles.css">
+    <script src="JS/script.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
@@ -22,28 +23,33 @@
         </ul>
     </nav>
     <main id="index">
-        <section id="aktuellt">
+        <section class="aktuellt">
+            <div id="aktuellt1"></div>
+
 
         </section>
         
         <a href="hittaDinNastaLat.html" class="hittaDinNastaLat">
             <h2> Hitta din nästa låt nu</h2>
-            <img src="hittaLåt.png" alt="bild för hitta låt knappen">
+            <img src="IMG/search.jpg" alt="bild för hitta låt knappen">
         </a>
         <a href="allaLatar.html" class="allaLatar">
             <h2>Alla låtar</h2>
-            <img src="allaLatar.png" alt="bild för hitta låt knappen">
+            <img src="IMG/alla.jpg" alt="bild för hitta låt knappen">
         </a>
         <a href="spelrum.html" class="spelrum">
             <h2>Spelrum</h2>
-            <img src="spelrum.png" alt="bild för hitta låt knappen">
+            <img src="IMG/lektioner.jpg" alt="bild för hitta låt knappen">
         </a>
 
         <section class="lektioner">
             <h2>Lektioner</h2>
-            <button type="button" name="gitarr" id="gitarr">Gitarr</button>
-            <button type="button" name="piano" id="piano">Piano</button>
-            <button type="button" name="trummor" id="trummor">Trummor</button>
+            <div id ="flexContainer">
+                
+                <button type="button" name="gitarr" id="gitarr"> gitarr</button>
+                <button type="button" name="piano" id="piano">Piano</button>
+                <button type="button" name="trummor" id="trummor">Trummor</button>
+            </div>
         </section>
 
 
