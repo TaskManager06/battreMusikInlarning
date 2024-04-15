@@ -24,23 +24,50 @@
     </nav>
     <div id="fullScreenMenu">
         <ul>
-            <li><a>Hitta en Ny Låt !</a></li>
-            <li><a>Alla Låtar</a></li>
-            <li><a>spelrum</a></li>
-            <li><a>Lektioner</a></li>
+            <li><a class="hittaLat" href="hittaDinNastaLat.html">Hitta en Ny Låt !</a></li>
+            <li><a href="allaLatar.html">Alla Låtar</a></li>
+            <li><a href="spelrum.html">spelrum</a></li>
+            <li><a href="lektioner.html">Lektioner</a></li>
         </ul>
     </div>
+   
     <main id="index">
+
+        <div id="hittaDinNastaLatForm">
+            <form action="/hittaDinNastaLat.html">
+                <h2>Instrument ? </h2>
+                <input type="radio" id="gitarr" name="instrument" value="gitarr">
+                <label for="gitarr">Gitarr</label><br>
+    
+                <input type="radio" id="piano" name="instrument" value="piano">
+                <label for="piano">Piano</label><br>
+    
+                <input type="radio" id="trummor" name="instrument" value="trummor">
+                <label for="trummor">Trummor</label><br>
+    
+                <h2>spelnivå ? </h2>
+                <input type="radio" id="nybörjare" name="level" value="nybörjare">
+                <label for="nybörjare">Nybörjare</label><br>
+    
+                <input type="radio" id="medel" name="level" value="medel">
+                <label for="medel">Medel</label><br>
+    
+                <input type="radio" id="expert" name="level" value="expert">
+                <label for="expert">Expert</label><br>
+    
+                <input type="submit">
+            </form>
+        </div>
         <section class="aktuellt">
             <div id="aktuellt1"></div>
 
 
         </section>
         
-        <a href="hittaDinNastaLat.html" class="hittaDinNastaLat">
+        <button type="button" class="hittaDinNastaLat" name="hittaDinNastaLat" id="hittaDinNastaLat">
             <h2> Hitta din nästa låt nu</h2>
             <img src="IMG/search.jpg" alt="bild för hitta låt knappen">
-        </a>
+        </button>
         <a href="allaLatar.html" class="allaLatar">
             <h2>Alla låtar</h2>
             <img src="IMG/alla.jpg" alt="bild för hitta låt knappen">
@@ -54,9 +81,9 @@
             <h2>Lektioner</h2>
             <div id ="flexContainer">
                 
-                <button type="button" name="gitarr" id="gitarr"> gitarr</button>
-                <button type="button" name="piano" id="piano">Piano</button>
-                <button type="button" name="trummor" id="trummor">Trummor</button>
+                <button type="button" name="gitarr" id="gitarrLektionRedirect" value="2"> gitarr</button>
+                <button type="button" name="piano" id="pianoLektionRedirect" value="3">Piano</button>
+                <button type="button" name="trummor" id="trummorLektionRedirect">Trummor</button>
             </div>
         </section>
 

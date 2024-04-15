@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Bättre Musik Inlärning </title>
+    <link rel="stylesheet" href="CSS/styles.css">
+    <script src="JS/script.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+    <header>
+        <h1>Lektioner</h1>
+    </header>
+    <nav id="closedMenu">
+        <ul>
+            <li >
+                <a href="index.html">
+                    <img src="IMG/logo.png" alt="Logo">
+                </a>
+            </li>
+            <li>
+                <button type="button" name="openMenu" id="openMenu"><img src="IMG/menu.png" alt="expandera menyn"></button>
+            </li>
+        </ul>
+    </nav>
+    <div id="fullScreenMenu">
+        <ul>
+            <li><a href="hittaDinNastaLat.html" class="hittaLat">Hitta en Ny Låt !</a></li>
+            <li><a href="allaLatar.html">Alla Låtar</a></li>
+            <li><a href="spelrum.html">spelrum</a></li>
+            <li><a href="lektioner.html">Lektioner</a></li>
+        </ul>
+    </div>
+
+
+
+    <main id="lektioner">
+        <ul>
+            <li><button type="button" name="gitarr" id="gitarrLektioner" value="2"> gitarr</button></li>
+            <button type="button" name="piano" id="pianoLektioner" value="3">Piano</button>
+            <button type="button" name="trummor" id="trummorLektioner">Trummor</button>
+        </ul>
+        <section>
+            <h2>Nybörjare</h2>
+            <div class="flexContainerLektioner">
+                <button type="button" name="leftButtonLektionNybörjare" id="leftButtonLektionNybörjare" class="left">left(bild)</button>
+                <div id="lektionNybörjare" class="center">
+                    <h3>Title</h3>
+                    <img src=""alt="imageBIld">
+                </div>
+                <button type="button" name="rightButtonLektionNybörjare" id="rightButtonLektionNybörjare" class="right">right(bild)</button>
+            </div>
+            
+        </section>
+        <section>
+            <h2>Medel</h2>
+            <div class="flexContainerLektioner">
+                <button type="button" name="leftButtonLektionmedel" id="leftButtonLektionmedel" class="left">left(bild)</button>
+                <div id="lektionMedel" class="center">
+                    <h3>Title</h3>
+                    <img src=""alt="imageBIld">
+                </div>
+                <button type="button" name="rightButtonLektionmedel" id="rightButtonLektionmedel" class="right">right(bild)</button>
+            
+            </div>
+        </section>
+        <section>
+            <h2>Expert</h2>
+            <div class="flexContainerLektioner">
+                <button type="button" name="leftButtonLektionExpert" id="leftButtonLektionExpert" class="left">left(bild)</button>
+                <div id="lektionExpert" class="center">
+                    <h3>Title</h3>
+                    <img src=""alt="imageBIld">
+                </div>
+                <button type="button" name="rightButtonLektionExpert" id="rightButtonLektionExpert" class="right">right(bild)</button>
+            
+            </div>
+        </section>
+    
+    </main>
+</body>
