@@ -24,7 +24,10 @@ var database = [
 
 document.addEventListener("DOMContentLoaded", (event) => {
    
-
+const activeWindow = document.getElementsByTagName('body')[0];
+console.log(activeWindow.id)
+if(activeWindow.id == "indexBody"){
+    console.log(1)
 //setInterval(windowSwitch, 4500)
 var num = 1;
 function windowSwitch(){
@@ -36,9 +39,6 @@ function windowSwitch(){
         num = 0;
     };
 }
-
-
-
 
 var isMenuClosed = true;
 const menuButtonElement = document.getElementById("openMenu");
@@ -54,9 +54,27 @@ function openMenu(){
     }
     isMenuClosed = !isMenuClosed;
     
-};
+}
 
-var isMenuClosed = true;
+var buttons = ["gitarrLektionRedirect","pianoLektionRedirect","trummorLektionRedirect"]
+for(let i =0;i< buttons.length;i++){
+    document.getElementById(buttons[i]).addEventListener("click", lektionerFunc);
+    console.log(1)
+}
+}
+
+
+else if(activeWindow.id == "indexLektioner"){
+
+    var buttons = ["gitarrLektioner","pianoLektioner","trummorLektioner"]
+    for(let i =0;i< buttons.length;i++){
+        document.getElementById(buttons[i]).addEventListener("click", lektionerFunc);
+        console.log(1)
+    }
+
+}
+else if(activeWindow.id == "indexHittaDinNastaLat"){
+    
 const hittaDinNastaLatForm = document.getElementById("hittaDinNastaLat");
 hittaDinNastaLatForm.addEventListener("click",openForm);
 
@@ -65,11 +83,10 @@ function openForm(){
     
 };
 
-var buttons = [gitarrLektioner,pianoLektioner,trummorLektioner,gitarrLektionRedirect,pianoLektionRedirect,trummorLektionRedirect]
-for(let i =0;i< buttons.length;i++){
-    document.getElementById(buttons[i]).addEventListener("click", lektionerFunc);
-    console.log(1)
 }
+
+
+
 function lektionerFunc(){
 console.log(1)
 };
