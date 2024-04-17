@@ -20,9 +20,24 @@ var database = [
 ],
 ]
 
-
-
+var lektionerLista = [["IMG/enklaackord.jpg","IMG/intermediateLektionGitarr.jpg","IMG/hardLektionGitarr.jpg"],["IMG/enklaPianoAckord.png","IMG/pianoMedelSvårLektion.jpg","IMG/pianoHardLektion.jpg"],[]] 
+var id = ["lektionNybörjare","lektionMedel", "lektionExpert"]
 document.addEventListener("DOMContentLoaded", (event) => {
+var isMenuClosed = true;
+const menuButtonElement = document.getElementById("openMenu");
+menuButtonElement.addEventListener("click",openMenu);
+
+function openMenu(){
+    console.log(isMenuClosed)
+    if(isMenuClosed){
+        document.getElementById("fullScreenMenu").style.width = "97vw";
+    }
+    else{
+        document.getElementById("fullScreenMenu").style.width = "0";
+    }
+    isMenuClosed = !isMenuClosed;
+    
+}
    
 const activeWindow = document.getElementsByTagName('body')[0];
 console.log(activeWindow.id)
@@ -40,55 +55,54 @@ function windowSwitch(){
     };
 }
 
-var isMenuClosed = true;
-const menuButtonElement = document.getElementById("openMenu");
-menuButtonElement.addEventListener("click",openMenu);
 
-function openMenu(){
-    console.log(isMenuClosed)
-    if(isMenuClosed){
-        document.getElementById("fullScreenMenu").style.width = "97vw";
-    }
-    else{
-        document.getElementById("fullScreenMenu").style.width = "0";
-    }
-    isMenuClosed = !isMenuClosed;
-    
-}
 
 var buttons = ["gitarrLektionRedirect","pianoLektionRedirect","trummorLektionRedirect"]
 for(let i =0;i< buttons.length;i++){
-    document.getElementById(buttons[i]).addEventListener("click", lektionerFunc);
-    console.log(1)
+    document.getElementById(buttons[i]).addEventListener("click", function(event){
+        
+        const url = "lektioner.html?instrument=" + encodeURIComponent(event.target.value)
+        window.location.href = url;
+    });
+    
 }
 }
 
 
 else if(activeWindow.id == "indexLektioner"){
 
+    var urlParams  = new URLSearchParams(window.location.search)
+    var value = urlParams.get("instrument")
+    console.log(value)
+    if (!value) {
+        value = 0;
+    };
+    for(let i = 0; i< id.length;i++){
+        document.getElementById(id[i]).src= lektionerLista[value][i]
+    }
+    
     var buttons = ["gitarrLektioner","pianoLektioner","trummorLektioner"]
     for(let i =0;i< buttons.length;i++){
-        document.getElementById(buttons[i]).addEventListener("click", lektionerFunc);
-        console.log(1)
+        document.getElementById(buttons[i]).addEventListener("click", function(event){
+
+            for(let i = 0; i< id.length;i++){
+                document.getElementById(id[i]).src= lektionerLista[event.target.value][i]
+            }
+
+        });
+        
     }
+    
+    
 
 }
 else if(activeWindow.id == "indexHittaDinNastaLat"){
-    
-const hittaDinNastaLatForm = document.getElementById("hittaDinNastaLat");
-hittaDinNastaLatForm.addEventListener("click",openForm);
+   
 
-function openForm(){
-    document.getElementById("hittaDinNastaLatForm").style.width = "97vw";
-    
-};
 
 }
 
 
 
-function lektionerFunc(){
-console.log(1)
-};
 
 });
