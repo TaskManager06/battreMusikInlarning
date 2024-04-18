@@ -31,9 +31,28 @@
         </ul>
     </div>
 
-
-
     <main id="hittaDinNastaLat">
+        <form id="hittaDinNastaLatNiva">
+            <fieldset id="test">
+                <legend>Vilken nivå är du på ?</legend>
+                <ol>
+                    <li>
+                        <input type="radio" name="niva" id="nybörjare" value="0">
+                        <label for="nybörjare">Nybörjare</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="niva" id="medel" value="1">
+                        <label for="medel">Medel</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="niva" id="expert" value="2">
+                        <label for="expert">Expert</label>
+                    </li>
+                        
+                </ol>
+                <input type="submit">
+            </fieldset>
+        </form>
         <div id="songContainer">
             <section>
                 <h2>Titel</h2>
@@ -51,5 +70,6 @@
                 <p> Svårhetsgrad</p>
             </section>
         </div>
+        
     </main>
 </body>

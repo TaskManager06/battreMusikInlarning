@@ -2,13 +2,13 @@
 var database = [
 //nybörjare
 [
-["get lucky", "https://www.youtube.com/watch?v=5NV6Rdv1a3I&pp=ygUJZ2V0IGx1Y2t5","IMG\chordsGetLuckyGuitar.jpg","IMG\chordsPianoGetLucky.png" ],
-["Dont stop believin", "https://www.youtube.com/watch?v=1k8craCGpgs", "IMG\chordsGuitarDontStopBelieving.png","IMG\chordsPianoDontStopBelieving.png"],
+["get lucky", "https://www.youtube.com/watch?v=5NV6Rdv1a3I&pp=ygUJZ2V0IGx1Y2t5","IMG/getLuckyImg.jpeg","IMG\chordsGetLuckyGuitar.jpg","IMG\chordsPianoGetLucky.png" ],
+["Dont stop believin", "https://www.youtube.com/watch?v=1k8craCGpgs","IMG/dontStopBelievingImg.jpeg","IMG\chordsGuitarDontStopBelieving.png","IMG\chordsPianoDontStopBelieving.png"],
 [],
 ],
 //medel
 [
-["Let her go", "https://www.youtube.com/watch?v=RBumgq5yVrA", "IMG\chordsGuitarLetHerGo.png","IMG\chordsPianoLetHerGo.png"],
+["Let her go", "https://www.youtube.com/watch?v=RBumgq5yVrA","IMG/letHerGoImg.jpeg", "IMG\chordsGuitarLetHerGo.png","IMG\chordsPianoLetHerGo.png"],
 [],
 [],
 ],

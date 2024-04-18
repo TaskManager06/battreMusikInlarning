@@ -208,6 +208,22 @@ max-width:30ch
     padding:30px;
     margin:40px;
     background:grey;
-
+    height:35vh;
 }
+#hittaDinNastaLat ol{
+    padding:0;
+}
+#hittaDinNastaLat label{
+    height:100%;
+    width:100%;
+}
+#hittaDinNastaLat ol li{
+    overflow:hidden;
+    background:grey;
+    padding-bottom:10px;
+    padding-top:10px;
+    margin-bottom:10px;
+}
+
+
 /*Hittadin nästa låt*/
