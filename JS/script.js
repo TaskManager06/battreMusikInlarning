@@ -2,13 +2,13 @@
 var database = [
 //nybörjare
 [
-["get lucky", "https://www.youtube.com/watch?v=5NV6Rdv1a3I&pp=ygUJZ2V0IGx1Y2t5","IMG/getLuckyImg.jpeg","IMG\chordsGetLuckyGuitar.jpg","IMG\chordsPianoGetLucky.png" ],
-["Dont stop believin", "https://www.youtube.com/watch?v=1k8craCGpgs","IMG/dontStopBelievingImg.jpeg","IMG\chordsGuitarDontStopBelieving.png","IMG\chordsPianoDontStopBelieving.png"],
+["get lucky", "https://www.youtube.com/watch?v=5NV6Rdv1a3I&pp=ygUJZ2V0IGx1Y2t5","IMG/getLuckyImg.jpeg","IMG\chordsGetLuckyGuitar.jpg","IMG\chordsPianoGetLucky.png", "nybörjare"],
+["Dont stop believin", "https://www.youtube.com/watch?v=1k8craCGpgs","IMG/dontStopBelievingImg.jpeg","IMG\chordsGuitarDontStopBelieving.png","IMG\chordsPianoDontStopBelieving.png","nybörjare"],
 [],
 ],
 //medel
 [
-["Let her go", "https://www.youtube.com/watch?v=RBumgq5yVrA","IMG/letHerGoImg.jpeg", "IMG\chordsGuitarLetHerGo.png","IMG\chordsPianoLetHerGo.png"],
+["Let her go", "https://www.youtube.com/watch?v=RBumgq5yVrA","IMG/letHerGoImg.jpeg", "IMG\chordsGuitarLetHerGo.png","IMG\chordsPianoLetHerGo.png","medel"],
 [],
 [],
 ],
@@ -97,8 +97,30 @@ else if(activeWindow.id == "indexLektioner"){
 
 }
 else if(activeWindow.id == "indexHittaDinNastaLat"){
-   
+   document.getElementById("submitButton").addEventListener("click", function(event){
+    const radioButtons = document.querySelectorAll('input[name="niva"]');
+    console.log(radioButtons)
+    var radioValue;
+    for(let i = 0; i< radioButtons.length;i++){
+        if(radioButtons[i]){
+            radioValue = radioButtons[i].value;
+        }
+    }
+    changeNiva(radioValue)
 
+   });
+
+   function changeNiva(radioButtons){
+    
+    const latar = document.getElementsByTagName("section");
+    console.log(radioButtons)
+    for(let i=0; i < latar.length; i++){
+        console.log(database[radioButtons][i])
+        latar[i].querySelector("h2").innerText  = database[radioButtons][i][0];
+        latar[i].querySelector("img").style.src = database[radioButtons][i][2];
+        latar[i].querySelector("p").innerText = database[radioButtons][i][5];
+    }
+   }
 
 }
 
