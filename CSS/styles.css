@@ -180,6 +180,7 @@ max-width:30ch
 
 
 /*Lektioner.html*/
+
 #lektioner ul{
     padding:0;
 }
@@ -206,9 +207,11 @@ max-width:30ch
 /*Hittadin nästa låt*/
 #hittaDinNastaLat section{
     padding:30px;
-    margin:40px;
+    padding-bottom:4rem;
+    margin-top:40px;
     background:grey;
     height:35vh;
+    
 }
 #hittaDinNastaLat ol{
     padding:0;
@@ -216,13 +219,40 @@ max-width:30ch
 #hittaDinNastaLat label{
     padding:10% 30% 10% 30%;
 }
+#hittaDinNastaLat #test{
+    position:absolute;
+    width:90vw;
+    height:80;
+    background:white;
+    z-index:1;
+    left:0;
+    overflow:hidden;
+    min-width:0;
+}
+
 #hittaDinNastaLat ol li{
     overflow:hidden;
     background:grey;
-    padding-bottom:10px;
-    padding-top:10px;
-    margin-bottom:10px;
+    padding-bottom:4rem;
+    padding-top:4rem;
+    margin-bottom:3rem;
 }
 
+#hittaDinNastaLat section img{
+    max-width:12em;
+    max-height:12em;
+}
 
+#hittaDinNastaLat section h2{
+    margin-top:0;
+}
+
+#hittaDinNastaLat #submitButton{
+    padding:1em;
+}
+
+#hittaDinNastaLat #songContainer{
+    display:none;
+    overflow:hidden;
+}
 /*Hittadin nästa låt*/

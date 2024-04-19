@@ -2,8 +2,8 @@
 var database = [
 //nybörjare
 [
-["get lucky", "https://www.youtube.com/watch?v=5NV6Rdv1a3I&pp=ygUJZ2V0IGx1Y2t5","IMG/getLuckyImg.jpeg","IMG\chordsGetLuckyGuitar.jpg","IMG\chordsPianoGetLucky.png", "nybörjare"],
-["Dont stop believin", "https://www.youtube.com/watch?v=1k8craCGpgs","IMG/dontStopBelievingImg.jpeg","IMG\chordsGuitarDontStopBelieving.png","IMG\chordsPianoDontStopBelieving.png","nybörjare"],
+["get lucky", "https://www.youtube.com/watch?v=5NV6Rdv1a3I&pp=ygUJZ2V0IGx1Y2t5","IMG/getLuckyImg.jpeg","IMG\chordsGetLuckyGuitar.jpg","IMG\chordsPianoGetLucky.png", "nybörjare ---- 1/5"],
+["Dont stop believin", "https://www.youtube.com/watch?v=1k8craCGpgs","IMG/dontStopBelievingImg.jpeg","IMG\chordsGuitarDontStopBelieving.png","IMG\chordsPianoDontStopBelieving.png","nybörjare ---- 2/5"],
 [],
 ],
 //medel
@@ -98,11 +98,14 @@ else if(activeWindow.id == "indexLektioner"){
 }
 else if(activeWindow.id == "indexHittaDinNastaLat"){
    document.getElementById("submitButton").addEventListener("click", function(event){
+    document.getElementById("test").style.display = "none";
+    document.getElementById("songContainer").style.display = "block";
+    
     const radioButtons = document.querySelectorAll('input[name="niva"]');
     console.log(radioButtons)
     var radioValue;
     for(let i = 0; i< radioButtons.length;i++){
-        if(radioButtons[i]){
+        if(radioButtons[i].checked){
             radioValue = radioButtons[i].value;
         }
     }
@@ -110,17 +113,19 @@ else if(activeWindow.id == "indexHittaDinNastaLat"){
 
    });
 
-   function changeNiva(radioButtons){
+   function changeNiva(radioValue){
     
     const latar = document.getElementsByTagName("section");
-    console.log(radioButtons)
     for(let i=0; i < latar.length; i++){
-        console.log(database[radioButtons][i])
-        latar[i].querySelector("h2").innerText  = database[radioButtons][i][0];
-        latar[i].querySelector("img").style.src = database[radioButtons][i][2];
-        latar[i].querySelector("p").innerText = database[radioButtons][i][5];
+        latar[i].querySelector("h2").innerText  = database[radioValue][i][0];
+        console.log(database[radioValue][i][2])
+        latar[i].querySelector("img").src = database[radioValue][i][2];
+        latar[i].querySelector("p").innerText = database[radioValue][i][5];
+        const url = "latSida.html?Lat=" + encodeURIComponent(database[radioValue][i])
     }
    }
+
+
 
 }
 
