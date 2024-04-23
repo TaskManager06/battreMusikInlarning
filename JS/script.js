@@ -122,6 +122,7 @@ else if(activeWindow.id == "indexHittaDinNastaLat"){
         latar[i].querySelector("img").src = database[radioValue][i][2];
         latar[i].querySelector("p").innerText = database[radioValue][i][5];
         const url = "latSida.html?Lat=" + encodeURIComponent(database[radioValue][i])
+        latar[i].parentElement.href= url;
     }
    }
 

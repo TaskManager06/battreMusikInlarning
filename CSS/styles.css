@@ -21,6 +21,9 @@ body{
 nav{
     grid-area: nav;
 }
+#closedMenu{
+    z-index:2;
+}
 #closedMenu ul{
     list-style: none;
     overflow:hidden;
@@ -39,20 +42,22 @@ nav{
 }
 #closedMenu ul> :nth-child(2){
     float:right;
+    right:0;
     padding-right:3vw;
 }
 
 #closedMenu ul> :nth-child(1){
     float:left;
+    left:0;
     padding-left:3vw;
 }
 #fullScreenMenu{
     z-index:1;
     width: 0;
-    height:200vh;
+    height:100vh;
     overflow:hidden;
-    position:absolute;
-    top:100px;
+    position:fixed;
+    top:0;
     background:white;
 
 }
@@ -196,6 +201,10 @@ max-width:30ch
 }
 
 #lektioner > section  > img{
+    max-height:35vh;
+    max-width:55vw;
+}
+#lektioner > section noscript img{
     max-height:35vh;
     max-width:55vw;
 }
