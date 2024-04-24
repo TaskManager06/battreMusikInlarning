@@ -2,7 +2,7 @@
 var database = [
 //nybörjare
 [
-["get lucky", "https://www.youtube.com/watch?v=5NV6Rdv1a3I&pp=ygUJZ2V0IGx1Y2t5","IMG/getLuckyImg.jpeg","IMG\chordsGetLuckyGuitar.jpg","IMG\chordsPianoGetLucky.png", "nybörjare ---- 1/5"],
+["get lucky", "https://www.youtube.com/embed?v=5NV6Rdv1a3I&pp=ygUJZ2V0IGx1Y2t5","IMG/getLuckyImg.jpeg","IMG\chordsGetLuckyGuitar.jpg","IMG\chordsPianoGetLucky.png", "nybörjare ---- 1/5"],
 ["Dont stop believin", "https://www.youtube.com/watch?v=1k8craCGpgs","IMG/dontStopBelievingImg.jpeg","IMG\chordsGuitarDontStopBelieving.png","IMG\chordsPianoDontStopBelieving.png","nybörjare ---- 2/5"],
 [],
 ],
@@ -20,7 +20,7 @@ var database = [
 ],
 ]
 
-var lektionerLista = [["IMG/enklaackord.jpg","IMG/intermediateLektionGitarr.jpg","IMG/hardLektionGitarr.jpg"],["IMG/enklaPianoAckord.png","IMG/pianoMedelSvårLektion.jpg","IMG/pianoHardLektion.jpg"],[]] 
+var lektionerLista = [["IMG/enklaackord.jpg","IMG/intermediateLektionGitarr.jpg","IMG/hardLektionGitarr.jpg"],["IMG/enklaPianoAckord.png","IMG/pianoMedelSvårLektion.jpg","IMG/pianoHardLektion.jpg"],["IMG/TrummorEnkelLektion.png","IMG/trummorMedelLektion.png","IMG/trummorSvårLektion.png"]] 
 var id = ["lektionNybörjare","lektionMedel", "lektionExpert"]
 document.addEventListener("DOMContentLoaded", (event) => {
 var isMenuClosed = true;
@@ -86,6 +86,7 @@ else if(activeWindow.id == "indexLektioner"){
         document.getElementById(buttons[i]).addEventListener("click", function(event){
 
             for(let i = 0; i< id.length;i++){
+                
                 document.getElementById(id[i]).src= lektionerLista[event.target.value][i]
             }
 
