@@ -265,3 +265,38 @@ max-width:30ch
     overflow:hidden;
 }
 /*Hittadin nästa låt*/
+/*allalåtar.html*/
+
+#allaLatarBody section ol li a{
+    display:grid;
+    grid-template-columns: 20% 30%;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "img title"
+    "img artist";
+    align-items: center;
+    justify-content: space-evenly;
+}
+#allaLatarBody section ol li{
+    
+    background: grey;
+    margin-bottom:5%;
+}
+
+#allaLatarBody section ol li img{
+    grid-area: img;
+    max-width:100%;
+    max-height:100%;
+    
+    
+}
+
+#allaLatarBody section ol li h3{
+    grid-area: title;
+    margin:0;
+}
+
+#allaLatarBody section ol li p{
+    grid-area: artist;
+    margin:0;
+}

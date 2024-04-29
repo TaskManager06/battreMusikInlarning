@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Bättre Musik Inlärning </title>
+    <link rel="stylesheet" href="CSS/styles.css">
+    <script src="JS/script.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body id="allaLatarBody">
+    <header>
+        <h1>Ansök om en låt</h1>
+    </header>
+    <nav id="closedMenu">
+        <ul>
+            <li >
+                <a href="index.html">
+                    <img src="IMG/logo.png" alt="Logo">
+                </a>
+            </li>
+            <li>
+                <button type="button" name="openMenu" id="openMenu"><img src="IMG/menu.png" alt="expandera menyn"></button>
+            </li>
+        </ul>
+    </nav>
+    <div id="fullScreenMenu">
+        <ul>
+            <li><a class="hittaLat" href="hittaDinNastaLat.html">Hitta en Ny Låt !</a></li>
+            <li><a href="allaLatar.html">Alla Låtar</a></li>
+            <li><a href="spelrum.html">spelrum</a></li>
+            <li><a href="lektioner.html">Lektioner</a></li>
+        </ul>
+    </div>
+    <p>Finns nte låten du ösnkar att spela ? Fyll i formuläret nedan!</p>
+    <form method="POST" action="">
+        <input type="text" name="låtNamn" id="låtNamn" required>
+        <label for="låtNamn">Låt Namn</label>
+        <input type="text" name="artistNamn" id="artistNamn" required>
+        <label for="artistNamn">Artist</label>
+        <p>Vulgärt språk ? </p>
+        <input type="radio" name="språk" id="ja" value="ja">
+        <label for="ja">Ja</label>
+        <input type="radio" name="språk" id="nej" value="nej">
+        <label for="nej">Nej</label>
+        <br>
+        <input type="submit">
+
+    </form>
+</body>

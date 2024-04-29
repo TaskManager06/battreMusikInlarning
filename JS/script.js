@@ -122,7 +122,7 @@ else if(activeWindow.id == "indexHittaDinNastaLat"){
         console.log(database[radioValue][i][2])
         latar[i].querySelector("img").src = database[radioValue][i][2];
         latar[i].querySelector("p").innerText = database[radioValue][i][5];
-        const url = "latSida.html?Lat=" + encodeURIComponent(database[radioValue][i])
+        const url = "latSida.html?videoUrl=" + encodeURIComponent(database[radioValue][i][1]) + "&namn=" + encodeURIComponent(database[radioValue][i][0]) + '&gitarrAckord=' + encodeURIComponent(database[radioValue][i][3]) + '&pianoAckord' + encodeURIComponent(database[radioValue][i][4]) + '&trummorAckord' + encodeURIComponent(database[radioValue][i][5]);
         latar[i].parentElement.href= url;
     }
    }
@@ -131,6 +131,15 @@ else if(activeWindow.id == "indexHittaDinNastaLat"){
 
 }
 
+else if(activeWindow.id == "indexLatSida"){
+    var urlParams  = new URLSearchParams(window.location.search)
+    console.log(urlParams.get("name"))
+    document.getElementById('video').src = urlParams.get("videoUrl");
+    document.getElementsByTagName('h1')[0].innerText = urlParams.get("namn");
+    
+
+    
+}
 
 
 
