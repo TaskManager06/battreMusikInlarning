@@ -22,21 +22,30 @@
             </li>
         </ul>
     </nav>
+    <div id="fullScreenMenu">
+        <ul>
+            <li><a class="hittaLat" href="hittaDinNastaLat.html">Hitta en Ny Låt !</a></li>
+            <li><a href="allaLatar.html">Alla Låtar</a></li>
+            <li><a href="spelrum.html">spelrum</a></li>
+            <li><a href="lektioner.html">Lektioner</a></li>
+        </ul>
+    </div>
+   
     <main>
         <iframe src="https://www.youtube.com/embed/5NV6Rdv1a3I?si=0aTCmCu5tqYeQ1b0" id="video"></iframe>
-
+        <p>Laddar inte videon ? <br> Lyssna <a href="" id="ytLänk" target="_blank" rel="noreferrer noopener">här</a> på yt eller nedan för endast ljud</p>
         <h2>OM låten</h2>
         <div>
-            <h3></h3>
-            <p></p>
-            <p></p>
+            <h3 id="artist"></h3>
+            <p id="beskrivning"></p>
+            
         </div>
         <p>Spela låten</p>
         <div>
-            <button><img></button>
-            <button><img></button>
-            <button><img></button>
-            <img>
+            <button class="ackordButton" value="0"><img src="IMG/pianoIcon.png"></button>
+            <button class="ackordButton" value="1"><img src="IMG/guitarIcon.png"></button>
+            <button class="ackordButton" value="2"><img src="IMG/drumsIcon.png"></button>
+            <img id="ackord">
         </div>
     </main>
     

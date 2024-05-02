@@ -2,13 +2,13 @@
 var database = [
 //nybörjare
 [
-["get lucky", "https://www.youtube.com/embed?v=5NV6Rdv1a3I&pp=ygUJZ2V0IGx1Y2t5","IMG/getLuckyImg.jpeg","IMG\chordsGetLuckyGuitar.jpg","IMG\chordsPianoGetLucky.png", "nybörjare ---- 1/5"],
-["Dont stop believin", "https://www.youtube.com/watch?v=1k8craCGpgs","IMG/dontStopBelievingImg.jpeg","IMG\chordsGuitarDontStopBelieving.png","IMG\chordsPianoDontStopBelieving.png","nybörjare ---- 2/5"],
+["get lucky", "https://www.youtube.com/embed?v=5NV6Rdv1a3I&pp=ygUJZ2V0IGx1Y2t5","IMG/getLuckyImg.jpeg","IMG/chordsGetLuckyGuitar.jpg","IMG/chordsPianoGetLucky.png", "nybörjare ---- 4/5","Beskrivning Beskrivning Beskrivning Beskrivning Beskrivning","Daft punk"],
+["Dont stop believin", "https://www.youtube.com/watch?v=1k8craCGpgs","IMG/dontStopBelievingImg.jpeg","IMG/chordsGuitarDontStopBelieving.png","IMG/chordsPianoDontStopBelieving.png","nybörjare ---- 5/5","Beskrivning Beskrivning Beskrivning Beskrivning Beskrivning","Journey"],
 [],
 ],
 //medel
 [
-["Let her go", "https://www.youtube.com/watch?v=RBumgq5yVrA","IMG/letHerGoImg.jpeg", "IMG\chordsGuitarLetHerGo.png","IMG\chordsPianoLetHerGo.png","medel"],
+["Let her go", "https://www.youtube.com/watch?v=RBumgq5yVrA","IMG/letHerGoImg.jpeg", "IMG/chordsGuitarLetHerGo.png","IMG/chordsPianoLetHerGo.png","medel ---- 3/5","Beskrivning Beskrivning Beskrivning Beskrivning Beskrivning","Passenger"],
 [],
 [],
 ],
@@ -122,7 +122,7 @@ else if(activeWindow.id == "indexHittaDinNastaLat"){
         console.log(database[radioValue][i][2])
         latar[i].querySelector("img").src = database[radioValue][i][2];
         latar[i].querySelector("p").innerText = database[radioValue][i][5];
-        const url = "latSida.html?videoUrl=" + encodeURIComponent(database[radioValue][i][1]) + "&namn=" + encodeURIComponent(database[radioValue][i][0]) + '&gitarrAckord=' + encodeURIComponent(database[radioValue][i][3]) + '&pianoAckord' + encodeURIComponent(database[radioValue][i][4]) + '&trummorAckord' + encodeURIComponent(database[radioValue][i][5]);
+        const url = "latSida.html?videoUrl=" + encodeURIComponent(database[radioValue][i][1]) + "&namn=" + encodeURIComponent(database[radioValue][i][0]) + '&gitarrAckord=' + encodeURIComponent(database[radioValue][i][3]) + '&pianoAckord=' + encodeURIComponent(database[radioValue][i][4]) + '&trummorAckord=' + encodeURIComponent(database[radioValue][i][5]) + '&artist=' + encodeURIComponent(database[radioValue][i][7]) + '&beskrivning=' + encodeURIComponent(database[radioValue][i][6]);
         latar[i].parentElement.href= url;
     }
    }
@@ -133,9 +133,24 @@ else if(activeWindow.id == "indexHittaDinNastaLat"){
 
 else if(activeWindow.id == "indexLatSida"){
     var urlParams  = new URLSearchParams(window.location.search)
-    console.log(urlParams.get("name"))
+    console.log(urlParams.get("pianoAckord"))
     document.getElementById('video').src = urlParams.get("videoUrl");
+    document.getElementById('ytLänk').href = urlParams.get("videoUrl");
     document.getElementsByTagName('h1')[0].innerText = urlParams.get("namn");
+    document.getElementById('artist').innerText = 'av:' + urlParams.get("artist");
+    document.getElementById('beskrivning').innerText = urlParams.get("beskrivning");
+    document.getElementById('ackord').src = urlParams.get('pianoAckord');
+    const ackordLista = ['pianoAckord','guitarAckord','trummorAckord'];
+    const buttons = document.getElementsByClassName("ackordButton");
+    console.log(buttons)
+    for( let i = 0; i < buttons.length; i++){
+        console.log(1)
+        buttons[i].addEventListener('click' ,function(event){
+            var a = ackordLista[event.target.value];
+            console.log(a)
+            document.getElementById('ackord').src = urlParams.get(a);
+        })
+    }
     
 
     
