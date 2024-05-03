@@ -6,7 +6,7 @@
     <script src="JS/script.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
-<body id="spelrumBody">
+<body id="indexSpelrum">
     <header>
         <h1>Spelrum</h1>
     </header>
@@ -35,14 +35,15 @@
             <h2>
                 Metronom
             </h2>
-            <img src="IMG/metronome1.png">
+            <img src="IMG/metronome1.png" id="metronomeImage">
             <div>
-                <button id="left" name="left" value="0"><img></button>
-                <p>BPM</p>
-                <br>
-                <p>120</p>
-                <button id="right" name="right" value="1"><img></button>
+                <button id="minus" name="minus" value="0"><img src="IMG/minusBPM.png"></button>
+                <p>BPM:</p>
+                <p id="bpm">120</p>
+                <button id="play" name="play"><img src="IMG/playBPM.png" alt="Bild till knapp för att spela låten"></button>
+                <button id="plus" name="plus" value="1"><img src="IMG/plusBPM.png"></button>
             </div>
+            <input type="range" min="0" max="500" step="5">
         </section>
         <section>
             <h2>Song ackord</h2>

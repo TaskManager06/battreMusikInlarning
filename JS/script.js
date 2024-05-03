@@ -1,4 +1,6 @@
 //placeholder
+var a = 0
+var loopID;
 var database = [
 //nybörjare
 [
@@ -156,6 +158,49 @@ else if(activeWindow.id == "indexLatSida"){
     
 }
 
+else if(activeWindow.id =="indexSpelrum"){
+document.getElementById('minus').addEventListener("click",function(event){
+document.getElementById('bpm').innerText =Number(document.getElementById('bpm').innerText) - 1 ;
+})
 
+
+document.getElementById('plus').addEventListener("click",function(event){
+    document.getElementById('bpm').innerText =Number(document.getElementById('bpm').innerText) + 1 ;
+})
+
+var metronomeIsPlaying = false;
+document.getElementById('play').addEventListener("click", function(event){
+
+if(!metronomeIsPlaying){
+var beepSound = new Audio('Audio/beep.wav') 
+const bpm = document.getElementById('bpm').innerText;
+const delay = 1/(bpm/60)
+var metronomeIndex = 0
+
+loopID = setInterval(function(){
+    beepSound.play();
+    document.getElementById('metronomeImage').src= 'IMG/metronome' + metronomeIndex + '.png';
+    metronomeIndex = Number(!metronomeIndex)
+}, delay * 1000)
+console.log(loopID)
+console.log(document.getElementById('play'))
+console.log(document.getElementById('play').querySelector('img'))
+document.getElementById('play').querySelector('img').src='IMG/pauseBPM.png';
+metronomeIsPlaying = !metronomeIsPlaying;
+}
+else{
+    console.log(loopID)
+    clearInterval(loopID);
+    document.getElementById('play').querySelector('img').src='IMG/playBPM.png';
+    metronomeIsPlaying = !metronomeIsPlaying;
+}
+
+})
+
+
+
+
+
+}
 
 });

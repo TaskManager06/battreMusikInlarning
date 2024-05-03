@@ -321,7 +321,7 @@ max-width:30ch
 
 /*Latsida*/
 /*Spelrum*/
-#spelrumBody >main>section:first-of-type > div{
+#indexSpelrum >main>section:first-of-type > div{
     background:grey;
     display:flex;
     flex-direction:row;
@@ -331,8 +331,12 @@ max-width:30ch
     margin-left:auto;
     margin-right:auto;
 }
-#spelrumBody >main>section:first-of-type>img{
+#indexSpelrum >main>section:first-of-type>img{
     max-width:10em;
     max-height:10em;
+}
+#indexSpelrum >main>section:first-of-type>div img{
+    max-width:3em;
+    max-height:3em;
 }
 /*Spelrum*/
