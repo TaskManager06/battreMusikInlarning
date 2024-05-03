@@ -32,16 +32,38 @@
     </div>
     <p>Finns nte låten du ösnkar att spela ? Fyll i formuläret nedan!</p>
     <form method="POST" action="">
+        <input type="datetime-local" name="datum" id="datum" readonly>
+        <label for="datum">Dagens datum</label>
         <input type="text" name="låtNamn" id="låtNamn" required>
         <label for="låtNamn">Låt Namn</label>
         <input type="text" name="artistNamn" id="artistNamn" required>
         <label for="artistNamn">Artist</label>
-        <p>Vulgärt språk ? </p>
-        <input type="radio" name="språk" id="ja" value="ja">
+        <fieldset>
+            <legend>Vulgärt språk ?</legend>
+            <input type="radio" name="språk" id="ja" value="ja">
         <label for="ja">Ja</label>
-        <input type="radio" name="språk" id="nej" value="nej">
+        <input type="radio" name="språk" id="nej" value="nej" >
         <label for="nej">Nej</label>
-        <br>
+        </fieldset>
+        <label for="genre">
+            Vilken genre tillhör låten ?
+        </label>
+        <select name="genre" id="genre">
+            <option value="" selected>Vänligen välj ett alternativ</option>
+            <option value="pop">pop</option>
+            <option value="rock">rock</option>
+            <option value="metall">metall</option>
+            <option value="hip hop">hip hop</option>
+            <option value="blues">blues</option>
+            <option value="reggae">reggae</option>
+        </select>
+        
+        <h3>Välj om du vill bli kontaktad om din låt kommer med</h3>
+        <input type="email" id="email" name="email" placeholder="example@gmail.com">
+        <label for="email" >
+            Ange din email för att bli notifierad om din låt väljs
+        </label>
+        <input type="tel" id="telefon" name="telefon" pattern="[0-9]{3}-[0-9]{7}" placeholder="123-4567890">
         <input type="submit">
 
     </form>

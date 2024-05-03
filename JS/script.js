@@ -2,13 +2,13 @@
 var database = [
 //nybörjare
 [
-["get lucky", "https://www.youtube.com/embed?v=5NV6Rdv1a3I&pp=ygUJZ2V0IGx1Y2t5","IMG/getLuckyImg.jpeg","IMG/chordsGetLuckyGuitar.jpg","IMG/chordsPianoGetLucky.png", "nybörjare ---- 4/5","Beskrivning Beskrivning Beskrivning Beskrivning Beskrivning","Daft punk"],
-["Dont stop believin", "https://www.youtube.com/watch?v=1k8craCGpgs","IMG/dontStopBelievingImg.jpeg","IMG/chordsGuitarDontStopBelieving.png","IMG/chordsPianoDontStopBelieving.png","nybörjare ---- 5/5","Beskrivning Beskrivning Beskrivning Beskrivning Beskrivning","Journey"],
+["get lucky", "https://www.youtube.com/embed?v=5NV6Rdv1a3I&pp=ygUJZ2V0IGx1Y2t5","IMG/getLuckyImg.jpeg","IMG/chordsGetLuckyGuitar.jpg","IMG/chordsPianoGetLucky.png", "nybörjare ---- 4/5","Beskrivning Beskrivning Beskrivning Beskrivning Beskrivning","Daft punk","IMG/chordsGetLuckyDrums.jpg","Audio/getLuckyAudio.mp3"],
+["Dont stop believin", "https://www.youtube.com/watch?v=1k8craCGpgs","IMG/dontStopBelievingImg.jpeg","IMG/chordsGuitarDontStopBelieving.png","IMG/chordsPianoDontStopBelieving.png","nybörjare ---- 5/5","Beskrivning Beskrivning Beskrivning Beskrivning Beskrivning","Journey","IMG/dontStopBelievingChordsDrums.png","Audio/dontStopBelievingAudio.mp3"],
 [],
 ],
 //medel
 [
-["Let her go", "https://www.youtube.com/watch?v=RBumgq5yVrA","IMG/letHerGoImg.jpeg", "IMG/chordsGuitarLetHerGo.png","IMG/chordsPianoLetHerGo.png","medel ---- 3/5","Beskrivning Beskrivning Beskrivning Beskrivning Beskrivning","Passenger"],
+["Let her go", "https://www.youtube.com/watch?v=RBumgq5yVrA","IMG/letHerGoImg.jpeg", "IMG/chordsGuitarLetHerGo.png","IMG/chordsPianoLetHerGo.png","medel ---- 3/5","Beskrivning Beskrivning Beskrivning Beskrivning Beskrivning","Passenger","IMG/letHerGoAckordDrums.png","Audio/letHerGoaudi.mp3"],
 [],
 [],
 ],
@@ -115,14 +115,13 @@ else if(activeWindow.id == "indexHittaDinNastaLat"){
    });
 
    function changeNiva(radioValue){
-    
     const latar = document.getElementsByTagName("section");
     for(let i=0; i < latar.length; i++){
         latar[i].querySelector("h2").innerText  = database[radioValue][i][0];
         console.log(database[radioValue][i][2])
         latar[i].querySelector("img").src = database[radioValue][i][2];
         latar[i].querySelector("p").innerText = database[radioValue][i][5];
-        const url = "latSida.html?videoUrl=" + encodeURIComponent(database[radioValue][i][1]) + "&namn=" + encodeURIComponent(database[radioValue][i][0]) + '&gitarrAckord=' + encodeURIComponent(database[radioValue][i][3]) + '&pianoAckord=' + encodeURIComponent(database[radioValue][i][4]) + '&trummorAckord=' + encodeURIComponent(database[radioValue][i][5]) + '&artist=' + encodeURIComponent(database[radioValue][i][7]) + '&beskrivning=' + encodeURIComponent(database[radioValue][i][6]);
+        const url = "latSida.html?videoUrl=" + encodeURIComponent(database[radioValue][i][1]) + "&namn=" + encodeURIComponent(database[radioValue][i][0]) + '&gitarrAckord=' + encodeURIComponent(database[radioValue][i][3]) + '&pianoAckord=' + encodeURIComponent(database[radioValue][i][4]) + '&trummorAckord=' + encodeURIComponent(database[radioValue][i][8]) + '&artist=' + encodeURIComponent(database[radioValue][i][7]) + '&beskrivning=' + encodeURIComponent(database[radioValue][i][6]) + '&audio=' + encodeURIComponent(database[radioValue][i][9]);
         latar[i].parentElement.href= url;
     }
    }
@@ -140,7 +139,8 @@ else if(activeWindow.id == "indexLatSida"){
     document.getElementById('artist').innerText = 'av:' + urlParams.get("artist");
     document.getElementById('beskrivning').innerText = urlParams.get("beskrivning");
     document.getElementById('ackord').src = urlParams.get('pianoAckord');
-    const ackordLista = ['pianoAckord','guitarAckord','trummorAckord'];
+    document.getElementsByTagName('audio')[0].src = urlParams.get('audio');
+    const ackordLista = ['pianoAckord','gitarrAckord','trummorAckord'];
     const buttons = document.getElementsByClassName("ackordButton");
     console.log(buttons)
     for( let i = 0; i < buttons.length; i++){
