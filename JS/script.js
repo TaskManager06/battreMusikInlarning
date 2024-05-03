@@ -195,6 +195,11 @@ else{
     metronomeIsPlaying = !metronomeIsPlaying;
 }
 
+document.getElementById('bpmSlider').addEventListener("input", (event) => {
+    console.log(1)
+})
+
+
 })
 
 
