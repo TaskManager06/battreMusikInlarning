@@ -17,8 +17,7 @@ body{
     "nav"
     "header"
     "main"
-    "footer"
-    ;
+    "footer";
     margin:0;
     background-image:linear-gradient(to right,	#354656,#1d2e3d);
 }
@@ -88,18 +87,12 @@ li{
 #closedMenu button{
     margin-left:auto;
     height:7em;
-    
-    
-    
 }
-
-#closedMenu:first-child{
-    
+#closedMenu:first-child{   
     padding-left:3vw;
 }
 #fullScreenMenu{
     z-index:1;
-
     padding-top:5vh;
     width: 0;
     height:100vh;
@@ -107,28 +100,23 @@ li{
     position:fixed;
     background:#64b5f6;
     top:15vh;
-
 }
 #fullScreenMenu >ul{
     list-style-type:none;
     padding:0;
 }
-
 body #fullScreenMenu > ul  li {
     margin: 10px 0;
 }
-
 body #fullScreenMenu > ul  li a{
     font-size:22px;
 }
-
 header>h2{
     grid-area: header;
 }
 header{
     padding-bottom:5vh;
 }
-
 /*Nästa låt form*/
 #hittaDinNastaLatForm{
     width:0;
@@ -140,7 +128,6 @@ header{
     top:3vh;
     left:50vw;
     transform: translate(-50%,0);
-
 }
 /*Nästa låt form*/
 /*index*/
@@ -159,15 +146,12 @@ header{
     "hitta "
     "allaLatar "
     "spelrum"
-    "lektioner "
-    ;
+    "lektioner ";
     place-items: center;
-
 }
 #index .aktuellt{
     grid-area: aktuellt;
     height:100%;
-
 }
 #index a>#aktuellt1{
     height:100%;
@@ -182,9 +166,6 @@ header{
 max-height:20ch;
 max-width:30ch
 }
-
-
-
 #index> .allaLatar{
     grid-area: allaLatar;
     padding:1em 0.5em 1em 0.5em;
@@ -197,7 +178,6 @@ max-width:30ch
     border-radius: 10px;
     background:hsl(180, 79%, 24%);
 }
-
 #index> .lektioner{
     grid-area: lektioner;
     padding:1em 0.5em 1em 0.5em;
@@ -207,8 +187,6 @@ max-width:30ch
 #index .lektioner button{
     background:#ffe0c8;
 }
-
-
 #index >.aktuellt >a> div{
     background-color: red;
     width:17em;
@@ -221,10 +199,6 @@ max-width:30ch
 #index >.aktuellt >a> #aktuellt1> h2{
     background:#4a9d9c;
 }
-
-
-
-
 #index  #flexContainer{
     background: hsl(180, 79%, 24%);
     display:flex;
@@ -241,7 +215,6 @@ max-width:30ch
     padding:0;
     margin: 0 auto 0 auto;
 }
-
 #index > .lektioner{
     width:70%;
     background:hsl(180, 79%, 24%);
@@ -268,7 +241,6 @@ max-width:30ch
     display: flex;
     justify-content: center;
 }
-
 #lektioner > section  > img{
     max-height:35vh;
     max-width:55vw;
@@ -279,12 +251,10 @@ max-width:30ch
 }
 #lektioner >ul> li> button{
     width:100%;
-    height:100%;   
-    
+    height:100%;      
 }
 #lektioner >ul> li> button >img{
     display:none;
-    
 }
 #lektioner  >ul>li>#gitarrLektioner{
     background:#FF3D3D;
@@ -294,16 +264,14 @@ max-width:30ch
 }
 
 /*Lektioner.html*/
-
-
 /*Hittadin nästa låt*/
+
 #hittaDinNastaLat section{
     padding:30px;
     padding-bottom:4rem;
     margin-top:40px;
     background:grey;
-    height:35vh;
-    
+    height:35vh;    
 }
 #hittaDinNastaLat ol{
     padding:0;
@@ -323,7 +291,6 @@ max-width:30ch
     left:50%;
     transform:translate(-50%,0)
 }
-
 #hittaDinNastaLat ol li{
     overflow:hidden;
     background:grey;
@@ -335,20 +302,16 @@ max-width:30ch
 #hittaDinNastaLat fieldset{
     border-radius:5px;
 }
-
 #hittaDinNastaLat section img{
     max-width:12em;
     max-height:12em;
 }
-
 #hittaDinNastaLat section h2{
     margin-top:0;
 }
-
 #hittaDinNastaLat #submitButton{
     padding:1em;
 }
-
 #hittaDinNastaLat #songContainer section{
     border-radius:5px;
 }
@@ -362,9 +325,9 @@ max-width:30ch
     margin:0 auto 0 auto;
 }
 
-
 /*Hittadin nästa låt*/
 /*allalåtar.html*/
+
 #allaLatar section ol li a{
     display:grid;
     grid-template-columns: 20% 30%;
@@ -379,27 +342,21 @@ max-width:30ch
     border:1px solid black;
     background: #4a9d9c;
 }
-
 #allaLatar section ol li img{
     grid-area: img;
     max-width:100%;
-    max-height:100%;
-    
-    
+    max-height:100%;   
 }
-
 #allaLatar section ol li h3{
     grid-area: title;
     margin:0;
 }
-
 #allaLatar section ol li p{
     grid-area: artist;
     margin:0;
 }
 
 /*ALLA LÅTAR*/
-
 /*Latsida.html*/
 
 #latSida button img{
@@ -407,7 +364,6 @@ max-width:30ch
     max-height:5em;
     pointer-events: none;
 }
-
 #latSida #ackord{
     max-width:97vw;
 }
@@ -418,6 +374,7 @@ max-width:30ch
 
 /*Latsida*/
 /*Spelrum*/
+
 #spelrum section button{
     background:rgb(175, 255, 255);;
 }
@@ -456,18 +413,18 @@ max-width:30ch
     display:inline-block;
     width:100px;
 }
-
 #ackordImg{
-    overflow: hidden; /* Hide overflowing content */
-    cursor: pointer; /* Change cursor to pointer to indicate clickability */
-    transition: transform 0.5s ease; /* Smooth transition for the transform property */
+    overflow: hidden; 
+    cursor: pointer; 
+    transition: transform 0.5s ease; 
+}
+#ackordImg.expanded {
+    transform: scale(2); 
 }
 
-#ackordImg.expanded {
-    transform: scale(2); /* Scale the image to twice its original size */
-}
 /*Spelrum*/
 /*Formulär*/
+
 #formSong form label,input{
     display:block;
 }
@@ -482,9 +439,6 @@ margin:0 auto 0 auto;
 }
 
 /*Formulär*/
-
-
-
 /*DESKTOP*/
 
 @media only screen and (min-width:600px){
@@ -523,8 +477,6 @@ h1{
     grid-area:hitta;
     width:80%;
     height:100%
-
-    
 }
 #index .allaLatar{
     grid-area:alla;
@@ -547,7 +499,6 @@ h1{
     justify-content:center;
     width:50vw;
     height:100%;
-    
 }
 #index >.aktuellt >a>#aktuellt1{
     width:100%;
@@ -564,7 +515,6 @@ h1{
     flex-direction:column;
     align-items:center;
     justify-content:right;
-
 }
 #index .lektioner >#flexContainer{
     flex-direction:row;
@@ -578,7 +528,7 @@ h1{
 #index .lektioner > #flexContainer > button{
     width:50%;
 }
-
+/*index*/
 /*hittaDinNastaLat*/
 
 #hittaDinNastaLat >#test{
@@ -587,7 +537,6 @@ h1{
     transform:translate(-50%,0);
     display:none;
 }
-
 #hittaDinNastaLat #songContainer,#songContainer2,#songContainer3,#nivåTable{
    display:flex;
    flex-direction:row;
@@ -602,7 +551,6 @@ h1{
 #hittaDinNastaLat table tr:nth-child(odd){
     background:red;
 }
-
 #hittaDinNastaLat >.wideClass{
     display:block;
     background:grey;
@@ -612,7 +560,9 @@ h1{
     margin-top:10vh;
 }
 
+/*HittaDInNAstaLAt*/
 /*Lektioenr*/
+
 #lektioner ul li{
     display: inline-block;
     width:25vw;
@@ -626,8 +576,10 @@ h1{
 #lektioner >ul >li >button >p{
     display:none;
 }
+
 /*Lektioner*/
 /*Spelrum*/
+
 #spelrum section:first-of-type>img{
     max-width:30vw;
 }
@@ -658,8 +610,10 @@ h1{
     flex-direction:column;
     align-items:center;
 }
+
 /*Spelrum*/
 /*Latsida*/
+
 #latSida{
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -688,6 +642,7 @@ h1{
 
 /*LATSIDA*/
 /*allalåtar*/
+
 #allaLatar ol{
     column-count:2;
     column-width:auto;
@@ -707,6 +662,4 @@ h1{
 }
 #allaLatar p,h3{
     font-size:2vw;
-}
-
-}
+}}
