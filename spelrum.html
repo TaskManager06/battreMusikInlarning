@@ -20,15 +20,15 @@
             <li><a href="lektioner.html">Lektioner</a></li>
             <li><a href="spelrum.html">Spelrum</a></li>
         </ul>
-        <button type="button" name="openMenu" id="openMenu"><img src="IMG/menu.png" alt="expandera menyn"></button>
+        <button type="button" name="openMenu" id="openMenu"><img src="IMG/menu.svg" alt="expandera menyn"></button>
     </nav>
     <div id="fullScreenMenu">
         <ul>
-            <li><a class="hiddenMenuLink href="index.html"  tabindex="-1">Hem</a></li>
-            <li><a class="hiddenMenuLink class="hittaLat" href="hittaDinNastaLat.html"  tabindex="-1">Hitta en Ny Låt !</a></li>
-            <li><a class="hiddenMenuLink href="allaLatar.html"  tabindex="-1">Alla Låtar</a></li>
-            <li><a class="hiddenMenuLink href="spelrum.html"  tabindex="-1">spelrum</a></li>
-            <li><a class="hiddenMenuLink href="lektioner.html"  tabindex="-1">Lektioner</a></li>
+            <li><a class="hiddenMenuLink" href="index.html"  tabindex="-1">Hem</a></li>
+            <li><a class="hiddenMenuLink" class="hittaLat" href="hittaDinNastaLat.html"  tabindex="-1">Hitta en Ny Låt !</a></li>
+            <li><a class="hiddenMenuLink" href="allaLatar.html"  tabindex="-1">Alla Låtar</a></li>
+            <li><a class="hiddenMenuLink" href="spelrum.html"  tabindex="-1">spelrum</a></li>
+            <li><a class="hiddenMenuLink" href="lektioner.html"  tabindex="-1">Lektioner</a></li>
         </ul>
     </div>
     <main id="spelrum">
@@ -36,13 +36,17 @@
             <h2>
                 Metronom
             </h2>
-            <img src="IMG/metronome1.png" id="metronomeImage" alt="bild/animation av en metronom">
+            <figure>
+                <img src="IMG/metronome1.png" id="metronomeImage" alt="bild/animation av en metronom">
+                <figcaption>Metronom bild</figcaption>
+            </figure>
+            
             <div>
-                <button id="minus" name="minus" value="0"><img src="IMG/minusBPM.png" alt="bild för knappen som minskar bpm med 1 steg"></button>
+                <button id="minus" name="minus" value="0"><img src="IMG/minusBPM.svg" alt="bild för knappen som minskar bpm med 1 steg"></button>
                 <p>BPM:</p>
                 <p id="bpm">120</p>
                 <button id="play" name="play"><img src="IMG/playBPM.png" alt="Bild till knapp för att spela låten"></button>
-                <button id="plus" name="plus" value="1"><img src="IMG/plusBPM.png" alt="bild för knappen som ökar bpm med 1 steg"></button>
+                <button id="plus" name="plus" value="1"><img src="IMG/plusBPM.svg" alt="bild för knappen som ökar bpm med 1 steg"></button>
             </div>
             <label for="bpmSlider">
                 Ändra bpm snabbre

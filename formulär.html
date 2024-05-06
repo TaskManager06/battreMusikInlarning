@@ -11,6 +11,9 @@
         <header>
             <h1>Ansök om en låt</h1>
         </header>
+        <!-- Meny som altid är synlig
+        ul är endast synlig på breda skärmar
+        -->
         <nav id="closedMenu">
             <a href="index.html" id="logo">
                 <img src="IMG/logo.png" alt="Logo">
@@ -22,13 +25,15 @@
             </ul>
             <button type="button" name="openMenu" id="openMenu"><img src="IMG/menu.png" alt="expandera menyn"></button>
         </nav>
+        <!--Meny som expanderar, ej synlig i vanliga fall
+        -->
         <div id="fullScreenMenu" tabindex="0">
             <ul>
-                <li><a class="hiddenMenuLink href="index.html" tabindex="-1">Hem</a></li>
-                <li><a class="hiddenMenuLink class="hittaLat" href="hittaDinNastaLat.html" tabindex="-1">Hitta en Ny Låt !</a></li>
-                <li><a class="hiddenMenuLink href="allaLatar.html" tabindex="-1">Alla Låtar</a></li>
-                <li><a class="hiddenMenuLink href="spelrum.html" tabindex="-1">spelrum</a></li>
-                <li><a class="hiddenMenuLink href="lektioner.html" tabindex="-1">Lektioner</a></li>
+                <li><a class="hiddenMenuLink" href="index.html" tabindex="-1">Hem</a></li>
+                <li><a class="hiddenMenuLink" class="hittaLat" href="hittaDinNastaLat.html" tabindex="-1">Hitta en Ny Låt !</a></li>
+                <li><a class="hiddenMenuLink" href="allaLatar.html" tabindex="-1">Alla Låtar</a></li>
+                <li><a class="hiddenMenuLink" href="spelrum.html" tabindex="-1">spelrum</a></li>
+                <li><a class="hiddenMenuLink" href="lektioner.html" tabindex="-1">Lektioner</a></li>
             </ul>
         </div>
         <main id="formSong">
@@ -65,6 +70,10 @@
                 Vilken genre tillhör låten ?
                 <input list="genre" name="genreSelect" id="genreSelect">
             </label>
+            <label for="year">
+                Vilke år släpptes låten
+                <input type="number" min="1900" max="2025" name="year" id="year">
+            </label>
             <datalist id="genre">
                 <option value="pop">
                 <option value="rock">
@@ -81,17 +90,18 @@
             <label for="telefon">
                 Telefon
                 <input type="checkbox" id="telefon" value="telefon" name="telefon">
+                <p> Vi hör av oss så fort vi kan!</p>
             </label>
-            
             <label for="email">
                 Email
                 <input type="checkbox" id="email" value="email" name="email" checked>
+                <p> Vi hör av oss så fort vi kan!</p>
             </label>
-            <label for="emailWrite">
+            <label for="emailWrite" id="labelEmail">
                 Email:
                 <input type="email" id="emailWrite" name="emailWrite" placeholder="example@gmail.com">
             </label>
-            <label for="telefonWrite">
+            <label for="telefonWrite" id="labelTelefon">
                 telefonnummer:
                 <input type="tel" id="telefonWrite" name="telefonWrite" pattern="[0-9]{3}-[0-9]{7}" placeholder="123-4567890">
             </label>

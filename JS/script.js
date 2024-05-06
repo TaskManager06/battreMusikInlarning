@@ -246,7 +246,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		document
 			.getElementById("submitButton")
 			.addEventListener("click", function(event) {
-				document.getElementById("test").style.display = "none";
+				document.getElementById("quiz").style.display = "none";
 				document.getElementById("songContainer").style.display = "block";
                 //samlar alla radio knapar för att se vilken som är vaöd
 				const radioButtons = document.querySelectorAll('input[name="niva"]');
@@ -295,22 +295,30 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		}
 	} else if (activeWindow.id == "indexLatSida") {
         /*INdividuella låtsidan
-        Börjar med att urlen tas och all viktig information extraheras ifrpn den och placeras på sidan
+        Börjar med att urlen tas och all viktig information extraheras ifrån den och placeras på sidan
 
         */
 		var urlParamsLatSida = new URLSearchParams(window.location.search);
-		document.getElementById("video").src = urlParamsLatSida.get("videoUrl");
-		document.getElementById("ytLänk").href = urlParamsLatSida.get("videoUrl");
-		document.getElementsByTagName("h1")[0].innerText =
+		
+		if(!urlParamsLatSida.get("videoUrl")){
+			console.log('no argumnet: default')
+		}
+		else{
+			document.getElementById("video").src = urlParamsLatSida.get("videoUrl");
+			document.getElementById("ytLänk").href = urlParamsLatSida.get("videoUrl");
+			document.getElementsByTagName("h1")[0].innerText =
 			urlParamsLatSida.get("namn");
-		document.getElementById("artist").innerText =
+			document.getElementById("artist").innerText =
 			"av:" + urlParamsLatSida.get("artist");
-		document.getElementById("beskrivning").innerText =
+			document.getElementById("beskrivning").innerText =
 			urlParamsLatSida.get("beskrivning");
-		document.getElementById("ackord").src = urlParamsLatSida.get("pianoAckord");
-		document.getElementsByTagName("audio")[0].src =
+			document.getElementById("ackord").src = urlParamsLatSida.get("pianoAckord");
+			document.getElementsByTagName("audio")[0].src =
 			urlParamsLatSida.get("audio");
 
+
+		}
+		
         /*Skapar en eventlistener för varje instrument knapp för låten
         Likt lektionerna loopar även denna igenom knapparna.
         Här gör den så att om en knapp blir tryckt kommer en bild med ett ackord som hämtas
@@ -342,6 +350,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         
         En knapp som sänker värde på 'bpm' och en som höjer det, finns även en slider för större förändringar
         Spelknappen
+		Fungerar genom att en eventlistnerer läggs på vardera knapp, när den klickas väljer vi tagen med bpm, gör om det till ett nummer och subrtaherar eller adderar
         */
 		document
 			.getElementById("minus")
@@ -354,18 +363,23 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			document.getElementById("bpm").innerText =
 				Number(document.getElementById("bpm").innerText) + 1;
 		});
-
+		//bool för om metronomen spelar
 		var metronomeIsPlaying = false;
-
+		//kod för slidern, lik knapparna
 		document.getElementById("bpmSlider").addEventListener("input", (event) => {
 			document.getElementById("bpm").innerText = event.target.value;
 		});
+
 		document.getElementById("ackord").addEventListener("input", (event) => {
+			//tar vilken option som är vald, och gör om det till en lista
 			var userChoice = JSON.parse(event.target.value);
+			//VÄljer från "databsen", eftersom varje vlaue har formatet [0,0] d'r färsta värden är svårhetsgrad och andra är låt, det gör att vi enkelt kan välja låt
 			var userAckord = database[userChoice[0]][userChoice[1]];
+			//Väljer alla radio knappar
 			var radioButtonsInstrument = document.querySelectorAll(
 				'input[type="radio"]'
 			);
+			//lägger till en eventlisteener på radioknapparna som gör att dem byter bilden till bildena av ackordet
 			for (let i = 0; i < radioButtonsInstrument.length; i++) {
 				radioButtonsInstrument[i].addEventListener("input", function(event) {
 					document.getElementById("ackordImg").src =
@@ -373,7 +387,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				});
 			}
 		});
+		//knapp för att starta metronomen
+		/*Börjar med att kolla om metronomen spelar
+		Sedan väljer vi ljud och tar bpm användaren har valt, för att göra om det till vänte tid delar vi på 60 och upphöjer med -1
+		Vi specificerar sedan ett metronomeINndex som vi använder för att stänga av intervallen
+		Därefter startas en intervall med tiden vi räknade ut innan multiplicerat med 1000, vi alternerar även mellan två metrnoom bilder för att få till en animation. Det gör vi
+		genom att vi har en bool som vi gör om till ett nummer, den altererar då mellan 1,0. Genom att döpa bilden till metronom0 och 1 kan vi då enkelt byta bild.
+		SLutligen sätter vi boolen till falskt
 
+		När det stängs av tar vi loopID:et och clearer den och öndrar tillbaka spelknappen
+		*/
 		document.getElementById("play").addEventListener("click", function(event) {
 			if (!metronomeIsPlaying) {
 				var beepSound = new Audio("Audio/beep.wav");

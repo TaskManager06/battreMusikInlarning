@@ -1,6 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/*Berättar var fontent kan laddas ner ifrån, hittar dock ej filen*/
+
+@font-face {
+    font-family: system-ui;
+    src: url(system-ui.woff);
+}
+/*Importerar en fonten kanit*/
+
 /* global - mobile*/
+
+/*Skapar en grid där standard html elementen ska var, ser även till så att allt hamnar i center
+Gör en fontstack och väljer font-weight
+*/
 body{
-    font-family: system-ui, sans-serif;
+    font-family: Kanit,system-ui, sans-serif;
     font-weight: normal;
     text-align: center;
     justify-content:center;
@@ -16,23 +30,26 @@ body{
     grid-template-areas: 
     "nav"
     "header"
-    "main"
-    "footer";
+    "main";
     margin:0;
-    background-image:linear-gradient(to right,	#354656,#1d2e3d);
+    background-image:linear-gradient(to right,	#354656,#0066cc);
+    min-height: 100vh;
+    position: relative;
 }
-@font-face {
-    font-family: system-ui;
-    src: url(system-ui.woff);
-  }
+/*Ställer in värden för generella element som att sections ska ha border-radius*/
 h1{
-    font-size:2.5rem;;
+    font-size:2.5rem;
 }
 a:link{
     color:black;
+    text-decoration: underline;
 }
+footer::after{
+    content:'!';
+}
+
 a:visited {
-    color: hotpink;
+    color: black;
   }
 a:hover{
     color:red;
@@ -46,10 +63,11 @@ nav{
     grid-area: nav;
 }
 footer{
-    grid-area:footer;
     background:#1d2e3d;
-    width:97vw;
-    height:100%;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;  
 }
 button{
     border-radius:10px;
@@ -67,6 +85,14 @@ td,th{
 li{
     padding-bottom:2vh;
 }
+
+header>h2{
+    grid-area: header;
+}
+header{
+    padding-bottom:5vh;
+}
+/* Gör att menyn alltid hamnar överst och placerar föremålen på rätt plats */
 #closedMenu{
     z-index:2;
     display:flex;
@@ -74,12 +100,15 @@ li{
     height:auto;
     padding:15px;
 }
+/*Gör att listan är osynlig på små skärmar*/
 #closedMenu ul{
     display:none;
 }
+/*Gör listan horizontell*/
 #closedMenu ul> li{
     display: inline-block;
 }
+/*Ställer in storlekar på objekten*/
 #closedMenu  img{
     max-width:5em;
     max-height:5em
@@ -91,6 +120,10 @@ li{
 #closedMenu:first-child{   
     padding-left:3vw;
 }
+/*Fullskärmsmenyn är över allt annat men under menyn
+Width=0 för att den ej ska synas
+position:fixed; eftersom om använaren scrollar kommer menyn följa med.
+*/
 #fullScreenMenu{
     z-index:1;
     padding-top:5vh;
@@ -111,12 +144,6 @@ body #fullScreenMenu > ul  li {
 body #fullScreenMenu > ul  li a{
     font-size:22px;
 }
-header>h2{
-    grid-area: header;
-}
-header{
-    padding-bottom:5vh;
-}
 /*Nästa låt form*/
 #hittaDinNastaLatForm{
     width:0;
@@ -130,6 +157,7 @@ header{
     transform: translate(-50%,0);
 }
 /*Nästa låt form*/
+/*CSS för mobilen, designade först*/
 /*index*/
 #index{
     grid-area: main;
@@ -162,6 +190,7 @@ header{
     border-radius: 10px;
     background:hsl(180, 79%, 24%);
 }
+/*Använder max-height för att bevara aspec ration på orginal bilden*/
 #index> a img{
 max-height:20ch;
 max-width:30ch
@@ -191,8 +220,10 @@ max-width:30ch
     background-color: red;
     width:17em;
     height:100%;
+    /*../ används eftersom den automatiskt kommer leta i /CSS därför måste vi gör så för att gå ut ett steg*/
     background-image:url('../IMG/getLuckyImg.jpeg');
     background-repeat: no-repeat;
+    /*Bakgrounden tar upp 100%x100% av diven*/
     background-size: 100% 100%;
     border-radius:5%;
 }
@@ -200,6 +231,7 @@ max-width:30ch
     background:#4a9d9c;
 }
 #index  #flexContainer{
+    /*Använder en flexContainer och flex för att enkelt kunna ändra orientation när man går till desktop*/
     background: hsl(180, 79%, 24%);
     display:flex;
     flex-direction: column;
@@ -226,7 +258,12 @@ max-width:30ch
 
 /*index*/
 /*Lektioner.html*/
-
+#lektioner{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 #lektioner ul{
     padding:0;
 }
@@ -234,16 +271,23 @@ max-width:30ch
     overflow:hidden;
     padding: 15px;
     padding-top: 0;
-    max-width:50vw;
+    width:50vw;
     height:10vh;
+
 }
+/*Återigen använder flex för att enklare byta mellan bred och smal skärm*/
 #lektioner .flexContainerLektioner{
     display: flex;
     justify-content: center;
 }
 #lektioner > section  > img{
+    /*avnänder vieport relativa mått enheter på viktiga bilder eftersom dem skalar bra*/
     max-height:35vh;
+    min-width:50vw;
     max-width:55vw;
+}
+#lektioner h2 ~ dl > dt{
+    border:1px solid black;
 }
 #lektioner > section noscript img{
     max-height:35vh;
@@ -254,6 +298,7 @@ max-width:30ch
     height:100%;      
 }
 #lektioner >ul> li> button >img{
+    /*BIlden ska enbart vara synlig på desktop*/
     display:none;
 }
 #lektioner  >ul>li>#gitarrLektioner{
@@ -270,8 +315,10 @@ max-width:30ch
     padding:30px;
     padding-bottom:4rem;
     margin-top:40px;
-    background:grey;
-    height:35vh;    
+    background:hsl(180, 79%, 24%);
+    /*Height auto får automatiskt med allt innehål så det ej rymmerut, försvinner eller överlappar*/
+    height:auto;
+    overflow:hidden;
 }
 #hittaDinNastaLat ol{
     padding:0;
@@ -279,21 +326,24 @@ max-width:30ch
 #hittaDinNastaLat label{
     padding:10% 30% 10% 30%;
 }
-#hittaDinNastaLat #test{
+#hittaDinNastaLat #quiz{
     position:absolute;
     width:90vw;
     height:auto;
     background:white;
+    /*Viktigt att denna kommer överst*/
     z-index:1;
     left:0;
     overflow:hidden;
+    /*denna har möjligheten att bli 0*/
     min-width:0;
+    /*Positionerar i mitten genom gå 50% av sidan och ta bart 50% av sin egen storlek*/
     left:50%;
     transform:translate(-50%,0)
 }
 #hittaDinNastaLat ol li{
     overflow:hidden;
-    background:grey;
+    background:hsl(180, 79%, 24%);
     padding-bottom:4rem;
     padding-top:4rem;
     margin-bottom:3rem;
@@ -315,12 +365,14 @@ max-width:30ch
 #hittaDinNastaLat #songContainer section{
     border-radius:5px;
 }
+/*Dessa ska ej vara synliga på mobile*/
 #hittaDinNastaLat #songContainer,#songContainer2,#songContainer3,#nivåTable{
     display:none;
 }
 #hittaDinNastaLat >.wideClass{
     display:none;
 }
+/*Centrerar tabellen*/
 #hittaDinNastaLat table{
     margin:0 auto 0 auto;
 }
@@ -336,6 +388,7 @@ max-width:30ch
     "img title"
     "img artist";
     align-items: center;
+    /*Lika mellan rum överallt */
     justify-content: space-evenly;
 }
 #allaLatar section ol li{
@@ -362,9 +415,11 @@ max-width:30ch
 #latSida button img{
     max-width:5em;
     max-height:5em;
+    /*Eftersom bilden ligger på knappen krävs denna för att knappens value ska gå att få*/
     pointer-events: none;
 }
 #latSida #ackord{
+    /*Max width 97 och ej 100 för att undvika sidoscroll*/
     max-width:97vw;
 }
 #latSida #info{
@@ -413,6 +468,7 @@ max-width:30ch
     display:inline-block;
     width:100px;
 }
+/*simpel css animation/transition för att förstora ackord bilden*/
 #ackordImg{
     overflow: hidden; 
     cursor: pointer; 
@@ -437,10 +493,22 @@ margin:0 auto 0 auto;
 #formSong form input[type='submit']{
 margin:0 auto 0 auto;
 }
+#formSong form input[type='number']:in-range{
+    background: green;
+}
 
+#formSong form input[type='number']:out-of-range{
+    background: red;
+}
+label p{
+    display:none;
+}
+input:checked ~ p{
+    display: block;
+}
 /*Formulär*/
 /*DESKTOP*/
-
+/*CSS som verkar när skärmen är 600px eller mer*/
 @media only screen and (min-width:600px){
 h1{
     font-size:50px;
@@ -450,6 +518,7 @@ h1{
     height:auto;
     padding:15px;
 }
+/*Ger listan en display så att den syns och ställer in attrubuter*/
 #closedMenu ul{
     display:block;
     margin-left:auto;
@@ -462,6 +531,7 @@ h1{
 #closedMenu button{
     margin:0;
 }
+/*Ändrar griden till en 3 spalts layout så att dem i mitten hamnar på det horizontella planet*/
 #index{
     display:grid;
     grid-template-columns: 1fr 2fr 1fr;
@@ -517,6 +587,7 @@ h1{
     justify-content:right;
 }
 #index .lektioner >#flexContainer{
+    /*Ändrar riktningen på flex för att passa en bredare skärm*/
     flex-direction:row;
     width:100%;
     gap:2vw;
@@ -531,19 +602,22 @@ h1{
 /*index*/
 /*hittaDinNastaLat*/
 
-#hittaDinNastaLat >#test{
+#hittaDinNastaLat >#quiz{
+    /*EFter som vi har mer plats på daesktop behövs inte frågan om svårhetsgrad så dräför tas den bort med en display:none*/
     width:50%;
     left:50%;
     transform:translate(-50%,0);
     display:none;
 }
 #hittaDinNastaLat #songContainer,#songContainer2,#songContainer3,#nivåTable{
+    /*Ändrar riktningen på flex för att passa en bredare skärm*/
    display:flex;
    flex-direction:row;
    gap:5vw;
 }
 #hittaDinNastaLat div a{
     width:28vw;
+    height:auto;
 }
 #hittaDinNastaLat table{
     font-size:2.5vw;
@@ -552,8 +626,9 @@ h1{
     background:red;
 }
 #hittaDinNastaLat >.wideClass{
+    /*Osynlig på mobile så behövs sättas en display*/
     display:block;
-    background:grey;
+    background:#1d2e3d;
     width:auto;
     padding:5px;
     margin-bottom:0;
@@ -564,6 +639,7 @@ h1{
 /*Lektioenr*/
 
 #lektioner ul li{
+    /*Ta bort tecknet från listan*/
     display: inline-block;
     width:25vw;
 }
@@ -573,14 +649,12 @@ h1{
     margin-left:35%;
     pointer-events: none;
 }
-#lektioner >ul >li >button >p{
-    display:none;
-}
 
 /*Lektioner*/
 /*Spelrum*/
 
-#spelrum section:first-of-type>img{
+/*Gör bilderna mindre eftersom vw blir väldigt mycket större*/
+#spelrum section:first-of-type img{
     max-width:30vw;
 }
 #spelrum section:first-of-type div button:first-child{
@@ -597,6 +671,7 @@ h1{
     max-width:35vw;
 }
 #spelrum{
+    /*Ändrar riktningen på flex för att passa en bredare skärm*/
     display:flex;
     flex-direction:row;
     gap:5vw;
@@ -614,16 +689,15 @@ h1{
 /*Spelrum*/
 /*Latsida*/
 
+/*Gör en ny grid för att passa en större skräm, 2 spalt istället för 1 spalt*/
 #latSida{
     display:grid;
     grid-template-columns:1fr 1fr;
-    grid-template-rows:1fr 1fr;
+    grid-template-rows:auto 1fr;
+    grid-column-gap:5vw;
     grid-template-areas:
     "media info"
     "ackord ackord";
-}
-#latSida section{
-    max-height:50vh;
 }
 #latSida> #info{
     grid-area:info;
@@ -635,6 +709,7 @@ h1{
     grid-area:ackord;
     display:flex;
     flex-direction:column;
+    height: auto;
 }
 #latSida>#ackordLatSida button{
     width:20vw;
@@ -644,16 +719,19 @@ h1{
 /*allalåtar*/
 
 #allaLatar ol{
+    /*Delar upp listan i två kolumner*/
     column-count:2;
     column-width:auto;
     column-gap:5vw;
 }
 #allaLatar ol li{
     height:30vh;
+    /*Ser till att en item i columen inte är på två rader*/
     break-inside: avoid-column
 }
 #allaLatar ol li a{
     height:100%;
+    /*FIck inte till en högre specificitet så tvingades därför använda !important*/
     grid-template-columns:2fr 1fr !important; 
 }
 #allaLatar ol li a img{
