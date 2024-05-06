@@ -1,70 +1,105 @@
 <!DOCTYPE html>
-<head>
-    <meta charset="UTF-8">
-    <title>Bättre Musik Inlärning </title>
-    <link rel="stylesheet" href="CSS/styles.css">
-    <script src="JS/script.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-</head>
-<body id="allaLatarBody">
-    <header>
-        <h1>Ansök om en låt</h1>
-    </header>
-    <nav id="closedMenu">
-        <ul>
-            <li >
-                <a href="index.html">
-                    <img src="IMG/logo.png" alt="Logo">
-                </a>
-            </li>
-            <li>
-                <button type="button" name="openMenu" id="openMenu"><img src="IMG/menu.png" alt="expandera menyn"></button>
-            </li>
-        </ul>
-    </nav>
-    <div id="fullScreenMenu">
-        <ul>
-            <li><a class="hittaLat" href="hittaDinNastaLat.html">Hitta en Ny Låt !</a></li>
-            <li><a href="allaLatar.html">Alla Låtar</a></li>
-            <li><a href="spelrum.html">spelrum</a></li>
-            <li><a href="lektioner.html">Lektioner</a></li>
-        </ul>
-    </div>
-    <p>Finns nte låten du ösnkar att spela ? Fyll i formuläret nedan!</p>
-    <form method="POST" action="">
-        <input type="datetime-local" name="datum" id="datum" readonly>
-        <label for="datum">Dagens datum</label>
-        <input type="text" name="låtNamn" id="låtNamn" required>
-        <label for="låtNamn">Låt Namn</label>
-        <input type="text" name="artistNamn" id="artistNamn" required>
-        <label for="artistNamn">Artist</label>
-        <fieldset>
-            <legend>Vulgärt språk ?</legend>
-            <input type="radio" name="språk" id="ja" value="ja">
-        <label for="ja">Ja</label>
-        <input type="radio" name="språk" id="nej" value="nej" >
-        <label for="nej">Nej</label>
-        </fieldset>
-        <label for="genre">
-            Vilken genre tillhör låten ?
-        </label>
-        <select name="genre" id="genre">
-            <option value="" selected>Vänligen välj ett alternativ</option>
-            <option value="pop">pop</option>
-            <option value="rock">rock</option>
-            <option value="metall">metall</option>
-            <option value="hip hop">hip hop</option>
-            <option value="blues">blues</option>
-            <option value="reggae">reggae</option>
-        </select>
-        
-        <h3>Välj om du vill bli kontaktad om din låt kommer med</h3>
-        <input type="email" id="email" name="email" placeholder="example@gmail.com">
-        <label for="email" >
-            Ange din email för att bli notifierad om din låt väljs
-        </label>
-        <input type="tel" id="telefon" name="telefon" pattern="[0-9]{3}-[0-9]{7}" placeholder="123-4567890">
-        <input type="submit">
+<html lang="sv">
+    <head>
+        <meta charset="UTF-8">
+        <title>Bättre Musik Inlärning </title>
+        <link rel="stylesheet" href="CSS/styles.css">
+        <script src="JS/script.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body id="formBody">
+        <header>
+            <h1>Ansök om en låt</h1>
+        </header>
+        <nav id="closedMenu">
+            <a href="index.html" id="logo">
+                <img src="IMG/logo.png" alt="Logo">
+            </a>
+            <ul id="navList">
+                <li><a href="allaLatar.html">Alla Låtar</a></li>
+                <li><a href="lektioner.html">Lektioner</a></li>
+                <li><a href="spelrum.html">Spelrum</a></li>
+            </ul>
+            <button type="button" name="openMenu" id="openMenu"><img src="IMG/menu.png" alt="expandera menyn"></button>
+        </nav>
+        <div id="fullScreenMenu" tabindex="0">
+            <ul>
+                <li><a class="hiddenMenuLink href="index.html" tabindex="-1">Hem</a></li>
+                <li><a class="hiddenMenuLink class="hittaLat" href="hittaDinNastaLat.html" tabindex="-1">Hitta en Ny Låt !</a></li>
+                <li><a class="hiddenMenuLink href="allaLatar.html" tabindex="-1">Alla Låtar</a></li>
+                <li><a class="hiddenMenuLink href="spelrum.html" tabindex="-1">spelrum</a></li>
+                <li><a class="hiddenMenuLink href="lektioner.html" tabindex="-1">Lektioner</a></li>
+            </ul>
+        </div>
+        <main id="formSong">
+        <p>Finns nte låten du ösnkar att spela ? Fyll i formuläret nedan!</p>
+        <form method="POST" action="landpage.html">
+            <label for="datum">
+                Dagens datum
+                <input type="datetime-local" name="datum" id="datum">
+            </label>
+            
+            <label for="låtNamn">
+                Låt Namn
+                <input type="text" name="låtNamn" id="låtNamn" required>
+            </label>
+            
+            <label for="artistNamn">
+                Artist
+                <input type="text" name="artistNamn" id="artistNamn" required>
+            </label>
+            
+            <fieldset>
+                <legend>Vulgärt språk ?</legend>
+                <label for="ja">
+                    Ja
+                    <input type="radio" name="språk" id="ja" value="ja">
+                </label>
+                <label for="nej">
+                    Nej
+                    <input type="radio" name="språk" id="nej" value="nej" selected>
+                </label>
+            </fieldset>
 
-    </form>
-</body>
+            <label for="genreSelect">
+                Vilken genre tillhör låten ?
+                <input list="genre" name="genreSelect" id="genreSelect">
+            </label>
+            <datalist id="genre">
+                <option value="pop">
+                <option value="rock">
+                <option value="metall">
+                <option value="hip hop">
+                <option value="blues">
+                <option value="reggae">
+            </datalist>
+            <label for="beskrivning">
+                Berätta varför du vill just ha denan låt 
+                <textarea id="beskrivning" name="beskrivning"></textarea>
+            </label>
+            <h3>Välj om du vill bli kontaktad om din låt kommer med</h3>
+            <label for="telefon">
+                Telefon
+                <input type="checkbox" id="telefon" value="telefon" name="telefon">
+            </label>
+            
+            <label for="email">
+                Email
+                <input type="checkbox" id="email" value="email" name="email" checked>
+            </label>
+            <label for="emailWrite">
+                Email:
+                <input type="email" id="emailWrite" name="emailWrite" placeholder="example@gmail.com">
+            </label>
+            <label for="telefonWrite">
+                telefonnummer:
+                <input type="tel" id="telefonWrite" name="telefonWrite" pattern="[0-9]{3}-[0-9]{7}" placeholder="123-4567890">
+            </label>
+            <input type="submit">
+        </form>
+        </main>
+        <footer>
+            Bättre musik inlärning
+        </footer>
+    </body>
+</html>

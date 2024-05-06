@@ -1,38 +1,40 @@
 <!DOCTYPE html>
+<html lang="sv">
 <head>
     <meta charset="UTF-8">
     <title>Bättre Musik Inlärning </title>
     <link rel="stylesheet" href="CSS/styles.css">
     <script src="JS/script.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body id="indexHittaDinNastaLat">
     <header>
         <h1>Hitta din nästa låt nu!</h1>
     </header>
     <nav id="closedMenu">
-        <ul>
-            <li >
-                <a href="index.html">
-                    <img src="IMG/logo.png" alt="Logo">
-                </a>
-            </li>
-            <li>
-                <button type="button" name="openMenu" id="openMenu"><img src="IMG/menu.png" alt="expandera menyn"></button>
-            </li>
+        <a href="index.html" id="logo">
+            <img src="IMG/logo.png" alt="Logo">
+        </a>
+        <ul id="navList" >
+            <li><a href="allaLatar.html">Alla Låtar</a></li>
+            <li><a href="lektioner.html">Lektioner</a></li>
+            <li><a href="spelrum.html">Spelrum</a></li>
         </ul>
+        <button type="button" name="openMenu" id="openMenu"><img src="IMG/menu.png" alt="expandera menyn"></button>
     </nav>
     <div id="fullScreenMenu">
         <ul>
-            <li><a href="hittaDinNastaLat.html" class="hittaLat">Hitta en Ny Låt !</a></li>
-            <li><a href="allaLatar.html">Alla Låtar</a></li>
-            <li><a href="spelrum.html">spelrum</a></li>
-            <li><a href="lektioner.html">Lektioner</a></li>
+            <li><a class="hiddenMenuLink href="index.html" tabindex="-1">Hem</a></li>
+            <li><a class="hiddenMenuLink class="hittaLat" href="hittaDinNastaLat.html" tabindex="-1">Hitta en Ny Låt !</a></li>
+            <li><a class="hiddenMenuLink href="allaLatar.html" tabindex="-1">Alla Låtar</a></li>
+            <li><a class="hiddenMenuLink href="spelrum.html" tabindex="-1">spelrum</a></li>
+            <li><a class="hiddenMenuLink href="lektioner.html" tabindex="-1">Lektioner</a></li>
         </ul>
     </div>
 
     <main id="hittaDinNastaLat">
-            <fieldset id="test">
+        <div id='test'>
+            <fieldset >
                 <legend>Vilken nivå är du på ?</legend>
                 <ol>
                     <li>
@@ -51,7 +53,44 @@
                 </ol>
                 <button type="button" name="submitButton" id="submitButton"> Confirm</button> 
             </fieldset>
+            <h2>Vet inte vilken nivå du ligger på ?</h2>
+            <table>
+                <caption>Nivåtabell</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Nivå</th>
+                        <th scope="col">Speltid</th>
+                        <th scope="col">Hur ofta</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Nybörjare</td>
+                        <td>0-10 timmar</td>
+                        <td>sällan</td>
+                    </tr>
+                    <tr>
+                        <td>Medel</td>
+                        <td>20-100 timmar</td>
+                        <td>Regelbundet</td>
+                    </tr>
+                    <tr>
+                        <td>Expert</td>
+                        <td>100+ timmar</td>
+                        <td>Väldigt ofta</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3">För nybörjare: Ha tålamod och håll fast vid det, spela med vänner för att lära dig spelet bättre.</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <h2>Välj låt att spela</h2>
+        <h3 class="wideClass">Nybörjare</h3>
         <div id="songContainer">
+            
             <a href="">
                 <section>
                     <h2>Titel1</h2>
@@ -73,8 +112,95 @@
                     <p> Svårhetsgrad</p>
                 </section>
             </a>
-            <a href="hittaDinNastaLat.html">Ändra nivå</a>
         </div>
-        
+        <h3 class="wideClass">Medel</h3>
+        <div id="songContainer2">
+            <a href="">
+                <section>
+                    <h2>Titel1</h2>
+                    <img src="a" alt="Titel - Bild">
+                    <p> Svårhetsgrad</p>
+                </section>
+            </a>
+            <a href="">
+                <section>
+                    <h2>Titel2</h2>
+                    <img src="a" alt="Titel - Bild">
+                    <p> Svårhetsgrad</p>
+                </section>
+            </a>
+            <a href="">
+                <section>
+                    <h2>Titel3</h2>
+                    <img src="a" alt="Titel - Bild">
+                    <p> Svårhetsgrad</p>
+                </section>
+            </a>
+        </div>
+        <h3 class="wideClass">Expert</h3>
+        <div id="songContainer3">
+            <a href="">
+                <section>
+                    <h2>Titel1</h2>
+                    <img src="a" alt="Titel - Bild">
+                    <p> Svårhetsgrad</p>
+                </section>
+            </a>
+            <a href="">
+                <section>
+                    <h2>Titel2</h2>
+                    <img src="a" alt="Titel - Bild">
+                    <p> Svårhetsgrad</p>
+                </section>
+            </a>
+            <a href="">
+                <section>
+                    <h2>Titel3</h2>
+                    <img src="a" alt="Titel - Bild">
+                    <p> Svårhetsgrad</p>
+                </section>
+            </a>
+           
+        </div>
+        <section id="nivåTable">
+        <h2>Vet du inte vilke nivå du ligger på ?</h2>
+        <table>
+            <caption>Nivåtabell</caption>
+            <thead>
+                <tr>
+                    <th scope="col">Nivå</th>
+                    <th scope="col">Speltid</th>
+                    <th scope="col">Hur ofta</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Nybörjare</td>
+                    <td>0-10 timmar</td>
+                    <td>sällan</td>
+                </tr>
+                <tr>
+                    <td>Medel</td>
+                    <td>20-100 timmar</td>
+                    <td>Regelbundet</td>
+                </tr>
+                <tr>
+                    <td>Expert</td>
+                    <td>100+ timmar</td>
+                    <td>Väldigt ofta</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3">För nybörjare: Ha tålamod och håll fast vid det, spela med vänner för att lära dig spelet bättre.</td>
+                </tr>
+            </tfoot>
+        </table>
+        </section>
+        <a href="hittaDinNastaLat.html">Ändra nivå</a>
     </main>
+    <footer>
+        Bättre musik inlärning
+    </footer>
 </body>
+</html>

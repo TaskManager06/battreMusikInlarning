@@ -20,54 +20,26 @@ body{
     "footer"
     ;
     margin:0;
-    background-image:linear-gradient(to right,	#354656,#1d2e3d);
 }
-@font-face {
-    font-family: system-ui;
-    src: url(system-ui.woff);
-  }
 h1{
-    font-size:2.5rem;;
+    font-size:35px;;
 }
-a:link{
+a{
     color:black;
-}
-a:visited {
-    color: hotpink;
-  }
-a:hover{
-    color:red;
-    text-decoration:underline;
-}
-a:focus {
-    outline: none; 
-    border-bottom: 1Ch solid blue; 
 }
 nav{
     grid-area: nav;
-}
-footer{
-    grid-area:footer;
-    background:#1d2e3d;
-    width:97vw;
-    height:100%;
 }
 button{
     border-radius:10px;
 }
 section{
-    border-radius:5Ex;
+    border-radius:10px;
 }
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
   }
-td,th{
-    padding:5px;
-}
-li{
-    padding-bottom:2vh;
-}
 #closedMenu{
     z-index:2;
     display:flex;
@@ -105,22 +77,19 @@ li{
     height:100vh;
     overflow:hidden;
     position:fixed;
-    background:#64b5f6;
-    top:15vh;
+    background:white;
+    top:5vh;
 
 }
 #fullScreenMenu >ul{
     list-style-type:none;
     padding:0;
+};
+
+#fullScreenMenu > ul  li {
+    padding-bottom:5em;
 }
 
-body #fullScreenMenu > ul  li {
-    margin: 10px 0;
-}
-
-body #fullScreenMenu > ul  li a{
-    font-size:22px;
-}
 
 header>h2{
     grid-area: header;
@@ -176,7 +145,7 @@ header{
     grid-area: hitta;
     padding:1em 0.5em 1em 0.5em;
     border-radius: 10px;
-    background:hsl(180, 79%, 24%);
+    background:grey;
 }
 #index> a img{
 max-height:20ch;
@@ -189,13 +158,13 @@ max-width:30ch
     grid-area: allaLatar;
     padding:1em 0.5em 1em 0.5em;
     border-radius: 10px;
-    background:hsl(180, 79%, 24%);
+    background:grey;
 }
 #index> .spelrum{
     grid-area: spelrum;
     padding:1em 0.5em 1em 0.5em;
     border-radius: 10px;
-    background:hsl(180, 79%, 24%);
+    background:grey;
 }
 
 #index> .lektioner{
@@ -203,9 +172,7 @@ max-width:30ch
     padding:1em 0.5em 1em 0.5em;
     border: 1px salmon solid;
     border-radius: 10px;
-}
-#index .lektioner button{
-    background:#ffe0c8;
+    background:grey;
 }
 
 
@@ -219,14 +186,14 @@ max-width:30ch
     border-radius:5%;
 }
 #index >.aktuellt >a> #aktuellt1> h2{
-    background:#4a9d9c;
+    background:lightgrey;
 }
 
 
 
 
 #index  #flexContainer{
-    background: hsl(180, 79%, 24%);
+    background: grey;
     display:flex;
     flex-direction: column;
     justify-content: center;
@@ -244,7 +211,6 @@ max-width:30ch
 
 #index > .lektioner{
     width:70%;
-    background:hsl(180, 79%, 24%);
 }
 #index > .lektioner >h2{
     padding-right:100%;
@@ -287,10 +253,7 @@ max-width:30ch
     
 }
 #lektioner  >ul>li>#gitarrLektioner{
-    background:#FF3D3D;
-}
-#lektioner>ul>li button{
-    background:hsl(180, 79%, 24%);
+    background:red;
 }
 
 /*Lektioner.html*/
@@ -320,8 +283,6 @@ max-width:30ch
     left:0;
     overflow:hidden;
     min-width:0;
-    left:50%;
-    transform:translate(-50%,0)
 }
 
 #hittaDinNastaLat ol li{
@@ -352,16 +313,12 @@ max-width:30ch
 #hittaDinNastaLat #songContainer section{
     border-radius:5px;
 }
-#hittaDinNastaLat #songContainer,#songContainer2,#songContainer3,#nivåTable{
+#hittaDinNastaLat #songContainer,#songContainer2,#songContainer3{
     display:none;
 }
 #hittaDinNastaLat >.wideClass{
     display:none;
 }
-#hittaDinNastaLat table{
-    margin:0 auto 0 auto;
-}
-
 
 /*Hittadin nästa låt*/
 /*allalåtar.html*/
@@ -377,7 +334,7 @@ max-width:30ch
 }
 #allaLatar section ol li{
     border:1px solid black;
-    background: #4a9d9c;
+    background: grey;
 }
 
 #allaLatar section ol li img{
@@ -418,9 +375,6 @@ max-width:30ch
 
 /*Latsida*/
 /*Spelrum*/
-#spelrum section button{
-    background:rgb(175, 255, 255);;
-}
 #spelrum section:first-of-type{
     border:2px solid black;
     overflow:hidden;
@@ -429,11 +383,11 @@ max-width:30ch
 #spelrum section:nth-of-type(2){
     border:2px solid black;
     margin-top:10vh;
-    width:40vw;
+    max-width:80vw;
     margin:10vh auto 0 auto;
 }
 #spelrum>section:first-of-type > div{
-    background:hsl(180, 79%, 24%);
+    background:grey;
     display:flex;
     flex-direction:row;
     text-align:center;
@@ -451,20 +405,6 @@ max-width:30ch
 }
 #spelrum>section:nth-of-type(2) img{
     max-width:50vw;
-}
-#spelrum label{
-    display:inline-block;
-    width:100px;
-}
-
-#ackordImg{
-    overflow: hidden; /* Hide overflowing content */
-    cursor: pointer; /* Change cursor to pointer to indicate clickability */
-    transition: transform 0.5s ease; /* Smooth transition for the transform property */
-}
-
-#ackordImg.expanded {
-    transform: scale(2); /* Scale the image to twice its original size */
 }
 /*Spelrum*/
 /*Formulär*/
@@ -488,11 +428,8 @@ margin:0 auto 0 auto;
 /*DESKTOP*/
 
 @media only screen and (min-width:600px){
-h1{
-    font-size:50px;
-}
 #closedMenu{
-    background:#64b5f6;
+    background:grey;
     height:auto;
     padding:15px;
 }
@@ -588,7 +525,7 @@ h1{
     display:none;
 }
 
-#hittaDinNastaLat #songContainer,#songContainer2,#songContainer3,#nivåTable{
+#hittaDinNastaLat #songContainer,#songContainer2,#songContainer3{
    display:flex;
    flex-direction:row;
    gap:5vw;
@@ -596,11 +533,8 @@ h1{
 #hittaDinNastaLat div a{
     width:28vw;
 }
-#hittaDinNastaLat table{
-    font-size:2.5vw;
-}
-#hittaDinNastaLat table tr:nth-child(odd){
-    background:red;
+#hittaDinNastaLat #test table{
+    font-size:3vw;
 }
 
 #hittaDinNastaLat >.wideClass{
@@ -654,9 +588,6 @@ h1{
 }
 #spelrum section:nth-of-type(2){
     margin:0 auto 0 auto;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
 }
 /*Spelrum*/
 /*Latsida*/

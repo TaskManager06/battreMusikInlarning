@@ -1,58 +1,101 @@
 <!DOCTYPE html>
+<html lang="sv">
 <head>
     <meta charset="UTF-8">
     <title>Bättre Musik Inlärning </title>
     <link rel="stylesheet" href="CSS/styles.css">
     <script src="JS/script.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body id="indexSpelrum">
     <header>
         <h1>Spelrum</h1>
     </header>
     <nav id="closedMenu">
-        <ul>
-            <li >
-                <a href="index.html">
-                    <img src="IMG/logo.png" alt="Logo">
-                </a>
-            </li>
-            <li>
-                <button type="button" name="openMenu" id="openMenu"><img src="IMG/menu.png" alt="expandera menyn"></button>
-            </li>
+        <a href="index.html" id="logo">
+            <img src="IMG/logo.png" alt="Logo">
+        </a>
+        <ul id="navList">
+            <li><a href="allaLatar.html">Alla Låtar</a></li>
+            <li><a href="lektioner.html">Lektioner</a></li>
+            <li><a href="spelrum.html">Spelrum</a></li>
         </ul>
+        <button type="button" name="openMenu" id="openMenu"><img src="IMG/menu.png" alt="expandera menyn"></button>
     </nav>
     <div id="fullScreenMenu">
         <ul>
-            <li><a class="hittaLat" href="hittaDinNastaLat.html">Hitta en Ny Låt !</a></li>
-            <li><a href="allaLatar.html">Alla Låtar</a></li>
-            <li><a href="spelrum.html">spelrum</a></li>
-            <li><a href="lektioner.html">Lektioner</a></li>
+            <li><a class="hiddenMenuLink href="index.html"  tabindex="-1">Hem</a></li>
+            <li><a class="hiddenMenuLink class="hittaLat" href="hittaDinNastaLat.html"  tabindex="-1">Hitta en Ny Låt !</a></li>
+            <li><a class="hiddenMenuLink href="allaLatar.html"  tabindex="-1">Alla Låtar</a></li>
+            <li><a class="hiddenMenuLink href="spelrum.html"  tabindex="-1">spelrum</a></li>
+            <li><a class="hiddenMenuLink href="lektioner.html"  tabindex="-1">Lektioner</a></li>
         </ul>
     </div>
-    <main>
+    <main id="spelrum">
         <section>
             <h2>
                 Metronom
             </h2>
-            <img src="IMG/metronome1.png" id="metronomeImage">
+            <img src="IMG/metronome1.png" id="metronomeImage" alt="bild/animation av en metronom">
             <div>
-                <button id="minus" name="minus" value="0"><img src="IMG/minusBPM.png"></button>
+                <button id="minus" name="minus" value="0"><img src="IMG/minusBPM.png" alt="bild för knappen som minskar bpm med 1 steg"></button>
                 <p>BPM:</p>
                 <p id="bpm">120</p>
                 <button id="play" name="play"><img src="IMG/playBPM.png" alt="Bild till knapp för att spela låten"></button>
-                <button id="plus" name="plus" value="1"><img src="IMG/plusBPM.png"></button>
+                <button id="plus" name="plus" value="1"><img src="IMG/plusBPM.png" alt="bild för knappen som ökar bpm med 1 steg"></button>
             </div>
-            <input type="range" min="0" max="500" step="5" value="120" name="bpmSlider" id="bpmSlider">
+            <label for="bpmSlider">
+                Ändra bpm snabbre
+                <input type="range" min="0" max="500" step="5" value="120" name="bpmSlider" id="bpmSlider">
+            </label>
+            
         </section>
         <section>
             <h2>Song ackord</h2>
-            <div>
-                <p> Tryck här för att välja ackord</p>
-                <img>
-            </div>
+            <label for="ackord">Välj låt</label>
+            <select name="ackord" id="ackord">
+                <option selected>--Välj Låt--</option>
+                <optgroup label="Nybörgare">
+                    <option value="[0,0]">Get Lukcy</option>
+                    <option value="[0,1]">Dont stop Believing</option>
+                    <option></option>
+                </optgroup>
+                <optgroup label="Medel">
+                    <option value="[1,0]">Let her go</option>
+                    <option></option>
+                    <option></option>
+                </optgroup>
+                <optgroup label="Expert">
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                </optgroup>
+            </select>
+            <br>
+            <label for="piano">
+                piano
+                
+            </label>
+            <input type="radio" name="instrument" id="piano" value="4">
+            
+            <label for="gitarr">
+                gitarr
+                
+            </label>
+            <input type="radio" name="instrument" id="gitarr" value="3">
+            
+            <label for="trummor">trummor
+                
+            </label>
+            <input type="radio" name="instrument" id="trummor" value="8">
+           
+            <img id="ackordImg" src="IMG/search.jpg" alt="Bild för ackord">
         </section>
         
         
     </main>
 </body>
+<footer>
+    Bättre musik inlärning
+</footer>
+</html>

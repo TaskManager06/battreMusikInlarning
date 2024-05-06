@@ -1,7 +1,5 @@
-/*eslint-env es6*/
-
 //placeholder
-
+var a = 0
 var loopID;
 var database = [
 //nybörjare
@@ -22,59 +20,52 @@ var database = [
 [],
 [],
 ],
-];
+]
 
-var lektionerLista = [["IMG/enklaackord.jpg","IMG/intermediateLektionGitarr.jpg","IMG/hardLektionGitarr.jpg"],["IMG/enklaPianoAckord.png","IMG/pianoMedelSvårLektion.jpg","IMG/pianoHardLektion.jpg"],["IMG/TrummorEnkelLektion.png","IMG/trummorMedelLektion.png","IMG/trummorSvårLektion.png"]];
-var id = ["lektionNybörjare","lektionMedel", "lektionExpert"];
-document.addEventListener("DOMContentLoaded", function(event) {
+var lektionerLista = [["IMG/enklaackord.jpg","IMG/intermediateLektionGitarr.jpg","IMG/hardLektionGitarr.jpg"],["IMG/enklaPianoAckord.png","IMG/pianoMedelSvårLektion.jpg","IMG/pianoHardLektion.jpg"],["IMG/TrummorEnkelLektion.png","IMG/trummorMedelLektion.png","IMG/trummorSvårLektion.png"]] 
+var id = ["lektionNybörjare","lektionMedel", "lektionExpert"]
+document.addEventListener("DOMContentLoaded", (event) => {
 var isMenuClosed = true;
-var menuButtonElement = document.getElementById("openMenu");
+const menuButtonElement = document.getElementById("openMenu");
 menuButtonElement.addEventListener("click",openMenu);
 
 function openMenu(){
+    console.log(isMenuClosed)
     if(isMenuClosed){
         document.getElementById("fullScreenMenu").style.width = "99vw";
-        var openButton = document.getElementById("openMenu");
+        
         var width = window.getComputedStyle(document.getElementById("closedMenu")).getPropertyValue('width');
-        var widthOpenButton = window.getComputedStyle(openButton).getPropertyValue('width');
-        var height = window.getComputedStyle(openButton).getPropertyValue('height');
-        var topOpenButton = openButton.getBoundingClientRect().top;
-        var topLogo = document.getElementById('logo').getBoundingClientRect().top;
+        var height = window.getComputedStyle(document.getElementById("openMenu")).getPropertyValue('height');
+        var top = document.getElementById('openMenu').getBoundingClientRect().top;
+        var openButton = document.getElementById("openMenu");
         console.log(top);
-        openButton.style.position = 'fixed';
+        openButton.style.position = 'fixed'
         openButton.style.right =(document.body.offsetWidth - parseInt(width))/2 + "px";
         openButton.style.height =height;
-        openButton.style.top = topOpenButton + 'px';
-        document.getElementById('logo').style.top = topLogo + 'px';
-        document.getElementById('navList').style.marginRight = widthOpenButton;
+        openButton.style.top = top;
 
-        document.getElementById('logo').style.position = 'fixed';
-        var links = document.getElementsByClassName('hiddenMenuLink');
-        for(let i =0;i<links.length;i++){
-            console.log(links[i])
-            links[i].tabIndex = '0'
-        }
+        document.getElementById('logo').style.position = 'fixed'
 
 
     }
     else{
         document.getElementById("fullScreenMenu").style.width = "0";
-        document.getElementById("openMenu").style.position = '';
-        document.getElementById("logo").style.position = '';
-        document.getElementById("navList").style.marginRight = '';
-        var links = document.getElementsByClassName('hiddenMenuLink');
-        for(let i =0;i<links.length;i++){
-
-            links[i].tabIndex = '-1'
-        }
+        document.getElementById("openMenu").style.position = ''
+        document.getElementById("logo").style.position = ''
     }
     isMenuClosed = !isMenuClosed;
     
 }
    
-var activeWindow = document.getElementsByTagName('body')[0];
+const activeWindow = document.getElementsByTagName('body')[0];
+console.log(activeWindow.id)
+if(activeWindow.id == "indexBody"){
+    console.log(1)
+setInterval(windowSwitch, 4500)
+var num = 1;
 function windowSwitch(){
-    var imgs = [ ["IMG/getLuckyImg.jpeg","get lucky","http://127.0.0.1:5500/latSida.html?videoUrl=https%3A%2F%2Fwww.youtube.com%2Fembed%3Fv%3D5NV6Rdv1a3I%26pp%3DygUJZ2V0IGx1Y2t5&namn=get%20lucky&gitarrAckord=IMG%2FchordsGetLuckyGuitar.jpg&pianoAckord=IMG%2FchordsPianoGetLucky.png&trummorAckord=IMG%2FchordsGetLuckyDrums.jpg&artist=Daft%20punk&beskrivning=Beskrivning%20Beskrivning%20Beskrivning%20Beskrivning%20Beskrivning&audio=Audio%2FgetLuckyAudio.mp3"],["IMG/dontStopBelievingImg.jpeg","Dont stop believin","http://127.0.0.1:5500/latSida.html?videoUrl=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D1k8craCGpgs&namn=Dont%20stop%20believin&gitarrAckord=IMG%2FchordsGuitarDontStopBelieving.png&pianoAckord=IMG%2FchordsPianoDontStopBelieving.png&trummorAckord=IMG%2FdontStopBelievingChordsDrums.png&artist=Journey&beskrivning=Beskrivning%20Beskrivning%20Beskrivning%20Beskrivning%20Beskrivning&audio=Audio%2FdontStopBelievingAudio.mp3"],["IMG/letHerGoImg.jpeg","Let her go","http://127.0.0.1:5500/latSida.html?videoUrl=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DRBumgq5yVrA&namn=Let%20her%20go&gitarrAckord=IMG%2FchordsGuitarLetHerGo.png&pianoAckord=IMG%2FchordsPianoLetHerGo.png&trummorAckord=IMG%2FletHerGoAckordDrums.png&artist=Passenger&beskrivning=Beskrivning%20Beskrivning%20Beskrivning%20Beskrivning%20Beskrivning&audio=Audio%2FletHerGoaudi.mp3"]];
+    console.log(num);
+    const imgs = [ ["IMG/getLuckyImg.jpeg","get lucky","http://127.0.0.1:5500/latSida.html?videoUrl=https%3A%2F%2Fwww.youtube.com%2Fembed%3Fv%3D5NV6Rdv1a3I%26pp%3DygUJZ2V0IGx1Y2t5&namn=get%20lucky&gitarrAckord=IMG%2FchordsGetLuckyGuitar.jpg&pianoAckord=IMG%2FchordsPianoGetLucky.png&trummorAckord=IMG%2FchordsGetLuckyDrums.jpg&artist=Daft%20punk&beskrivning=Beskrivning%20Beskrivning%20Beskrivning%20Beskrivning%20Beskrivning&audio=Audio%2FgetLuckyAudio.mp3"],["IMG/dontStopBelievingImg.jpeg","Dont stop believin","http://127.0.0.1:5500/latSida.html?videoUrl=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D1k8craCGpgs&namn=Dont%20stop%20believin&gitarrAckord=IMG%2FchordsGuitarDontStopBelieving.png&pianoAckord=IMG%2FchordsPianoDontStopBelieving.png&trummorAckord=IMG%2FdontStopBelievingChordsDrums.png&artist=Journey&beskrivning=Beskrivning%20Beskrivning%20Beskrivning%20Beskrivning%20Beskrivning&audio=Audio%2FdontStopBelievingAudio.mp3"],["IMG/letHerGoImg.jpeg","Let her go","http://127.0.0.1:5500/latSida.html?videoUrl=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DRBumgq5yVrA&namn=Let%20her%20go&gitarrAckord=IMG%2FchordsGuitarLetHerGo.png&pianoAckord=IMG%2FchordsPianoLetHerGo.png&trummorAckord=IMG%2FletHerGoAckordDrums.png&artist=Passenger&beskrivning=Beskrivning%20Beskrivning%20Beskrivning%20Beskrivning%20Beskrivning&audio=Audio%2FletHerGoaudi.mp3"]];
     backgroundDiv = document.getElementById("aktuellt1");
     backgroundDiv.style.backgroundImage = 'url(../' + imgs[num][0] + ')';
     backgroundDiv.getElementsByTagName('h2')[0].innerText = imgs[num][1];
@@ -82,20 +73,16 @@ function windowSwitch(){
     num += 1;
     if(num > imgs.length - 1){
         num = 0;
-    }
+    };
 }
-if(activeWindow.id == "indexBody"){
-setInterval(windowSwitch, 4500);
-var num = 1;
 
 
 
-
-var buttons = ["gitarrLektionRedirect","pianoLektionRedirect","trummorLektionRedirect"];
+var buttons = ["gitarrLektionRedirect","pianoLektionRedirect","trummorLektionRedirect"]
 for(let i =0;i< buttons.length;i++){
     document.getElementById(buttons[i]).addEventListener("click", function(event){
         
-        const url = "lektioner.html?instrument=" + encodeURIComponent(event.target.value);
+        const url = "lektioner.html?instrument=" + encodeURIComponent(event.target.value)
         window.location.href = url;
     });
     
@@ -105,26 +92,28 @@ for(let i =0;i< buttons.length;i++){
 
 else if(activeWindow.id == "indexLektioner"){
 
-    var urlParams  = new URLSearchParams(window.location.search);
-    var value = urlParams.get("instrument");
+    var urlParams  = new URLSearchParams(window.location.search)
+    var value = urlParams.get("instrument")
+    console.log(value)
     if (!value) {
         value = 0;
-    }
+    };
     for(let i = 0; i< id.length;i++){
-        document.getElementById(id[i]).src= lektionerLista[value][i];
+        document.getElementById(id[i]).src= lektionerLista[value][i]
     }
     
-    var buttonsLektioner = ["gitarrLektioner","pianoLektioner","trummorLektioner"];
-    for(let i =0;i< buttonsLektioner.length;i++){
-        document.getElementById(buttonsLektioner[i]).addEventListener("click", function(event){
+    var buttons = ["gitarrLektioner","pianoLektioner","trummorLektioner"]
+    for(let i =0;i< buttons.length;i++){
+        document.getElementById(buttons[i]).addEventListener("click", function(event){
             
-            for(let i =0;i< buttonsLektioner.length;i++){
-                document.getElementById(buttonsLektioner[i]).style.backgroundColor = '#0D6E6E';
+            for(let i =0;i< buttons.length;i++){
+            console.log(buttons[i])
+                document.getElementById(buttons[i]).style.backgroundColor = 'grey';
             }
-            event.target.style.backgroundColor = '#FF3D3D';
+            event.target.style.backgroundColor = 'red';
             for(let i = 0; i< id.length;i++){
                 
-                document.getElementById(id[i]).src= lektionerLista[event.target.value][i];
+                document.getElementById(id[i]).src= lektionerLista[event.target.value][i]
             }
             
             
@@ -141,13 +130,14 @@ else if(activeWindow.id == "indexHittaDinNastaLat"){
     document.getElementById("songContainer").style.display = "block";
     
     const radioButtons = document.querySelectorAll('input[name="niva"]');
+    console.log(radioButtons)
     var radioValue;
     for(let i = 0; i< radioButtons.length;i++){
         if(radioButtons[i].checked){
             radioValue = radioButtons[i].value;
         }
     }
-    changeNiva(radioValue);
+    changeNiva(radioValue)
 
    });
 
@@ -155,6 +145,7 @@ else if(activeWindow.id == "indexHittaDinNastaLat"){
     const latar = document.getElementsByTagName("section");
     for(let i=0; i < latar.length; i++){
         latar[i].querySelector("h2").innerText  = database[radioValue][i][0];
+        console.log(database[radioValue][i][2])
         latar[i].querySelector("img").src = database[radioValue][i][2];
         latar[i].querySelector("p").innerText = database[radioValue][i][5];
         const url = "latSida.html?videoUrl=" + encodeURIComponent(database[radioValue][i][1]) + "&namn=" + encodeURIComponent(database[radioValue][i][0]) + '&gitarrAckord=' + encodeURIComponent(database[radioValue][i][3]) + '&pianoAckord=' + encodeURIComponent(database[radioValue][i][4]) + '&trummorAckord=' + encodeURIComponent(database[radioValue][i][8]) + '&artist=' + encodeURIComponent(database[radioValue][i][7]) + '&beskrivning=' + encodeURIComponent(database[radioValue][i][6]) + '&audio=' + encodeURIComponent(database[radioValue][i][9]);
@@ -167,25 +158,30 @@ else if(activeWindow.id == "indexHittaDinNastaLat"){
 }
 
 else if(activeWindow.id == "indexLatSida"){
-    var urlParamsLatSida  = new URLSearchParams(window.location.search);
-    document.getElementById('video').src = urlParamsLatSida.get("videoUrl");
-    document.getElementById('ytLänk').href = urlParamsLatSida.get("videoUrl");
-    document.getElementsByTagName('h1')[0].innerText = urlParamsLatSida.get("namn");
-    document.getElementById('artist').innerText = 'av:' + urlParamsLatSida.get("artist");
-    document.getElementById('beskrivning').innerText = urlParamsLatSida.get("beskrivning");
-    document.getElementById('ackord').src = urlParamsLatSida.get('pianoAckord');
-    document.getElementsByTagName('audio')[0].src = urlParamsLatSida.get('audio');
+    var urlParams  = new URLSearchParams(window.location.search)
+    console.log(urlParams.get("pianoAckord"))
+    document.getElementById('video').src = urlParams.get("videoUrl");
+    document.getElementById('ytLänk').href = urlParams.get("videoUrl");
+    document.getElementsByTagName('h1')[0].innerText = urlParams.get("namn");
+    document.getElementById('artist').innerText = 'av:' + urlParams.get("artist");
+    document.getElementById('beskrivning').innerText = urlParams.get("beskrivning");
+    document.getElementById('ackord').src = urlParams.get('pianoAckord');
+    document.getElementsByTagName('audio')[0].src = urlParams.get('audio');
     const ackordLista = ['pianoAckord','gitarrAckord','trummorAckord'];
     const buttons = document.getElementsByClassName("ackordButton");
+    console.log(buttons)
     for( let i = 0; i < buttons.length; i++){
+        console.log(1)
+        
         buttons[i].addEventListener('click' ,function(event){
             for(let i =0;i< buttons.length;i++){
-                    buttons[i].style.backgroundColor = '#4a9d9c';
+                    buttons[i].style.backgroundColor = 'grey';
                 }
                 event.target.style.backgroundColor = 'red';
             var a = ackordLista[event.target.value];
-            document.getElementById('ackord').src = urlParamsLatSida.get(a);
-        });
+            console.log(a)
+            document.getElementById('ackord').src = urlParams.get(a);
+        })
     }
     
 
@@ -193,56 +189,56 @@ else if(activeWindow.id == "indexLatSida"){
 }
 
 else if(activeWindow.id =="indexSpelrum"){
-
-const clickableImage = document.querySelector('#ackordImg');
-
-clickableImage.addEventListener('click', function() {
-    this.classList.toggle('expanded');
-});
-
 document.getElementById('minus').addEventListener("click",function(event){
 document.getElementById('bpm').innerText =Number(document.getElementById('bpm').innerText) - 1 ;
-});
+})
 
 
 document.getElementById('plus').addEventListener("click",function(event){
     document.getElementById('bpm').innerText =Number(document.getElementById('bpm').innerText) + 1 ;
-});
+})
 
 var metronomeIsPlaying = false;
 
 document.getElementById('bpmSlider').addEventListener("input", (event) => {
     document.getElementById('bpm').innerText = event.target.value;
-});
+})
 document.getElementById('ackord').addEventListener("input", (event) => {
 
 var userChoice = JSON.parse(event.target.value);
 var userAckord = database[userChoice[0]][userChoice[1]];
 var radioButtonsInstrument = document.querySelectorAll('input[type="radio"]');
+console.log(radioButtonsInstrument.length)
 for(let i =0;i< radioButtonsInstrument.length;i++){
     radioButtonsInstrument[i].addEventListener("input", function(event){
-        document.getElementById('ackordImg').src= userAckord[event.target.value];
-    });
+        console.log(event.target.value)
+        document.getElementById('ackordImg').src= userAckord[event.target.value]
+    })
 }
-});
+console.log(userAckord)
+})
 
 document.getElementById('play').addEventListener("click", function(event){
 
 if(!metronomeIsPlaying){
-var beepSound = new Audio('Audio/beep.wav') ;
+var beepSound = new Audio('Audio/beep.wav') 
 const bpm = document.getElementById('bpm').innerText;
-const delay = 1/(bpm/60);
-var metronomeIndex = 0;
+const delay = 1/(bpm/60)
+var metronomeIndex = 0
 
 loopID = setInterval(function(){
     beepSound.play();
     document.getElementById('metronomeImage').src= 'IMG/metronome' + metronomeIndex + '.png';
-    metronomeIndex = Number(!metronomeIndex);
-}, delay * 1000);
+    metronomeIndex = Number(!metronomeIndex)
+}, delay * 1000)
+console.log(loopID)
+console.log(document.getElementById('play'))
+console.log(document.getElementById('play').querySelector('img'))
 document.getElementById('play').querySelector('img').src='IMG/pauseBPM.png';
 metronomeIsPlaying = !metronomeIsPlaying;
 }
 else{
+    console.log(loopID)
     clearInterval(loopID);
     document.getElementById('play').querySelector('img').src='IMG/playBPM.png';
     metronomeIsPlaying = !metronomeIsPlaying;
@@ -250,4 +246,12 @@ else{
 
 
 
-});}});
+})
+
+
+
+
+
+}
+
+});
