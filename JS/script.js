@@ -10,7 +10,7 @@ var database = [
 			"IMG/chordsGetLuckyGuitar.jpg",
 			"IMG/chordsPianoGetLucky.png",
 			"nybörjare ---- 4/5",
-			"Beskrivning Beskrivning Beskrivning Beskrivning Beskrivning",
+			"En funk- och discoproduktion av den franska elektroniska duon Daft Punk, som släpptes 2013. Låten har en retrokänsla och en upplyftande stämning, med Pharrell Williams och Nile Rodgers som gästartister.",
 			"Daft punk",
 			"IMG/chordsGetLuckyDrums.jpg",
 			"Audio/getLuckyAudio.mp3",
@@ -22,12 +22,24 @@ var database = [
 			"IMG/chordsGuitarDontStopBelieving.png",
 			"IMG/chordsPianoDontStopBelieving.png",
 			"nybörjare ---- 5/5",
-			"Beskrivning Beskrivning Beskrivning Beskrivning Beskrivning",
+			"En klassisk rocklåt av det amerikanska bandet Journey, släppt 1981. Låten är känd för sin ikoniska pianointro och sina inspirerande och motiverande texter som handlar om att behålla hoppet och tro på dig själv.",
 			"Journey",
 			"IMG/dontStopBelievingChordsDrums.png",
 			"Audio/dontStopBelievingAudio.mp3",
 		],
-		[],
+		[
+            "Tiny Dancer",
+            "https://www.youtube.com/embed/yYcyacLRPNs?si=gppHjngeFRCfwsQi",
+            "IMG/tinyDancerImg.png",
+            "chordsGuitarTinyDancer",
+            "IMG/chordsPianoTinyDance.png",
+            "nybörjare ---- 3/5",
+            //ej konsekvent indrag pga " tecken i strängen
+            'En sång av den brittiske artisten Elton John, från hans album "Madman Across the Water" som släpptes 1971. Låten anses vara en av Elton Johns signaturlåtar och hyllas för sina poetiska texter och melodiösa arrangemang.',
+            "Elton John",
+            "IMG/chordsDrumsTinyDancer.webp",
+            "Audio/tinyDancer.mp3"
+        ],
 	],
 	//medel
 	[
@@ -38,19 +50,74 @@ var database = [
 			"IMG/chordsGuitarLetHerGo.png",
 			"IMG/chordsPianoLetHerGo.png",
 			"medel ---- 3/5",
-			"Beskrivning Beskrivning Beskrivning Beskrivning Beskrivning",
+			"En låt av den brittiska singer-songwritern Passenger, utgiven 2012. Låten är känd för sin enkla gitarrackompanjemang och gripande texter som handlar om förlust och saknad av en älskad person.",
 			"Passenger",
 			"IMG/letHerGoAckordDrums.png",
 			"Audio/letHerGoaudi.mp3",
 		],
-		[],
-		[],
+		[
+            "Wanted Dead Or Alive.",
+            "https://www.youtube.com/embed/xNRaDavYo1M?si=k4j37kufZfYo5H3G",
+            "IMG/wantedDeadOrAliveImg.jpeg",
+            "IMG/chordsPianoWantedDeadOrAlive.svg",
+            "IMG/chordsGuitarWantedDeadOrAlive.png",
+            "medel ---- 4/5",
+            'En låt av det amerikanska rockbandet Bon Jovi, utgiven 1986. Låten har en kraftfull countryrock-stil och texter som handlar om livet på vägarna och känslan av att vara en "laglös cowboy".',
+            "Bon Jovi",
+            "IMG/chordsDrumsWantedDeadOrAlive.jpeg",
+            "Audio/wantedDeadOrAlive.mp3"
+        ],
+		[
+            "Bohemian Rhapsody",
+            "https://www.youtube.com/embed/fJ9rUzIMcZQ?si=qwWuaJQ0XeazmjYR",
+            "IMG/bohemianRhapsodyImg.jpeg",
+            "IMG/chordsGuitarBohemianRhapsody.jpeg",
+            "IMG/chordsPianoBohemianRhapsody.jpeg",
+            "medel ---- 5/5",
+            "En episk låt av det brittiska rockbandet Queen, släppt 1975. Låten är känd för sin unika struktur, som kombinerar rock, opera och ballad, samt dess komplexa arrangemang och djupa texter.",
+            "queen",
+            "IMG/chordsDrumsBohemianRhapsody.webp",
+            "Audio/bohemianRapsody.mp3"
+        ],
 	],
 	//expert
 	[
-		[],
-		[],
-		[]
+		[
+            "Fool In The Rain",
+            "https://www.youtube.com/embed/I57nIP0vc44?si=MhTVQVig1uWSXric",
+            "IMG/foolInTheRainImg.jpeg",
+            "IMG/chordsGuitarFoolInTheRain.png",
+            "IMG/chordsPianoFoolInTheRain.png",
+            "Expert ---- 4/5",
+            "En låt av det brittiska rockbandet Led Zeppelin, släppt 1979. Låten har en funkig känsla och karaktäriseras av sitt livliga rytmspel och jazzinfluerade arrangemang.",
+            "Led Zeppelin",
+            "IMG/chordsDrumsFoolInTheRain.png",
+            "Audio/foolInTheRain.mp3"
+        ],
+		[
+            "Through the Fire and Flames",
+            "https://www.youtube.com/embed/0jgrCKhxE1s?si=bHRWO50sxVqytHQ-",
+            "IMG/throughFireAndFlamesImg.jpeg",
+            "IMG/chordsGuitarThroughFireAndFlames.png",
+            "IMG/chordsPianoThroughFireAndFlames.png",
+            "Expert ---- 3/5",
+            'En låt av det brittiska power metal-bandet DragonForce, från deras album "Inhuman Rampage" som släpptes 2006. Låten är känd för sin snabba tempo och tekniska svårigheter på gitarr, och betraktas som en av de svåraste låtarna att spela på Guitar Hero-videospelserien.',
+            "Dragonforce",
+            "IMG/chordsDrumsThroughFireAndFlames.svg",
+            "Audio/throughFireAndFlames.mp3"
+        ],
+		[
+            "satellit",
+            "https://www.youtube.com/embed/AcMUULoT_jk?si=TMB5hpTRRJKhPEMv",
+            "IMG/satellitImg.jpeg",
+            "IMG/chordsGuitarSatellit.jpeg",
+            "IMG/chordsPianoSatellit.jpeg",
+            "Expert ---- 5/5",
+            '"Satellit" är en tidlös poplåt skriven och framförd av den svenska musikern Ted Gärdestad. Släppt år 1979, låter denna melodiska och känslosamma sång lyssnaren drömma sig bort till avlägsna platser och tidlösa äventyr. Med sin poetiska text och Gärdestads karakteristiska röst bjuder låten in till en resa genom melodins rymd, fylld med längtan och hopp om en ljusare framtid.',
+            "Ted Gärdestad",
+            "IMG/chordsDrumsSatellit.png",
+            "Audio/satellit.mp3"
+        ]
 	],
 ];
 

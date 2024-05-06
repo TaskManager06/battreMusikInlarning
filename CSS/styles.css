@@ -713,8 +713,11 @@ h1{
 }
 #latSida>#ackordLatSida button{
     width:20vw;
+    background:rgb(74, 157, 156);
 }
-
+#latSida>#ackordLatSida button:nth-of-type(2){
+    background:red ;
+}
 /*LATSIDA*/
 /*allalåtar*/
 
