@@ -454,7 +454,7 @@ max-width:30ch
     margin-left:auto;
     margin-right:auto;
 }
-#spelrum>section:first-of-type>img{
+#spelrum>section:first-of-type> figure >img{
     max-width:60vw;
 }
 #spelrum>section:first-of-type>div img{
