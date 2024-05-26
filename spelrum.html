@@ -1,106 +1,107 @@
-<!DOCTYPE html>
-<html lang="sv">
-<head>
-    <meta charset="UTF-8">
-    <title>Bättre Musik Inlärning </title>
-    <link rel="stylesheet" href="CSS/styles.css">
-    <script src="JS/script.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body id="indexSpelrum">
-    <header>
-        <h1>Spelrum</h1>
-    </header>
-    <nav id="closedMenu">
-        <a href="index.html" id="logo">
-            <img src="IMG/logo.png" alt="Logo">
-        </a>
-        <ul id="navList">
-            <li><a href="allaLatar.html">Alla Låtar</a></li>
-            <li><a href="lektioner.html">Lektioner</a></li>
-            <li><a href="spelrum.html">Spelrum</a></li>
-        </ul>
-        <button type="button" name="openMenu" id="openMenu"><img src="IMG/menu.svg" alt="expandera menyn"></button>
-    </nav>
-    <div id="fullScreenMenu">
-        <ul>
-            <li><a class="hiddenMenuLink" href="index.html"  tabindex="-1">Hem</a></li>
-            <li><a class="hiddenMenuLink" class="hittaLat" href="hittaDinNastaLat.html"  tabindex="-1">Hitta en Ny Låt !</a></li>
-            <li><a class="hiddenMenuLink" href="allaLatar.html"  tabindex="-1">Alla Låtar</a></li>
-            <li><a class="hiddenMenuLink" href="spelrum.html"  tabindex="-1">spelrum</a></li>
-            <li><a class="hiddenMenuLink" href="lektioner.html"  tabindex="-1">Lektioner</a></li>
-        </ul>
-    </div>
-    <main id="spelrum">
-        <section>
-            <h2>
-                Metronom
-            </h2>
-            <figure>
-                <img src="IMG/metronome1.png" id="metronomeImage" alt="bild/animation av en metronom">
-                <figcaption>Metronom bild</figcaption>
+<!DOCTYPE html> <!-- För att visa att det är en html sida -->
+<html lang="sv"> <!-- Html inledare och Språk för att visa att det är svenska -->
+    <head> <!-- Head för att visa att det är huvudet på sidan -->
+        <meta charset="UTF-8"> <!-- Meta för att visa att det är UTF-8 kodning -->
+        <title>Spela med metronome här!</title> <!-- Title hjälper SEO och tillgänglighet -->
+        <link rel="stylesheet" href="CSS/styles.css"> <!-- Länk till styles.css för att styla sidan -->
+        <script src="JS/script.js"></script> <!-- Script för att länka till script.js -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Meta för att visa att sidan ska vara responsiv och alltid lika bred som användarens slärm -->
+    </head>
+    <body id="indexSpelrum"> <!-- Body för att visa att det är kroppen på sidan med ett id för att gör css enklare-->
+        <header> <!-- Header för att visa att det är sidans header -->
+            <h1>Välj din favorit låt och timea perfekt!</h1> <!-- H1 för att det är en huvudrubrik -->
+        </header>
+        <!-- Meny som altid är synlig
+        ul är endast synlig på breda skärmar
+        -->
+        <nav id="closedMenu"> <!-- Nav för att visa att det är en navigationsmeny -->
+            <a href="index.html" id="logo"> <!-- A för att det är en länk -->
+                <img src="IMG/logo.png" alt="Logo">     <!-- Bild för att visa en bild på loggan -->
+            </a> 
+            <ul id="navList"> <!-- Ul för att det är en oordnad lista -->
+                <li><a href="allaLatar.html">Alla Låtar</a></li> <!-- Li för att det är en punkt i listan med en länk -->
+                <li><a href="lektioner.html">Lektioner</a></li> 
+                <li><a href="spelrum.html">Spelrum</a></li>
+            </ul>
+            <button type="button" name="openMenu" id="openMenu"><img src="IMG/menu.png" alt="expandera menyn"></button> <!-- Button för att visa att det är en knapp, har en img inuti som gör att det blir en bild inuti knappen-->
+        </nav>
+        <!--Meny som expanderar, ej synlig i vanliga fall
+        -->
+        <div id="fullScreenMenu" >
+            <ul>
+                <!-- Tab index -1 eftersom denna menyn ej är synlig 
+                Ändras till 0 ifall menyn öppnas så den blir tabb bar
+
+                Classnamn är inte nödvändigt men underlättar för att kunna sätta tabb index till -1
+                -->
+                <li><a class="hiddenMenuLink" href="index.html" tabindex="-1">Hem</a></li>
+                <li><a class="hiddenMenuLink hittaLat" href="hittaDinNastaLat.html" tabindex="-1">Hitta en Ny Låt !</a></li>
+                <li><a class="hiddenMenuLink" href="allaLatar.html" tabindex="-1">Alla Låtar</a></li>
+                <li><a class="hiddenMenuLink" href="spelrum.html" tabindex="-1">spelrum</a></li>
+                <li><a class="hiddenMenuLink" href="lektioner.html" tabindex="-1">Lektioner</a></li>
+            </ul>
+        </div>
+    <main id="spelrum"> <!-- Main för att visa att det är huvudinnehållet på sidan -->
+        <section> <!-- Section för att visa att det är en sektion -->
+            <h2> Metronom</h2> <!-- H2 för att det är en underrubrik -->
+            <figure> <!-- Figure för att visa att det är en figur -->
+                <img src="IMG/metronome1.png" id="metronomeImage" alt="bild/animation av en metronom"> <!-- Bild för att visa en bild på metronomen -->
+                <figcaption>Metronom bild</figcaption> <!-- Figcaption för att visa att det är en bildtext -->
             </figure>
-            
-            <div>
-                <button id="minus" name="minus" value="0"><img src="IMG/minusBPM.svg" alt="bild för knappen som minskar bpm med 1 steg"></button>
-                <p>BPM:</p>
-                <p id="bpm">120</p>
-                <button id="play" name="play"><img src="IMG/playBPM.png" alt="Bild till knapp för att spela låten"></button>
-                <button id="plus" name="plus" value="1"><img src="IMG/plusBPM.svg" alt="bild för knappen som ökar bpm med 1 steg"></button>
+            <div> <!-- Container för +/- setupen och även för att visa bpm;en-->
+                <button id="minus" name="minus" value="0"><img src="IMG/minusBPM.svg" alt="bild för knappen som minskar bpm med 1 steg"></button> <!-- Button för att visa att det är en knapp, har en img inuti som gör att det blir en bild inuti knappen. Har ochså value 0 som minskar bpm med ett steg-->
+                <p>BPM:</p> <!-- P för att det är en paragraf -->
+                <p id="bpm">120</p> <!-- P för att det är en paragraf som visar bpm, den har ett id för att enkelt kunna väljas med js-->
+                <button id="play" name="play"><img src="IMG/playBPM.png" alt="Bild till knapp för att spela låten"></button>  <!-- Button för att visa att det är en knapp, har en img inuti som gör att det blir en bild inuti knappen. Knappen startar och pausar metronomen. Iconen inuti byts ut om den är igång eller av.-->
+                <button id="plus" name="plus" value="1"><img src="IMG/plusBPM.svg" alt="bild för knappen som ökar bpm med 1 steg"></button> <!-- Button för att visa att det är en knapp, har en img inuti som gör att det blir en bild inuti knappen. Har ochså value 1 som ökar bpm med ett steg-->
             </div>
-            <label for="bpmSlider">
-                Ändra bpm snabbre
-                <input type="range" min="0" max="500" step="5" value="120" name="bpmSlider" id="bpmSlider">
+            <label for="bpmSlider"> <!-- Label för att visa att det är en label -->
+                Ändra bpm snabbre <!-- Input element utanför formulär, undantag här eftersom den har en event listener.-->
+                <input type="range" min="0" max="500" step="5" value="120" name="bpmSlider" id="bpmSlider"> <!-- Input för att visa att det är en input, range för att det är en slider. Min och max är satta till 0 och 500 för att visa att det är min och max värde. Step är satt till 5 för att visa att det är steg mellan varje värde. Value är satt till 120 för att visa att det är standard värde. Name och id är satt till bpmSlider för att kunna användas i js-->
             </label>
-            
         </section>
-        <section>
+        <section> <!-- Section för att visa att det är en sektion, denna sektion är för ackorden -->
             <h2>Song ackord</h2>
-            <label for="ackord">Välj låt</label>
-            <select name="ackord" id="ackord">
+            <form> <!-- Form för att visa att det är en form, för semantisk anledning. -->
+                <label for="ackord">Välj låt</label>
+                <select name="ackord" id="ackord"> <!-- Select för att visa att det är en dropdown, name och id är satt till ackord för att kunna användas i js-->
                 <!--Value är en lista där första värdet representerar svårhets grad och andra representerar låten-->
-                <option selected>--Välj Låt--</option>
-                <optgroup label="Nybörgare">
-                    <option value="[0,0]">Get Lukcy</option>
-                    <option value="[0,1]">Dont stop Believing</option>
-                    <option value="[0,2]">Tiny Dancer</option>
-                </optgroup>
-                <optgroup label="Medel">
-                    <option value="[1,0]">Let her go</option>
-                    <option value="[1,1]">Wanted dead or alive</option>
-                    <option value="[1,2]">Bohemian Rhapsody</option>
-                </optgroup>
-                <optgroup label="Expert">
-                    <option value="[2,0]">Fool in the rain</option>
-                    <option value="[2,1]">Trough fire and flames</option>
-                    <option value="[2,2]">Satelli</option>
-                </optgroup>
-            </select>
-            <br>
-            <label for="piano">
-                piano
-                
-            </label>
-            <input type="radio" name="instrument" id="piano" value="4">
-            
-            <label for="gitarr">
-                gitarr
-                
-            </label>
-            <input type="radio" name="instrument" id="gitarr" value="3">
-            
-            <label for="trummor">trummor
-                
-            </label>
-            <input type="radio" name="instrument" id="trummor" value="8">
-           
-            <img id="ackordImg" src="IMG/search.jpg" alt="Bild för ackord">
+                    <option selected>--Välj Låt--</option> <!-- Option för att visa att det är en option, selected för att visa att det är standard värde -->
+                    <optgroup label="Nybörgare"> <!-- Optgroup för att visa att det är en grupp av option -->
+                        <option value="[0,0]">Get Lukcy</option> <!-- Option för att visa att det är en option, value är satt till en lista där första värdet representerar svårhets grad och andra representerar låten -->
+                        <option value="[0,1]">Dont stop Believing</option>
+                        <option value="[0,2]">Tiny Dancer</option>
+                    </optgroup>
+                    <optgroup label="Medel">
+                        <option value="[1,0]">Let her go</option>
+                        <option value="[1,1]">Wanted dead or alive</option>
+                        <option value="[1,2]">Bohemian Rhapsody</option>
+                    </optgroup>
+                    <optgroup label="Expert">
+                        <option value="[2,0]">Fool in the rain</option>
+                        <option value="[2,1]">Trough fire and flames</option>
+                        <option value="[2,2]">Satelli</option>
+                    </optgroup>
+                </select>
+                <br> <!-- Br för att det är en radbrytning, annars kommer labeln för piano på samma rad som select-->
+                <label for="piano"> <!-- Label för att visa att det är en label -->
+                    piano
+                </label>
+                <input type="radio" name="instrument" id="piano" value="4"> <!-- Input för att visa att det är en input, radio för att det är en radioknapp. Name och id är satt till piano för att kunna användas i js. Value är satt till 4 för att visa att det är värdet för piano-->
+                <label for="gitarr">
+                    gitarr
+                </label>
+                <input type="radio" name="instrument" id="gitarr" value="3"> <!-- Input för att visa att det är en input, radio för att det är en radioknapp. Name och id är satt till gitarr för att kunna användas i js. Value är satt till 3 för att visa att det är värdet för gitarr-->
+                <label for="trummor">trummor      
+                </label>
+                <input type="radio" name="instrument" id="trummor" value="8"> <!-- Input för att visa att det är en input, radio för att det är en radioknapp. Name och id är satt till trummor för att kunna användas i js. Value är satt till 8 för att visa att det är värdet för trummor-->
+            </form>
+            <img id="ackordImg" src="IMG/search.png" alt="Bild för ackord"> <!-- Bild för att visa en bild på ackorden -->
+            <p>Klicka på ackorden för att expandera dem</p> <!-- P för att det är en paragraf -->
         </section>
-        
-        
     </main>
-</body>
-<footer>
+    <footer> <!-- Footer för att visa att det är sidans footer -->
     Bättre musik inlärning
-</footer>
+    </footer>
+</body>
 </html>

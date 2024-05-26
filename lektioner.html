@@ -1,70 +1,75 @@
-<!DOCTYPE html>
-<html lang="sv">
-<head>
-    <meta charset="UTF-8">
-    <title>Bättre Musik Inlärning </title>
-    <link rel="stylesheet" href="CSS/styles.css">
-    <script src="JS/script.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-</head>
-<body id="indexLektioner">
-    <header>
-        <h1>Lektioner</h1>
-    </header>
-    <nav id="closedMenu">
-        <a href="index.html" id="logo">
-            <img src="IMG/logo.png" alt="Logo">
-        </a>
-        <ul id="navList">
-            <li><a href="allaLatar.html">Alla Låtar</a></li>
-            <li><a href="lektioner.html">Lektioner</a></li>
-            <li><a href="spelrum.html">Spelrum</a></li>
-        </ul>
-        <button type="button" name="openMenu" id="openMenu"><img src="IMG/menu.png" alt="expandera menyn"></button>
-    </nav>
-    <div id="fullScreenMenu" >
-        <ul>
-            <li><a class="hiddenMenuLink" href="index.html" tabindex="-1">Hem</a></li>
-            <li><a class="hiddenMenuLink" class="hittaLat" href="hittaDinNastaLat.html" tabindex="-1">Hitta en Ny Låt !</a></li>
-            <li><a class="hiddenMenuLink" href="allaLatar.html" tabindex="-1">Alla Låtar</a></li>
-            <li><a class="hiddenMenuLink" href="spelrum.html" tabindex="-1">spelrum</a></li>
-            <li><a class="hiddenMenuLink" href="lektioner.html" tabindex="-1">Lektioner</a></li>
-        </ul>
-    </div>
+<!DOCTYPE html> <!-- För att visa att det är en html sida -->
+<html lang="sv"> <!-- Html inledare och Språk för att visa att det är svenska -->
+    <head> <!-- Head för att visa att det är huvudet på sidan -->
+        <meta charset="UTF-8"> <!-- Meta för att visa att det är UTF-8 kodning -->
+        <title>Träna med hjälp av våra lektinoer</title> <!-- Title hjälper SEO och tillgänglighet -->
+        <link rel="stylesheet" href="CSS/styles.css"> <!-- Länk till styles.css för att styla sidan -->
+        <script src="JS/script.js"></script> <!-- Script för att länka till script.js -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Meta för att visa att sidan ska vara responsiv och alltid lika bred som användarens slärm -->
+    </head>
+    <body id="indexLektioner"> <!-- Body för att visa att det är kroppen på sidan med ett id för att gör css enklare-->
+        <header> <!-- Header för att visa att det är sidans header -->
+            <h1>Ta en lektion och utveckla dig!</h1> <!-- H1 för att det är en huvudrubrik -->
+        </header>
+        <!-- Meny som altid är synlig
+        ul är endast synlig på breda skärmar
+        -->
+        <nav id="closedMenu"> <!-- Nav för att visa att det är en navigationsmeny -->
+            <a href="index.html" id="logo"> <!-- A för att det är en länk -->
+                <img src="IMG/logo.png" alt="Logo">     <!-- Bild för att visa en bild på loggan -->
+            </a> 
+            <ul id="navList"> <!-- Ul för att det är en oordnad lista -->
+                <li><a href="allaLatar.html">Alla Låtar</a></li> <!-- Li för att det är en punkt i listan med en länk -->
+                <li><a href="lektioner.html">Lektioner</a></li> 
+                <li><a href="spelrum.html">Spelrum</a></li>
+            </ul>
+            <button type="button" name="openMenu" id="openMenu"><img src="IMG/menu.png" alt="expandera menyn"></button> <!-- Button för att visa att det är en knapp, har en img inuti som gör att det blir en bild inuti knappen-->
+        </nav>
+        <!--Meny som expanderar, ej synlig i vanliga fall
+        -->
+        <div id="fullScreenMenu" >
+            <ul>
+                <!-- Tab index -1 eftersom denna menyn ej är synlig 
+                Ändras till 0 ifall menyn öppnas så den blir tabb bar
 
-
-
-    <main id="lektioner">
-        <article>
-            <h2>Musik lektioner</h2>
+                Classnamn är inte nödvändigt men underlättar för att kunna sätta tabb index till -1
+                -->
+                <li><a class="hiddenMenuLink" href="index.html" tabindex="-1">Hem</a></li>
+                <li><a class="hiddenMenuLink hittaLat" href="hittaDinNastaLat.html" tabindex="-1">Hitta en Ny Låt !</a></li>
+                <li><a class="hiddenMenuLink" href="allaLatar.html" tabindex="-1">Alla Låtar</a></li>
+                <li><a class="hiddenMenuLink" href="spelrum.html" tabindex="-1">spelrum</a></li>
+                <li><a class="hiddenMenuLink" href="lektioner.html" tabindex="-1">Lektioner</a></li>
+            </ul>
+        </div>
+    <main id="lektioner"> <!-- Main för att visa att det är huvudinnehållet på sidan -->
+        <article> <!-- Article för att visa att det är en artikel -->
+            <h3>Musik lektioner</h3> <!-- H3 för att det är en underrubrik -->
             <p>Musik är ett fantastikst redskap vi alla använder på ett sätt eller ett annat. Alla som spelar musik vill såklart bli bättre så därför har vi sammanställt ett antal lektioner här för olika instrument. Vi har även inkluderat alla svårhetsgrader</p>
         </article>
-        <h2>Vet inte vilket instrument du ska börja med ?</h2>
-        <dl>
-            <dt>Piano</dt>
-            <dd>Låter find men dyrt</dd>
+        <h2>Vet inte vilket instrument du ska börja med ?</h2> <!-- H2 för att det är en underrubrik -->
+        <dl> <!-- Dl för att det är en definition lista -->
+            <dt>Piano</dt> <!-- Dt för att det är en definition term -->
+            <dd>Låter find men dyrt</dd> <!-- Dd för att det är en definition description -->
             <dt>Gitarr</dt>
             <dd>Enkelt att ta med sig men svårt att bli bra på</dd>
             <dt>Trummor</dt>
             <dd>Svårt att ta med sig men enkelt att böjra med</dd>
         </dl>
-        <ul>
-            <li><button type="button" name="gitarr" id="gitarrLektioner" value="0"> <img src="IMG/guitarIcon.png" alt="lektioner för gitarr">gitarr</button></li>
+        <ul> <!-- Ul för att det är en oordnad lista -->
+            <li><button type="button" name="gitarr" id="gitarrLektioner" value="0"> <img src="IMG/guitarIcon.png" alt="lektioner för gitarr">gitarr</button></li> <!-- Li för att det är en punkt i listan med en knap, knappen har en bild och ett value.  -->
             <li><button type="button" name="piano" id="pianoLektioner" value="1"><img src="IMG/pianoIcon.png" alt="lektioner för piano">Piano</button></li>
             <li><button type="button" name="trummor" id="trummorLektioner" value="2"> <img src="IMG/drumsIcon.png" alt="lektioner för trummor">Trummor</button></li>
         </ul>
-        <section>
-            <h2>Nybörjare</h2>
-            <noscript> <h3>Piano</h3></noscript>
-            <img id="lektionNybörjare" src="IMG/enklaPianoAckord.png" alt="enkel Lektion piano">
-            <noscript>
+        <section>   <!-- Section för att visa att det är en sektion där alla lektioner syns. ALla sektioner lika så därför komenteras enbart en-->
+            <h2>Nybörjare</h2>  <!-- H2 för att det är en underrubrik -->
+            <noscript> <h3>Piano</h3></noscript> <!-- Noscript för att visa att det är en text som visas om javascript inte är aktiverat -->
+            <img id="lektionNybörjare" src="IMG/enklaPianoAckord.png" alt="enkel Lektion piano"> <!-- Bild för att visa en bild på lektionen -->
+            <noscript> <!-- Ifall anväöndaren ej har js kommer alla lektioner synas istället för att låta användaren välja-->
                 <h3>Gitarr</h3>
                 <img src="IMG/enklaackord.jpg" alt="enkel lektion gitarr">
                 <h3>Trummor</h3>
                 <img src="IMG/trummorEnkelLektion.png" alt="enkel lektion trummor">
             </noscript>
-                
-            
         </section>
         <section>
             <h2>Medel</h2>
@@ -88,10 +93,9 @@
                 <img src="IMG/trummorSvårLektion.png" alt="svår lektion trummor">
             </noscript>
         </section>
-    
     </main>
-</body>
-<footer>
+    <footer>    <!-- Footer för att visa att det är sidans footer -->
     Bättre musik inlärning
-</footer>
+    </footer>
+</body>
 </html>

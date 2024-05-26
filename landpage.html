@@ -1,42 +1,47 @@
-<!DOCTYPE html>
-<html lang="sv">
-    <head>
-        <meta charset="UTF-8">
-        <title>Bättre Musik Inlärning </title>
-        <link rel="stylesheet" href="CSS/styles.css">
-        <script src="JS/script.js"></script>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html> <!-- För att visa att det är en html sida -->
+<html lang="sv"> <!-- Html inledare och Språk för att visa att det är svenska -->
+    <head> <!-- Head för att visa att det är huvudet på sidan -->
+        <meta charset="UTF-8"> <!-- Meta för att visa att det är UTF-8 kodning -->
+        <title>Tack för din ansökan</title> <!-- Title hjälper SEO och tillgänglighet -->
+        <link rel="stylesheet" href="CSS/styles.css"> <!-- Länk till styles.css för att styla sidan -->
+        <script src="JS/script.js"></script> <!-- Script för att länka till script.js -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Meta för att visa att sidan ska vara responsiv och alltid lika bred som användarens slärm -->
     </head>
-    <body id="allaLatarBody">
-        <header>
-            <h1>Alla Låtar</h1>
+    <body> <!-- Body för att visa att det är kroppen på sidan med ett id för att gör css enklare-->
+        <header> <!-- Header för att visa att det är sidans header -->
+            <h1>tack för din ansökan</h1> <!-- H1 för att det är en huvudrubrik -->
         </header>
         <!-- Meny som altid är synlig
         ul är endast synlig på breda skärmar
         -->
-        <nav id="closedMenu">
-            <a href="index.html" id="logo">
-                <img src="IMG/logo.png" alt="Logo">
-            </a>
-            <ul id="navList">
-                <li><a href="allaLatar.html">Alla Låtar</a></li>
-                <li><a href="lektioner.html">Lektioner</a></li>
+        <nav id="closedMenu"> <!-- Nav för att visa att det är en navigationsmeny -->
+            <a href="index.html" id="logo"> <!-- A för att det är en länk -->
+                <img src="IMG/logo.png" alt="Logo">     <!-- Bild för att visa en bild på loggan -->
+            </a> 
+            <ul id="navList"> <!-- Ul för att det är en oordnad lista -->
+                <li><a href="allaLatar.html">Alla Låtar</a></li> <!-- Li för att det är en punkt i listan med en länk -->
+                <li><a href="lektioner.html">Lektioner</a></li> 
                 <li><a href="spelrum.html">Spelrum</a></li>
             </ul>
-            <button type="button" name="openMenu" id="openMenu"><img src="IMG/menu.png" alt="expandera menyn"></button>
+            <button type="button" name="openMenu" id="openMenu"><img src="IMG/menu.png" alt="expandera menyn"></button> <!-- Button för att visa att det är en knapp, har en img inuti som gör att det blir en bild inuti knappen-->
         </nav>
         <!--Meny som expanderar, ej synlig i vanliga fall
         -->
         <div id="fullScreenMenu" >
             <ul>
+                <!-- Tab index -1 eftersom denna menyn ej är synlig 
+                Ändras till 0 ifall menyn öppnas så den blir tabb bar
+
+                Classnamn är inte nödvändigt men underlättar för att kunna sätta tabb index till -1
+                -->
                 <li><a class="hiddenMenuLink" href="index.html" tabindex="-1">Hem</a></li>
-                <li><a class="hiddenMenuLink" class="hittaLat" href="hittaDinNastaLat.html" tabindex="-1">Hitta en Ny Låt !</a></li>
+                <li><a class="hiddenMenuLink hittaLat" href="hittaDinNastaLat.html" tabindex="-1">Hitta en Ny Låt !</a></li>
                 <li><a class="hiddenMenuLink" href="allaLatar.html" tabindex="-1">Alla Låtar</a></li>
                 <li><a class="hiddenMenuLink" href="spelrum.html" tabindex="-1">spelrum</a></li>
-                <li><a class="hiddenMenuLink" href="lektioner.html tabindex="-1">Lektioner</a></li>
+                <li><a class="hiddenMenuLink" href="lektioner.html" tabindex="-1">Lektioner</a></li>
             </ul>
         </div>
-        <main>
+        <main> <!-- Väldigt simpel sida som enbart används för att tacka användaren-->
             <h1>tack!</h1>
             <p>Tack för att du har skickat in din ansökan</p>
         </main>

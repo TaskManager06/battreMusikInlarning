@@ -31,7 +31,7 @@ var database = [
             "Tiny Dancer",
             "https://www.youtube.com/embed/yYcyacLRPNs?si=gppHjngeFRCfwsQi",
             "IMG/tinyDancerImg.png",
-            "chordsGuitarTinyDancer",
+            "IMG/chordsDrumsTinyDancer.webp",
             "IMG/chordsPianoTinyDance.png",
             "nybörjare ---- 3/5",
             //ej konsekvent indrag pga " tecken i strängen
@@ -220,23 +220,23 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			[
 				"IMG/getLuckyImg.jpeg",
 				"get lucky",
-				"http://127.0.0.1:5500/latSida.html?videoUrl=https%3A%2F%2Fwww.youtube.com%2Fembed%3Fv%3D5NV6Rdv1a3I%26pp%3DygUJZ2V0IGx1Y2t5&namn=get%20lucky&gitarrAckord=IMG%2FchordsGetLuckyGuitar.jpg&pianoAckord=IMG%2FchordsPianoGetLucky.png&trummorAckord=IMG%2FchordsGetLuckyDrums.jpg&artist=Daft%20punk&beskrivning=Beskrivning%20Beskrivning%20Beskrivning%20Beskrivning%20Beskrivning&audio=Audio%2FgetLuckyAudio.mp3",
+				"latSida.html?videoUrl=https%3A%2F%2Fwww.youtube.com%2Fembed%3Fv%3D5NV6Rdv1a3I%26pp%3DygUJZ2V0IGx1Y2t5&namn=get%20lucky&gitarrAckord=IMG%2FchordsGetLuckyGuitar.jpg&pianoAckord=IMG%2FchordsPianoGetLucky.png&trummorAckord=IMG%2FchordsGetLuckyDrums.jpg&artist=Daft%20punk&beskrivning=En%20funk-%20och%20discoproduktion%20av%20den%20franska%20elektroniska%20duon%20Daft%20Punk%2C%20som%20släpptes%202013.%20Låten%20har%20en%20retrokänsla%20och%20en%20upplyftande%20stämning%2C%20med%20Pharrell%20Williams%20och%20Nile%20Rodgers%20som%20gästartister.&audio=Audio%2FgetLuckyAudio.mp3",
 			],
 			[
 				"IMG/dontStopBelievingImg.jpeg",
 				"Dont stop believin",
-				"http://127.0.0.1:5500/latSida.html?videoUrl=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D1k8craCGpgs&namn=Dont%20stop%20believin&gitarrAckord=IMG%2FchordsGuitarDontStopBelieving.png&pianoAckord=IMG%2FchordsPianoDontStopBelieving.png&trummorAckord=IMG%2FdontStopBelievingChordsDrums.png&artist=Journey&beskrivning=Beskrivning%20Beskrivning%20Beskrivning%20Beskrivning%20Beskrivning&audio=Audio%2FdontStopBelievingAudio.mp3",
+				"latSida.html?videoUrl=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D1k8craCGpgs&namn=Dont%20stop%20believin&gitarrAckord=IMG%2FchordsGuitarDontStopBelieving.png&pianoAckord=IMG%2FchordsPianoDontStopBelieving.png&trummorAckord=IMG%2FdontStopBelievingChordsDrums.png&artist=Journey&beskrivning=En%20klassisk%20rocklåt%20av%20det%20amerikanska%20bandet%20Journey%2C%20släppt%201981.%20Låten%20är%20känd%20för%20sin%20ikoniska%20pianointro%20och%20sina%20inspirerande%20och%20motiverande%20texter%20som%20handlar%20om%20att%20behålla%20hoppet%20och%20tro%20på%20dig%20själv.&audio=Audio%2FdontStopBelievingAudio.mp3",
 			],
 			[
 				"IMG/letHerGoImg.jpeg",
 				"Let her go",
-				"http://127.0.0.1:5500/latSida.html?videoUrl=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DRBumgq5yVrA&namn=Let%20her%20go&gitarrAckord=IMG%2FchordsGuitarLetHerGo.png&pianoAckord=IMG%2FchordsPianoLetHerGo.png&trummorAckord=IMG%2FletHerGoAckordDrums.png&artist=Passenger&beskrivning=Beskrivning%20Beskrivning%20Beskrivning%20Beskrivning%20Beskrivning&audio=Audio%2FletHerGoaudi.mp3",
+				"latSida.html?videoUrl=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DRBumgq5yVrA&namn=Let%20her%20go&gitarrAckord=IMG%2FchordsGuitarLetHerGo.png&pianoAckord=IMG%2FchordsPianoLetHerGo.png&trummorAckord=IMG%2FletHerGoAckordDrums.png&artist=Passenger&beskrivning=En%20låt%20av%20den%20brittiska%20singer-songwritern%20Passenger%2C%20utgiven%202012.%20Låten%20är%20känd%20för%20sin%20enkla%20gitarrackompanjemang%20och%20gripande%20texter%20som%20handlar%20om%20förlust%20och%20saknad%20av%20en%20älskad%20person.&audio=Audio%2FletHerGoaudi.mp3",
 			],
 		];
-		backgroundDiv = document.getElementById("aktuellt1");
-		backgroundDiv.style.backgroundImage = "url(../" + imgs[num][0] + ")";
-		backgroundDiv.getElementsByTagName("h2")[0].innerText = imgs[num][1];
-		document.getElementById("aktuelltLink").href = imgs[num][2];
+		aktuelltLinkElement = document.getElementById("aktuelltLink");
+		aktuelltLinkElement.getElementsByTagName("img")[0].src = "../" + imgs[num][0];
+		aktuelltLinkElement.getElementsByTagName("h3")[0].innerText = imgs[num][1];
+		aktuelltLinkElement.href = imgs[num][2];
 		num += 1;
 		if (num > imgs.length - 1) {
 			num = 0;
@@ -310,9 +310,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	} else if (activeWindow.id == "indexHittaDinNastaLat") {
         //"form" för att se vilken svårighets grad användaren vill ha 
         //sätter även display="none" på forment vsilket gör den osunlig och display block på sångerna vilekt gör dem synlgia
-		document
-			.getElementById("submitButton")
-			.addEventListener("click", function(event) {
+		document.getElementById("submitButton").addEventListener("click", function(event) {
 				document.getElementById("quiz").style.display = "none";
 				document.getElementById("songContainer").style.display = "block";
                 //samlar alla radio knapar för att se vilken som är vaöd

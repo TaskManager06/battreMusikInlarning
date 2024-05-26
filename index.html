@@ -1,51 +1,57 @@
-<!DOCTYPE html>
-<html lang="sv">
-<head>
-    <meta charset="UTF-8">
-    <title>Bättre Musik Inlärning </title>
-    <link rel="stylesheet" href="CSS/styles.css">
-    <script src="JS/script.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body id="indexBody">
-    <header>
-        <h1>Bättre Musik inlärning!</h1>
-    </header>
-    <nav id="closedMenu" >
-        <a href="index.html" id="logo">
-            <img src="IMG/logo.png" alt="Logo">
-        </a>
-        <ul id="navList">
-            <li><a href="allaLatar.html">Alla Låtar</a></li>
-            <li><a href="lektioner.html">Lektioner</a></li>
-            <li><a href="spelrum.html">Spelrum</a></li>
-        </ul>
-        <button type="button" name="openMenu" id="openMenu"><img src="IMG/menu.png" alt="expandera menyn"></button>
-    </nav>
-    <div id="fullScreenMenu" >
-        <ul>
-            <li><a class="hiddenMenuLink" href="index.html" tabindex="-1">Hem</a></li>
-            <li><a class="hiddenMenuLink" class="hittaLat" href="hittaDinNastaLat.html" tabindex="-1">Hitta en Ny Låt !</a></li>
-            <li><a class="hiddenMenuLink" href="allaLatar.html" tabindex="-1">Alla Låtar</a></li>
-            <li><a class="hiddenMenuLink" href="spelrum.html" tabindex="-1">spelrum</a></li>
-            <li><a class="hiddenMenuLink" href="lektioner.html" tabindex="-1">Lektioner</a></li>
-        </ul>
-    </div>
-   
-    <main id="index">
-        <!--place holder som ändras med js-->
-        <section class="aktuellt">
-            <a href="index.html" id="aktuelltLink">
-                <div id="aktuellt1">
-                    <h2>get lucky</h2>
-                </div>
+<!DOCTYPE html> <!-- För att visa att det är en html sida -->
+<html lang="sv"> <!-- Html inledare och Språk för att visa att det är svenska -->
+    <head> <!-- Head för att visa att det är huvudet på sidan -->
+        <meta charset="UTF-8"> <!-- Meta för att visa att det är UTF-8 kodning -->
+        <title>Bättre musik inlärning - hem </title> <!-- Title hjälper SEO och tillgänglighet -->
+        <link rel="stylesheet" href="CSS/styles.css"> <!-- Länk till styles.css för att styla sidan -->
+        <script src="JS/script.js"></script> <!-- Script för att länka till script.js -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Meta för att visa att sidan ska vara responsiv och alltid lika bred som användarens slärm -->
+    </head>
+    <body id="indexBody"> <!-- Body för att visa att det är kroppen på sidan med ett id för att gör css enklare-->
+        <header> <!-- Header för att visa att det är sidans header -->
+            <h1>Välkommen till Bättre musik inlärning</h1> <!-- H1 för att det är en huvudrubrik -->
+        </header>
+        <!-- Meny som altid är synlig
+        ul är endast synlig på breda skärmar
+        -->
+        <nav id="closedMenu"> <!-- Nav för att visa att det är en navigationsmeny -->
+            <a href="index.html" id="logo"> <!-- A för att det är en länk -->
+                <img src="IMG/logo.png" alt="Logo">     <!-- Bild för att visa en bild på loggan -->
+            </a> 
+            <ul id="navList"> <!-- Ul för att det är en oordnad lista -->
+                <li><a href="allaLatar.html">Alla Låtar</a></li> <!-- Li för att det är en punkt i listan med en länk -->
+                <li><a href="lektioner.html">Lektioner</a></li> 
+                <li><a href="spelrum.html">Spelrum</a></li>
+            </ul>
+            <button type="button" name="openMenu" id="openMenu"><img src="IMG/menu.png" alt="expandera menyn"></button> <!-- Button för att visa att det är en knapp, har en img inuti som gör att det blir en bild inuti knappen-->
+        </nav>
+        <!--Meny som expanderar, ej synlig i vanliga fall
+        -->
+        <div id="fullScreenMenu" >
+            <ul>
+                <!-- Tab index -1 eftersom denna menyn ej är synlig 
+                Ändras till 0 ifall menyn öppnas så den blir tabb bar
+
+                Classnamn är inte nödvändigt men underlättar för att kunna sätta tabb index till -1
+                -->
+                <li><a class="hiddenMenuLink" href="index.html" tabindex="-1">Hem</a></li>
+                <li><a class="hiddenMenuLink hittaLat" href="hittaDinNastaLat.html" tabindex="-1">Hitta en Ny Låt !</a></li>
+                <li><a class="hiddenMenuLink" href="allaLatar.html" tabindex="-1">Alla Låtar</a></li>
+                <li><a class="hiddenMenuLink" href="spelrum.html" tabindex="-1">spelrum</a></li>
+                <li><a class="hiddenMenuLink" href="lektioner.html" tabindex="-1">Lektioner</a></li>
+            </ul>
+        </div>
+    <main id="index"> <!-- Main för att visa att det är huvudinnehållet på sidan -->
+        <section class="aktuellt"> <!-- Section för att visa att det är en sektion, innehållet i section ändras med javascript och detta är den första som redan är inskriven så att användaren ska se någonting-->
+            <!--Länk till den första sidan som visas i flip skärmen-->
+            <a href="latSida.html?videoUrl=https%3A%2F%2Fwww.youtube.com%2Fembed%3Fv%3D5NV6Rdv1a3I%26pp%3DygUJZ2V0IGx1Y2t5&namn=get%20lucky&gitarrAckord=IMG%2FchordsGetLuckyGuitar.jpg&pianoAckord=IMG%2FchordsPianoGetLucky.png&trummorAckord=IMG%2FchordsGetLuckyDrums.jpg&artist=Daft%20punk&beskrivning=En%20funk-%20och%20discoproduktion%20av%20den%20franska%20elektroniska%20duon%20Daft%20Punk%2C%20som%20släpptes%202013.%20Låten%20har%20en%20retrokänsla%20och%20en%20upplyftande%20stämning%2C%20med%20Pharrell%20Williams%20och%20Nile%20Rodgers%20som%20gästartister.&audio=Audio%2FgetLuckyAudio.mp3" id="aktuelltLink">
+                    <h3>get lucky</h3> <!-- H3 för att det är en underrubrik -->
+                    <img src="IMG/getLuckyImg.jpeg" alt="image för aktuellt"> <!-- Bild för att visa en bild på låten -->
             </a>
-            
-        </section>
-        
-        <a href="hittaDinNastaLat.html" class="hittaDinNastaLat">
-            <h2> Hitta din nästa låt nu</h2>
-            <img src="IMG/search.svg" alt="bild för hitta låt knappen">
+        </section> <!-- Sektion för knapparna till dem olika sidorna-->
+        <a href="hittaDinNastaLat.html" class="hittaDinNastaLat"> <!-- A för att det är en länk, länken är wrappad runt inehållet för att göra hela sidan klickbar -->
+            <h2> Hitta din nästa låt nu</h2> <!-- H2 för att det är en underrubrik -->
+            <img src="IMG/search.svg" alt="bild för hitta låt knappen"> <!-- Bild för att visa en bild på knappen, svg används eftersom det är simpla symboler och det laddas snabbare -->
         </a>
         <a href="allaLatar.html" class="allaLatar">
             <h2>Alla låtar</h2>
@@ -55,22 +61,18 @@
             <h2>Spelrum</h2>
             <img src="IMG/lektioner.jpg" alt="bild för hitta låt knappen">
         </a>
-
-        <section class="lektioner">
-            <h2>Lektioner</h2>
-            <div id ="flexContainer">
+        <section class="lektioner"> <!-- Sektion för att visa att det är en sektion,-->
+            <h2>Lektioner</h2> <!-- H2 för att det är en underrubrik -->
+            <div id ="flexContainer"> <!-- Div för att visa att det är en container, flex används för att kunna ha knapparna bredvid varandra. Flex används här eftersom det enkelt går att byta från en enspalts layout till en enspalts-->
                 <!--Knappar med värde som används av js-->
-                <button type="button" name="gitarr" id="gitarrLektionRedirect" value="0"> gitarr</button>
+                <button type="button" name="gitarr" id="gitarrLektionRedirect" value="0"> gitarr</button> <!-- Button för att visa att det är en knapp, har ett värde som används av javascript för att veta vilken sida som ska laddas -->
                 <button type="button" name="piano" id="pianoLektionRedirect" value="1">Piano</button>
                 <button type="button" name="trummor" id="trummorLektionRedirect" value="2">Trummor</button>
-                <noscript> Verkar som att du inte har javascript, <a href="lektioner.html">Gå vidare till lektioner</a></noscript>
+                <noscript> Verkar som att du inte har javascript, <a href="lektioner.html">Gå vidare till lektioner</a></noscript> <!-- Noscript för att visa att det inte finns något javascript, länk till lektioner.html -->
             </div>
         </section>
-
-
-
     </main>
-    <footer>
+    <footer> <!-- Footer för att visa att det är sidans footer -->
         Bättre musik inlärning
     </footer>
 </body>

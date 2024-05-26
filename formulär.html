@@ -1,80 +1,81 @@
-<!DOCTYPE html>
-<html lang="sv">
-    <head>
-        <meta charset="UTF-8">
-        <title>Bättre Musik Inlärning </title>
-        <link rel="stylesheet" href="CSS/styles.css">
-        <script src="JS/script.js"></script>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html> <!-- För att visa att det är en html sida -->
+<html lang="sv"> <!-- Html inledare och Språk för att visa att det är svenska -->
+    <head> <!-- Head för att visa att det är huvudet på sidan -->
+        <meta charset="UTF-8"> <!-- Meta för att visa att det är UTF-8 kodning -->
+        <title>Ansök om en låt! </title> <!-- Title hjälper SEO och tillgänglighet -->
+        <link rel="stylesheet" href="CSS/styles.css"> <!-- Länk till styles.css för att styla sidan -->
+        <script src="JS/script.js"></script> <!-- Script för att länka till script.js -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Meta för att visa att sidan ska vara responsiv och alltid lika bred som användarens slärm -->
     </head>
-    <body id="formBody">
-        <header>
-            <h1>Ansök om en låt</h1>
+    <body id="indexFormSong"> <!-- Body för att visa att det är kroppen på sidan med ett id för att gör css enklare-->
+        <header> <!-- Header för att visa att det är sidans header -->
+            <h1>Ansök om en låt!</h1> <!-- H1 för att det är en huvudrubrik -->
         </header>
         <!-- Meny som altid är synlig
         ul är endast synlig på breda skärmar
         -->
-        <nav id="closedMenu">
-            <a href="index.html" id="logo">
-                <img src="IMG/logo.png" alt="Logo">
-            </a>
-            <ul id="navList">
-                <li><a href="allaLatar.html">Alla Låtar</a></li>
-                <li><a href="lektioner.html">Lektioner</a></li>
+        <nav id="closedMenu"> <!-- Nav för att visa att det är en navigationsmeny -->
+            <a href="index.html" id="logo"> <!-- A för att det är en länk -->
+                <img src="IMG/logo.png" alt="Logo">     <!-- Bild för att visa en bild på loggan -->
+            </a> 
+            <ul id="navList"> <!-- Ul för att det är en oordnad lista -->
+                <li><a href="allaLatar.html">Alla Låtar</a></li> <!-- Li för att det är en punkt i listan med en länk -->
+                <li><a href="lektioner.html">Lektioner</a></li> 
                 <li><a href="spelrum.html">Spelrum</a></li>
             </ul>
-            <button type="button" name="openMenu" id="openMenu"><img src="IMG/menu.png" alt="expandera menyn"></button>
+            <button type="button" name="openMenu" id="openMenu"><img src="IMG/menu.png" alt="expandera menyn"></button> <!-- Button för att visa att det är en knapp, har en img inuti som gör att det blir en bild inuti knappen-->
         </nav>
         <!--Meny som expanderar, ej synlig i vanliga fall
         -->
-        <div id="fullScreenMenu" tabindex="0">
+        <div id="fullScreenMenu" >
             <ul>
+                <!-- Tab index -1 eftersom denna menyn ej är synlig 
+                Ändras till 0 ifall menyn öppnas så den blir tabb bar
+
+                Classnamn är inte nödvändigt men underlättar för att kunna sätta tabb index till -1
+                -->
                 <li><a class="hiddenMenuLink" href="index.html" tabindex="-1">Hem</a></li>
-                <li><a class="hiddenMenuLink" class="hittaLat" href="hittaDinNastaLat.html" tabindex="-1">Hitta en Ny Låt !</a></li>
+                <li><a class="hiddenMenuLink hittaLat" href="hittaDinNastaLat.html" tabindex="-1">Hitta en Ny Låt !</a></li>
                 <li><a class="hiddenMenuLink" href="allaLatar.html" tabindex="-1">Alla Låtar</a></li>
                 <li><a class="hiddenMenuLink" href="spelrum.html" tabindex="-1">spelrum</a></li>
                 <li><a class="hiddenMenuLink" href="lektioner.html" tabindex="-1">Lektioner</a></li>
             </ul>
         </div>
-        <main id="formSong">
-        <p>Finns nte låten du ösnkar att spela ? Fyll i formuläret nedan!</p>
-        <form method="POST" action="landpage.html">
-            <label for="datum">
+        <main id="formSong"> <!-- Main för att visa att det är huvudinnehållet på sidan -->
+        <p>Finns nte låten du ösnkar att spela ? Fyll i formuläret nedan!</p> <!-- P för att det är en paragraf -->
+        <form method="POST" action="landpage.html"> <!-- Form för att visa att det är ett formulär, method för att visa att det är post och action för att visa vart datan ska skickas -->
+            <label for="datum"> 
                 Dagens datum
-                <input type="datetime-local" name="datum" id="datum">
-            </label>
-            
+                <input type="datetime-local" name="datum" id="datum">  <!-- Label för att visa att det är en label och input för att visa att det är en input, type för att visa att det är en datetime-local och name för att ge värdet ett namn så det kan användas-->
+            </label>  
             <label for="låtNamn">
                 Låt Namn
-                <input type="text" name="låtNamn" id="låtNamn" required>
+                <input type="text" name="låtNamn" id="låtNamn" required> <!-- Label för att visa att det är en label och input för att visa att det är en input, type för att visa att det är en text och name för att ge värdet ett namn så det kan användas. Required för att visa att denna krävs-->
             </label>
-            
             <label for="artistNamn">
                 Artist
-                <input type="text" name="artistNamn" id="artistNamn" required>
+                <input type="text" name="artistNamn" id="artistNamn" required> <!-- Label för att visa att det är en label och input för att visa att det är en input, type för att visa att det är en text och name för att ge värdet ett namn så det kan användas. Required för att visa att denna krävs-->
             </label>
-            
-            <fieldset>
-                <legend>Vulgärt språk ?</legend>
+            <fieldset> <!-- Fieldset för att visa att det är en grupp av inputs -->
+                <legend>Vulgärt språk ?</legend> <!-- Legend för att visa att det är en legend och texten som ska visas -->
                 <label for="ja">
                     Ja
-                    <input type="radio" name="språk" id="ja" value="ja">
+                    <input type="radio" name="språk" id="ja" value="ja"> <!-- Label för att visa att det är en label och input för att visa att det är en input, type för att visa att det är en radio och name för att ge värden ett namn så det kan användas. Name används även här för att visa vilka radioknappar som hör ihop. Value för att ge värdet ett värde -->
                 </label>
                 <label for="nej">
                     Nej
-                    <input type="radio" name="språk" id="nej" value="nej" selected>
+                    <input type="radio" name="språk" id="nej" value="nej" checked> <!-- Label för att visa att det är en label och input för att visa att det är en input, type för att visa att det är en radio och name för att ge värden ett namn så det kan användas. Name används även här för att visa vilka radioknappar som hör ihop. Value för att ge värdet ett värde och checked för att visa att denna är förvald -->
                 </label>
             </fieldset>
-
             <label for="genreSelect">
                 Vilken genre tillhör låten ?
-                <input list="genre" name="genreSelect" id="genreSelect">
+                <input list="genre" name="genreSelect" id="genreSelect"> <!-- Label för att visa att det är en label och input för att visa att det är en input, type för att visa att det är en list, där man väljer innehål ifrån en lista och name för att ge värden ett namn så det kan användas. List för att visa att det är en lista och id för att ge det ett id så det kan användas -->
             </label>
             <label for="year">
                 Vilke år släpptes låten
-                <input type="number" min="1900" max="2025" name="year" id="year">
+                <input type="number" min="1900" max="2025" name="year" id="year">b <!-- Label för att visa att det är en label och input för att visa att det är en input, type för att visa att det är en nummer och name för att ge värden ett namn så det kan användas. Min för att visa att det är det minsta värdet och max för att visa att det är det största värdet -->
             </label>
-            <datalist id="genre">
+            <datalist id="genre"> <!-- Datalist för att visa att det är en lista med värden -->
                 <option value="pop">
                 <option value="rock">
                 <option value="metall">
@@ -84,31 +85,36 @@
             </datalist>
             <label for="beskrivning">
                 Berätta varför du vill just ha denan låt 
-                <textarea id="beskrivning" name="beskrivning"></textarea>
+                <textarea id="beskrivning" name="beskrivning"></textarea> <!-- Label för att visa att det är en label och textarea för att visa att det är en textarea, id för att ge det ett id så det kan användas och name för att ge värden ett namn så det kan användas -->
             </label>
-            <h3>Välj om du vill bli kontaktad om din låt kommer med</h3>
+            <h3>Välj ett lösenord för att kunna identifiera dig själv senare</h3> <!-- H3 för att det är en underrubrik -->
+            <label for="lösenord">
+                Lösenord
+            <input type="password" id="lösenord" name="lösenord" required> <!-- Label för att visa att det är en label och input för att visa att det är en input, type för att visa att det är en password och name för att ge värden ett namn så det kan användas. Required för att visa att denna krävs-->
+            Välj om du vill bli kontaktad om din låt kommer med
+            </label>
             <label for="telefon">
                 Telefon
-                <input type="checkbox" id="telefon" value="telefon" name="telefon">
-                <p> Vi hör av oss så fort vi kan!</p>
+                <input type="checkbox" id="telefon" value="telefon" name="telefon"> <!-- Label för att visa att det är en label och input för att visa att det är en input, type för att visa att det är en checkbox och name för att ge värden ett namn så det kan användas. Value för att ge värden ett värde -->
+                Vi hör av oss så fort vi kan!
             </label>
             <label for="email">
                 Email
-                <input type="checkbox" id="email" value="email" name="email" checked>
-                <p> Vi hör av oss så fort vi kan!</p>
+                <input type="checkbox" id="email" value="email" name="email" checked>   <!-- Label för att visa att det är en label och input för att visa att det är en input, type för att visa att det är en checkbox och name för att ge värden ett namn så det kan användas. Value för att ge värden ett värde och checked för att visa att denna är förvald -->
+                Vi hör av oss så fort vi kan!
             </label>
             <label for="emailWrite" id="labelEmail">
                 Email:
-                <input type="email" id="emailWrite" name="emailWrite" placeholder="example@gmail.com">
+                <input type="email" id="emailWrite" name="emailWrite" placeholder="example@gmail.com"> <!-- Label för att visa att det är en label och input för att visa att det är en input, type för att visa att det är en email och name för att ge värden ett namn så det kan användas. Placeholder för att visa ett exempel på hur det ska se ut -->
             </label>
             <label for="telefonWrite" id="labelTelefon">
                 telefonnummer:
-                <input type="tel" id="telefonWrite" name="telefonWrite" pattern="[0-9]{3}-[0-9]{7}" placeholder="123-4567890">
+                <input type="tel" id="telefonWrite" name="telefonWrite" pattern="[0-9]{3}-[0-9]{7}" placeholder="123-4567890"> <!-- Label för att visa att det är en label och input för att visa att det är en input, type för att visa att det är en telefonnummer och name för att ge värden ett namn så det kan användas. Pattern för att visa att det är ett specifikt mönster som ska följas och placeholder för att visa ett exempel på hur det ska se ut -->
             </label>
-            <input type="submit">
+            <input type="submit"> <!-- Input för att visa att det är en input, type för att visa att det är en submit -->
         </form>
         </main>
-        <footer>
+        <footer> <!-- Footer för att visa att det är sidans footer -->
             Bättre musik inlärning
         </footer>
     </body>

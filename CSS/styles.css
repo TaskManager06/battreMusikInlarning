@@ -1,11 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-/*Berättar var fontent kan laddas ner ifrån, hittar dock ej filen*/
 
-@font-face {
-    font-family: system-ui;
-    src: url(system-ui.woff);
-}
 /*Importerar en fonten kanit*/
 
 /* global - mobile*/
@@ -13,627 +8,599 @@
 /*Skapar en grid där standard html elementen ska var, ser även till så att allt hamnar i center
 Gör en fontstack och väljer font-weight
 */
-body{
-    font-family: Kanit,system-ui, sans-serif;
-    font-weight: normal;
-    text-align: center;
-    justify-content:center;
-    text-decoration: none;
-    display:grid;
-    place-items:center;
-    grid-template-rows:
+
+body{ 
+    font-family: Kanit,system-ui, sans-serif; /*fontstack med 3 fonter, ifall en inte fungerar*/
+    font-weight: normal; /* normal font vikt*/
+    text-align: center; /*centrerar texten*/
+    justify-content:center; /*centrerar innehållet*/
+    text-decoration: none; /*tar bort underlinje på länkar*/
+    display:grid; /*gör att allt hamnar i en grid*/
+    place-items:center; /*centrerar allt i griden*/
+    grid-template-rows: 
     150px
     auto
     auto
     50px
-    ;
+    ; /*skapar 4 rader i griden*/
     grid-template-areas: 
     "nav"
     "header"
-    "main";
-    margin:0;
-    background-image:linear-gradient(to right,	#354656,#0066cc);
-    min-height: 100vh;
-    position: relative;
+    "main"
+    "footer"; /*skapar 4 områden i griden*/
+    margin:0; /*tar bort marginaler*/
+    background-image:linear-gradient(to right,	#354656,#0066cc); /*skapar en gradient bakgrund*/
+    min-height: 100vh; /*sätter minsta höjden till 100vh*/
+    color:#a7a7a7; /*sätter textfärgen till grå*/
 }
 /*Ställer in värden för generella element som att sections ska ha border-radius*/
 h1{
-    font-size:2.5rem;
+    font-size:2.5rem; /*sätter storleken på h1*/
 }
 a:link{
-    color:black;
-    text-decoration: underline;
+    color:black; /*sätter färgen på länkar*/
+    text-decoration: none; /*tar bort underlinje på länkar som en besökts*/
+    
 }
 footer::after{
-    content:'!';
+    content:'!'; /*lägger till ett utropstecken efter footern*/
 }
 
 a:visited {
-    color: black;
-  }
+    color: pink ; /*sätter färgen på länkar som är besökta*/  
+}
 a:hover{
-    color:red;
-    text-decoration:underline;
+    color:red; /*sätter röd färg på länkar som hovras över*/
 }
 a:focus {
-    outline: none; 
-    border-bottom: 1Ch solid blue; 
+    border-bottom: 1Ch solid blue; /*sätter en blå bottenlinje på länkar som är fokuserade*/
 }
 nav{
-    grid-area: nav;
+    grid-area: nav; /*placerar nav i nav området*/
 }
 footer{
-    background:#1d2e3d;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 2.5rem;  
+    background:#375d7f; /*sätter bakgrundsfärgen på footern*/
+    width: 100%; /*sätter bredden på footern till 100%*/
+    height: 2.5rem;  /*sätter höjden på footern till 2.5rem*/
 }
 button{
-    border-radius:10px;
+    border-radius:10px; /*sätter border-radius på knappar*/
 }
 section{
-    border-radius:5Ex;
+    border-radius:5Ex; /*sätter border-radius på section*/
 }
 table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
+    border: 1px solid black; /*sätter en svart border på tabeller, tabellhuvuden och tabellceller*/
+    border-collapse: collapse; /*sätter ihop celler i tabellen*/
   }
 td,th{
-    padding:5px;
+    padding:5px; /*sätter padding på tabellceller och tabellhuvuden*/
 }
 li{
-    padding-bottom:2vh;
+    padding-bottom:2vh; /*sätter padding på listor*/
 }
 
 header>h2{
-    grid-area: header;
+    grid-area: header; /*placerar h2 i header området*/
 }
 header{
-    padding-bottom:5vh;
+    padding-bottom:5vh; /*sätter padding på header*/
 }
 /* Gör att menyn alltid hamnar överst och placerar föremålen på rätt plats */
 #closedMenu{
-    z-index:2;
-    display:flex;
-    width:95vw;
-    height:auto;
-    padding:15px;
+    z-index:2; /*sätter z-index på closedMenu till 2*/
+    display:flex; /*gör att closedMenu är en flexbox*/
+    width:95vw; /*sätter bredden på closedMenu till 95vw*/
+    height:auto; /*sätter höjden på closedMenu till auto*/
+    padding:15px; /*sätter padding på closedMenu*/
 }
 /*Gör att listan är osynlig på små skärmar*/
 #closedMenu ul{
-    display:none;
+    display:none; /*gör att listan är osynlig*/
 }
 /*Gör listan horizontell*/
 #closedMenu ul> li{
-    display: inline-block;
+    display: inline-block; /*gör att listan är horizontell*/
 }
 /*Ställer in storlekar på objekten*/
 #closedMenu  img{
-    max-width:5em;
-    max-height:5em
+    max-width:5em; /*sätter maxbredden på bilder till 5em*/
+    max-height:5em /*sätter maxhöjden på bilder till 5em*/
 }
 #closedMenu button{
-    margin-left:auto;
-    height:7em;
+    margin-left:auto; /*placerar knappen längst till höger*/
+    height:7em; /*sätter höjden på knappen till 7em*/
 }
 #closedMenu:first-child{   
-    padding-left:3vw;
+    padding-left:3vw; /*sätter padding på closedMenu till 3vw*/
 }
 /*Fullskärmsmenyn är över allt annat men under menyn
 Width=0 för att den ej ska synas
 position:fixed; eftersom om använaren scrollar kommer menyn följa med.
 */
 #fullScreenMenu{
-    z-index:1;
-    padding-top:5vh;
-    width: 0;
-    height:100vh;
-    overflow:hidden;
-    position:fixed;
-    background:#64b5f6;
-    top:15vh;
+    z-index:1; /*sätter z-index på fullScreenMenu till 1 för att få den långst upp*/
+    padding-top:5vh; /*sätter padding på fullScreenMenu till 5vh*/
+    width: 0; /*sätter bredden på fullScreenMenu till 0 för att göra den osynlig när den ej är öppen*/
+    height:100vh; /*sätter höjden på fullScreenMenu till 100vh*/
+    overflow:hidden; /*sätter overflow på fullScreenMenu till hidden för att gömma innehållet*/
+    position:fixed; /*sätter position på fullScreenMenu till fixed för att menyn ska vara på samma ställe även om man scrolla*/
+    background:#64b5f6; /*sätter bakgrundsfärgen på fullScreenMenu till #64b5f6*/
+    top:15vh; /*sätter top på fullScreenMenu till 15vh*/
 }
 #fullScreenMenu >ul{
-    list-style-type:none;
-    padding:0;
+    list-style-type:none; /*sätter list-style-type på listan till none för att ta bort punkterna*/
+    padding:0; /*sätter padding på listan till 0*/
 }
 body #fullScreenMenu > ul  li {
-    margin: 10px 0;
+    margin: 10px 0; /*sätter margin på listan till 10px 0*/
 }
 body #fullScreenMenu > ul  li a{
-    font-size:22px;
+    font-size:22px; /*sätter font-size på länkarna till */
 }
-/*Nästa låt form*/
-#hittaDinNastaLatForm{
-    width:0;
-    z-index:1;
-    background:white;
-    height:97vh;
-    overflow:hidden;
-    position:absolute;
-    top:3vh;
-    left:50vw;
-    transform: translate(-50%,0);
-}
-/*Nästa låt form*/
 /*CSS för mobilen, designade först*/
 /*index*/
 #index{
-    grid-area: main;
-    display:grid;
-    grid-template-rows:
+    grid-area: main; /*placerar index i main området*/
+    display:grid; /*gör index till en grid*/
+    grid-template-rows: 
     30vh
     auto
     auto
-    auto;
-    grid-template-columns: 1fr;
-    grid-gap: 2em 0;
+    auto; /*sätter 4 rader i griden*/
+    grid-template-columns: 1fr; /*sätter 1 kolumn i griden*/
+    grid-gap: 2em 0; /*sätter gap i griden*/
     grid-template-areas: 
     "aktuellt "
     "hitta "
     "allaLatar "
     "spelrum"
-    "lektioner ";
-    place-items: center;
+    "lektioner "; /*sätter 5 områden i griden*/
+    place-items: center; /*centrerar innehållet i griden*/
 }
 #index .aktuellt{
-    grid-area: aktuellt;
-    height:100%;
+    grid-area: aktuellt; /*placerar aktuellt i aktuellt området*/
+    height:100%; /*sätter höjden på aktuellt till 100%*/
+    background:hsl(180, 79%, 24%); /*sätter bakgrundsfärgen på aktuellt*/
 }
-#index a>#aktuellt1{
-    height:100%;
+#index >.aktuellt >a> img{
+    background-color: red; /*sätter bakgrundsfärgen på bilden i aktuellt till röd*/
+    max-height:80%;  /*sätter maxhöjden på bilden i aktuellt till 80%*/
+    max-width:80%; /*sätter maxbredden på bilden i aktuellt till 80%*/
+    border-radius:5%; /*sätter border-radius på bilden i aktuellt till 5%*/
 }
+
 #index> .hittaDinNastaLat{
-    grid-area: hitta;
-    padding:1em 0.5em 1em 0.5em;
-    border-radius: 10px;
-    background:hsl(180, 79%, 24%);
+    grid-area: hitta; /*placerar hitta i hitta området*/
+    padding:1em 0.5em 1em 0.5em; /*sätter padding på hitta*/
+    border-radius: 10px; /*sätter border-radius på hitta till 10px*/
+    background:hsl(180, 79%, 24%); /*sätter bakgrundsfärgen på hitta*/
 }
 /*Använder max-height för att bevara aspec ration på orginal bilden*/
 #index> a img{
-max-height:20ch;
-max-width:30ch
+max-height:20ch; /*sätter maxhöjden på bilden till 20ch*/
+max-width:30ch /*sätter maxbredden på bilden till 30ch*/
 }
 #index> .allaLatar{
-    grid-area: allaLatar;
-    padding:1em 0.5em 1em 0.5em;
-    border-radius: 10px;
-    background:hsl(180, 79%, 24%);
+    grid-area: allaLatar; /*placerar allaLatar i allaLatar området*/
+    padding:1em 0.5em 1em 0.5em; /*sätter padding på allaLatar*/
+    border-radius: 10px; /*sätter border-radius på allaLatar till 10px*/
+    background:hsl(180, 79%, 24%); /*sätter bakgrundsfärgen på allaLatar*/
 }
 #index> .spelrum{
-    grid-area: spelrum;
-    padding:1em 0.5em 1em 0.5em;
-    border-radius: 10px;
-    background:hsl(180, 79%, 24%);
+    grid-area: spelrum; /*placerar spelrum i spelrum området*/
+    padding:1em 0.5em 1em 0.5em; /*sätter padding på spelrum*/
+    border-radius: 10px;   /*sätter border-radius på spelrum till 10px*/
+    background:hsl(180, 79%, 24%); /*sätter bakgrundsfärgen på spelrum*/
 }
 #index> .lektioner{
-    grid-area: lektioner;
-    padding:1em 0.5em 1em 0.5em;
-    border: 1px salmon solid;
-    border-radius: 10px;
+    grid-area: lektioner; /*placerar lektioner i lektioner området*/
+    padding:1em 0.5em 1em 0.5em; /*sätter padding på lektioner*/
+    border: 1px salmon solid; /*sätter en border på lektioner*/
+    border-radius: 10px; /*sätter border-radius på lektioner till 10px*/
 }
 #index .lektioner button{
-    background:#ffe0c8;
+    background:#ffe0c8; /*sätter bakgrundsfärgen på knapparna i lektioner till #ffe0c8*/
 }
-#index >.aktuellt >a> div{
-    background-color: red;
-    width:17em;
-    height:100%;
-    /*../ används eftersom den automatiskt kommer leta i /CSS därför måste vi gör så för att gå ut ett steg*/
-    background-image:url('../IMG/getLuckyImg.jpeg');
-    background-repeat: no-repeat;
-    /*Bakgrounden tar upp 100%x100% av diven*/
-    background-size: 100% 100%;
-    border-radius:5%;
-}
-#index >.aktuellt >a> #aktuellt1> h2{
-    background:#4a9d9c;
-}
+
 #index  #flexContainer{
     /*Använder en flexContainer och flex för att enkelt kunna ändra orientation när man går till desktop*/
-    background: hsl(180, 79%, 24%);
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap:10px;
-    width:100%;
+    background: hsl(180, 79%, 24%); /*sätter bakgrundsfärgen på flexContainer till hsl(180, 79%, 24%)*/
+    display:flex; /*gör flexContainer till en flexbox*/
+    flex-direction: column; /*sätter flex-direction på flexContainer till column*/
+    justify-content: center; /*centrerar innehållet i flexContainer*/
+    align-items: center; /*centrerar innehållet i flexContainer*/
+    gap:10px; /*sätter gap i flexContainer till 10px*/
+    width:100%; /*sätter bredden på flexContainer till 100%*/
 }
 #index  #flexContainer > button{
-    width:25%;
-    width:15em;
-    height:7em;
-    padding:0;
-    margin: 0 auto 0 auto;
+    width:25%; /*sätter bredden på knapparna i flexContainer till 25%*/
+    width:15em; /*sätter bredden på knapparna i flexContainer till 15em*/
+    height:7em; /*sätter höjden på knapparna i flexContainer till 7em*/
+    padding:0; /*sätter padding på knapparna i flexContainer till 0*/
+    margin: 0 auto 0 auto; /*centrerar knapparna i flexContainer*/
 }
 #index > .lektioner{
-    width:70%;
-    background:hsl(180, 79%, 24%);
+    width:70%; /*sätter bredden på lektioner till 70%*/
+    background:hsl(180, 79%, 24%); /*sätter bakgrundsfärgen på lektioner*/
 }
 #index > .lektioner >h2{
-    padding-right:100%;
-    padding-bottom:5%;
+    padding-right:100%; /*sätter padding-right på h2 i lektioner till 100%*/
+    padding-bottom:5%; /*sätter padding-bottom på h2 i lektioner till 5%*/
 }
 
 /*index*/
 /*Lektioner.html*/
 #lektioner{
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display:flex; /*gör lektioner till en flexbox*/
+    flex-direction: column; /*sätter flex-direction på lektioner till column*/
+    justify-content: center; /*centrerar innehållet i lektioner*/
+    align-items: center; /*centrerar innehållet i lektioner*/
 }
 #lektioner ul{
-    padding:0;
+    padding:0; /*sätter padding på listan till 0*/
 }
 #lektioner ul li{
-    overflow:hidden;
-    padding: 15px;
-    padding-top: 0;
-    width:50vw;
-    height:10vh;
+    overflow:hidden; /*gör att listan inte överlappar*/
+    padding: 15px; /*sätter padding på listan till 15px*/
+    padding-top: 0; /*sätter padding-top på listan till 0*/
+    width:50vw; /*sätter bredden på listan till 50vw*/
+    height:10vh; /*sätter höjden på listan till 10vh*/
 
 }
 /*Återigen använder flex för att enklare byta mellan bred och smal skärm*/
 #lektioner .flexContainerLektioner{
-    display: flex;
-    justify-content: center;
+    display: flex; /*gör flexContainerLektioner till en flexbox*/
+    justify-content: center; /*centrerar innehållet i flexContainerLektioner*/
 }
 #lektioner > section  > img{
     /*avnänder vieport relativa mått enheter på viktiga bilder eftersom dem skalar bra*/
-    max-height:35vh;
-    min-width:50vw;
-    max-width:55vw;
+    max-height:35vh; /*sätter maxhöjden på bilder till 35vh*/
+    min-width:50vw; /*sätter minbredden på bilder till 50vw*/
+    max-width:55vw; /*sätter maxbredden på bilder till 55vw*/
 }
 #lektioner h2 ~ dl > dt{
-    border:1px solid black;
+    border:1px solid black; /*sätter en border på dt efter h2*/
 }
 #lektioner > section noscript img{
-    max-height:35vh;
-    max-width:55vw;
+    max-height:35vh; /*sätter maxhöjden på bilder till 35vh*/
+    max-width:55vw; /*sätter maxbredden på bilder till 55vw*/
 }
 #lektioner >ul> li> button{
-    width:100%;
-    height:100%;      
+    width:100%; /*sätter bredden på knapparna till 100%*/
+    height:100%;      /*sätter höjden på knapparna till 100%*/ 
 }
 #lektioner >ul> li> button >img{
     /*BIlden ska enbart vara synlig på desktop*/
-    display:none;
+    display:none; /*gör att bilden är osynlig*/
 }
 #lektioner  >ul>li>#gitarrLektioner{
-    background:#FF3D3D;
+    background:#FF3D3D; /*sätter bakgrundsfärgen på gitarrLektioner till #FF3D3D*/
 }
 #lektioner>ul>li button{
-    background:hsl(180, 79%, 24%);
+    background:hsl(180, 79%, 24%); /*sätter bakgrundsfärgen på knapparna till hsl(180, 79%, 24%)*/
 }
+#lektioner article{
+    background:#495f89; /*sätter bakgrundsfärgen på article till #495f89*/
+}
+#lektioner dl dt{
+    background:#218f6c; /*sätter bakgrundsfärgen på dt till #218f6c*/
+}
+
 
 /*Lektioner.html*/
 /*Hittadin nästa låt*/
 
 #hittaDinNastaLat section{
-    padding:30px;
-    padding-bottom:4rem;
-    margin-top:40px;
-    background:hsl(180, 79%, 24%);
+    padding:30px; /*sätter padding på section till 30px*/
+    padding-bottom:4rem; /*sätter padding-bottom på section till 4rem*/
+    margin-top:40px; /*sätter margin-top på section till 40px*/
+    background:hsl(180, 79%, 24%); /*sätter bakgrundsfärgen på section till hsl(180, 79%, 24%)*/
     /*Height auto får automatiskt med allt innehål så det ej rymmerut, försvinner eller överlappar*/
-    height:auto;
-    overflow:hidden;
+    height:auto; /*sätter höjden på section till auto*/
+    overflow:hidden; /*sätter overflow på section till hidden*/
 }
-#hittaDinNastaLat ol{
-    padding:0;
+#hittaDinNastaLat ul{
+    padding:0; /*sätter padding på listan till 0*/
 }
 #hittaDinNastaLat label{
-    padding:10% 30% 10% 30%;
+    padding:10% 30% 10% 30%; /*sätter padding på label till 10% 30% 10% 30%*/
 }
 #hittaDinNastaLat #quiz{
-    position:absolute;
-    width:90vw;
-    height:auto;
-    background:white;
+    position:absolute; /*sätter position på quiz till absolute*/
+    width:90vw; /*sätter bredden på quiz till 90vw*/
+    height:auto; /*sätter höjden på quiz till auto*/
+    background:white; /*sätter bakgrundsfärgen på quiz till vit*/
     /*Viktigt att denna kommer överst*/
-    z-index:1;
-    left:0;
-    overflow:hidden;
+    z-index:1; /*sätter z-index på quiz till 1*/
+    left:0; /*sätter left på quiz till 0*/
+    overflow:hidden; /*sätter overflow på quiz till hidden*/
     /*denna har möjligheten att bli 0*/
-    min-width:0;
+    min-width:0; /*sätter minbredden på quiz till 0*/
     /*Positionerar i mitten genom gå 50% av sidan och ta bart 50% av sin egen storlek*/
-    left:50%;
-    transform:translate(-50%,0)
+    left:50%; /*sätter left på quiz till 50%*/
+    transform:translate(-50%,0); /*sätter transform på quiz till translate(-50%,0)*/
 }
-#hittaDinNastaLat ol li{
-    overflow:hidden;
-    background:hsl(180, 79%, 24%);
-    padding-bottom:4rem;
-    padding-top:4rem;
-    margin-bottom:3rem;
-    border-radius:5px;
+#hittaDinNastaLat ul li{
+    overflow:hidden; /*gör att listan inte överlappar*/
+    background:hsl(180, 79%, 24%); /*sätter bakgrundsfärgen på listan till hsl(180, 79%, 24%)*/
+    padding-bottom:4rem; /*sätter padding-bottom på listan till 4rem*/
+    padding-top:4rem; /*sätter padding-top på listan till 4rem*/
+    margin-bottom:3rem; /*sätter margin-bottom på listan till 3rem*/
+    border-radius:5px; /*sätter border-radius på listan till 5px*/
 }
 #hittaDinNastaLat fieldset{
-    border-radius:5px;
+    border-radius:5px; /*sätter border-radius på fieldset till 5px*/
 }
 #hittaDinNastaLat section img{
-    max-width:12em;
-    max-height:12em;
+    max-width:12em; /*sätter maxbredden på bilder till 12em*/
+    max-height:12em; /*sätter maxhöjden på bilder till 12em*/
 }
 #hittaDinNastaLat section h2{
-    margin-top:0;
+    margin-top:0; /*sätter margin-top på h2 till 0*/
 }
 #hittaDinNastaLat #submitButton{
-    padding:1em;
+    padding:1em; /*sätter padding på submitButton till 1em*/
 }
 #hittaDinNastaLat #songContainer section{
-    border-radius:5px;
+    border-radius:5px; /*sätter border-radius på songContainer till 5px*/
+}
+
+#hittaDinNastaLat table tr:nth-child(odd){
+    background:green; /*sätter bakgrundsfärgen på udda rader i tabellen till grön*/
 }
 /*Dessa ska ej vara synliga på mobile*/
 #hittaDinNastaLat #songContainer,#songContainer2,#songContainer3,#nivåTable{
-    display:none;
+    display:none; /*gör att songContainer, songContainer2, songContainer3 och nivåTable är osynliga*/
 }
 #hittaDinNastaLat >.wideClass{
-    display:none;
+    display:none; /*gör att wideClass är osynlig*/
 }
 /*Centrerar tabellen*/
 #hittaDinNastaLat table{
-    margin:0 auto 0 auto;
+    margin:0 auto 0 auto; /*centrerar tabellen*/
 }
 
 /*Hittadin nästa låt*/
 /*allalåtar.html*/
 
 #allaLatar section ol li a{
-    display:grid;
-    grid-template-columns: 20% 30%;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas: 
+    display:grid; /*gör att a är en grid*/
+    grid-template-columns: 20% 30%; /*sätter 2 kolumner i griden*/
+    grid-template-rows: 1fr 1fr; /*sätter 2 rader i griden*/
+    grid-template-areas:
     "img title"
     "img artist";
-    align-items: center;
+    align-items: center; /*centrerar innehållet i griden*/
     /*Lika mellan rum överallt */
-    justify-content: space-evenly;
+    justify-content: space-evenly; /*sätter justify-content på griden till space-evenly*/
 }
 #allaLatar section ol li{
-    border:1px solid black;
-    background: #4a9d9c;
+    border:1px solid black; /*sätter en border på listan*/
+    background: #4a9d9c; /*sätter bakgrundsfärgen på listan till #4a9d9c*/
 }
 #allaLatar section ol li img{
-    grid-area: img;
-    max-width:100%;
-    max-height:100%;   
+    grid-area: img; /*placerar img i img området*/
+    max-width:100%; /*sätter maxbredden på bilder till 100%*/
+    max-height:100%; /*sätter maxhöjden på bilder till 100%*/
 }
 #allaLatar section ol li h3{
-    grid-area: title;
-    margin:0;
+    grid-area: title; /*placerar title i title området*/
+    margin:0; /*sätter margin på title till 0*/
 }
 #allaLatar section ol li p{
-    grid-area: artist;
-    margin:0;
+    grid-area: artist; /*placerar artist i artist området*/
+    margin:0; /*sätter margin på artist till 0*/
 }
 
 /*ALLA LÅTAR*/
 /*Latsida.html*/
 
 #latSida button img{
-    max-width:5em;
-    max-height:5em;
+    max-width:5em; /*sätter maxbredden på bilder till 5em*/
+    max-height:5em; /*sätter maxhöjden på bilder till 5em*/
     /*Eftersom bilden ligger på knappen krävs denna för att knappens value ska gå att få*/
-    pointer-events: none;
+    pointer-events: none; /*sätter pointer-events på bilder till none*/
 }
 #latSida #ackord{
     /*Max width 97 och ej 100 för att undvika sidoscroll*/
-    max-width:97vw;
+    max-width:97vw; /*sätter maxbredden på ackord till 97vw*/
 }
 #latSida #info{
-    background:grey;
-    padding-bottom:3em;
+    background:rgb(81, 38, 38); /*sätter bakgrundsfärgen på info till rgb(81, 38, 38)*/
+    padding-bottom:3em; /*sätter padding-bottom på info till 3em*/
 }
 
 /*Latsida*/
 /*Spelrum*/
 
 #spelrum section button{
-    background:rgb(175, 255, 255);;
+    background:rgb(175, 255, 255); /*sätter bakgrundsfärgen på knapparna till rgb(175, 255, 255)*/
 }
 #spelrum section:first-of-type{
-    border:2px solid black;
-    overflow:hidden;
-    margin:0 auto 0 auto;
+    border:2px solid black; /*sätter en border på första section*/
+    overflow:hidden; /*sätter overflow på första section till hidden*/
+    margin:0 auto 0 auto; /*centrerar första section*/
 }
 #spelrum section:nth-of-type(2){
-    border:2px solid black;
-    margin-top:10vh;
-    width:50vw;
-    margin:10vh auto 0 auto;
+    border:2px solid black; /*sätter en border på andra section*/
+    margin-top:10vh; /*sätter margin-top på andra section till 10vh*/
+    width:50vw; /*sätter bredden på andra section till 50vw*/
+    margin:10vh auto 0 auto; /*centrerar andra section*/
 }
 #spelrum>section:first-of-type > div{
-    background:hsl(180, 79%, 24%);
-    display:flex;
-    flex-direction:row;
-    text-align:center;
-    justify-content:center;
-    width:50vw;
-    margin-left:auto;
-    margin-right:auto;
+    background:hsl(180, 79%, 24%); /*sätter bakgrundsfärgen på div till hsl(180, 79%, 24%)*/
+    display:flex; /*gör div till en flexbox*/
+    flex-direction:row; /*sätter flex-direction på div till row*/
+    text-align:center; /*centrerar texten i div*/
+    justify-content:center; /*centrerar innehållet i div*/
+    width:50vw; /*sätter bredden på div till 50vw*/
+    margin-left:auto; /*placerar div längst till vänster*/
+    margin-right:auto;  /*placerar div längst till höger*/
 }
 #spelrum>section:first-of-type> figure >img{
-    max-width:60vw;
+    max-width:60vw; /*sätter maxbredden på bilder till 60vw*/
 }
 #spelrum>section:first-of-type>div img{
-    max-width:10vw;
-    max-height:10vw;
+    max-width:10vw; /*sätter maxbredden på bilder till 10vw*/
+    max-height:10vw; /*sätter maxhöjden på bilder till 10vw*/
 }
 #spelrum>section:nth-of-type(2) img{
-    max-width:50vw;
+    max-width:50vw; /*sätter maxbredden på bilder till 50vw*/
 }
 #spelrum label{
-    display:inline-block;
-    width:100px;
+    width:100px; /*sätter bredden på label till 100px*/
 }
 /*simpel css animation/transition för att förstora ackord bilden*/
 #ackordImg{
-    overflow: hidden; 
-    cursor: pointer; 
-    transition: transform 0.5s ease; 
+    overflow: hidden; /*sätter overflow på ackordImg till hidden*/
+    cursor: pointer; /*sätter cursor på ackordImg till pointer*/
+    transition: transform 0.5s ease; /*sätter transition på ackordImg till transform 0.5s ease*/
 }
 #ackordImg.expanded {
-    transform: scale(2); 
+    transform: scale(2);  /*sätter transform på ackordImg till dubbla scalan*/
 }
 
 /*Spelrum*/
 /*Formulär*/
 
 #formSong form label,input{
-    display:block;
+    display:block; /*gör att label och input är block*/
 }
 #formSong form label{
-    margin-bottom:2vh;
+    margin-bottom:2vh; /*sätter margin-bottom på label till 2vh*/
 }
 #formSong form label>input{
-margin:0 auto 0 auto;
+margin:0 auto 0 auto; /*centrerar input*/
 }
 #formSong form input[type='submit']{
-margin:0 auto 0 auto;
+margin:0 auto 0 auto; /*centrerar submit*/
 }
 #formSong form input[type='number']:in-range{
-    background: green;
+    background: green; /*sätter bakgrundsfärgen på number till grön*/
 }
 
 #formSong form input[type='number']:out-of-range{
-    background: red;
+    background: red; /*sätter bakgrundsfärgen på number till röd*/
 }
 label p{
-    display:none;
+    display:none; /*gör att p är osynlig*/
 }
 input:checked ~ p{
-    display: block;
+    display: block; /*gör att p är block*/
 }
 /*Formulär*/
 /*DESKTOP*/
 /*CSS som verkar när skärmen är 600px eller mer*/
 @media only screen and (min-width:600px){
 h1{
-    font-size:50px;
+    font-size:50px; /*sätter font-size på h1 till 50px*/
 }
 #closedMenu{
-    background:#64b5f6;
-    height:auto;
-    padding:15px;
+    background:#64b5f6; /*sätter bakgrundsfärgen på closedMenu till #64b5f6*/
 }
 /*Ger listan en display så att den syns och ställer in attrubuter*/
 #closedMenu ul{
-    display:block;
-    margin-left:auto;
-    padding-right:5vw;
-    font-size:30px;
+    display:block; /*gör att listan är synlig*/
+    margin-left:auto; /*placerar listan längst till vänster*/
+    padding-right:5vw; /*sätter padding-right på listan till 5vw*/
+    font-size:30px; /*sätter font-size på listan till 30px*/
 }
 #closedMenu>ul>li{
-    padding-left:4vw;
+    padding-left:4vw; /*sätter padding-left på listan till 4vw*/
 }
 #closedMenu button{
-    margin:0;
+    margin:0; /*sätter margin på knappen till 0*/
 }
 /*Ändrar griden till en 3 spalts layout så att dem i mitten hamnar på det horizontella planet*/
 #index{
-    display:grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows:2fr 1fr 1fr;
-    grid-template-areas:
+    grid-template-columns: 1fr 2fr 1fr; /*sätter 3 kolumner i griden*/
+    grid-template-rows:2fr 1fr 1fr; /*sätter 3 rader i griden*/
+    grid-template-areas: 
     "aktuellt aktuellt aktuellt"
     "alla hitta spelrum"
-    "lektioner lektioner lektioner"
-    ;
-    grid-row-gap:10vh;
+    "lektioner lektioner lektioner"; /*sätter 3 områden i griden*/
+    grid-row-gap:10vh; /*sätter grid-row-gap till 10vh*/
 }
 #index .hittaDinNastaLat{
-    grid-area:hitta;
-    width:80%;
-    height:100%
+    width:80%; /*sätter bredden på hittaDinNastaLat till 80%*/
+    height:100% /*sätter höjden på hittaDinNastaLat till 100%*/
 }
 #index .allaLatar{
-    grid-area:alla;
-    width:85%;
-    height:90%;
+    grid-area:alla; /*placerar allaLatar i alla området*/
+    width:85%; /*sätter bredden på allaLatar till 85%*/
+    height:90%; /*sätter höjden på allaLatar till 90%*/
 }   
 #index .allaLatar img{
-    width:100%;
+    width:100%; /*sätter bredden på bilder till 100%*/
 }   
 #index .spelrum{
-    grid-area:spelrum;
-    width:85%;
-    height:90%
+    width:85%; /*sätter bredden på spelrum till 85%*/
+    height:90%; /*sätter höjden på spelrum till 90%*/
 }
 #index .spelrum img{
-    width:100%
+    width:100%; /*sätter bredden på bilder till 100%*/
 }
 #index .aktuellt {
-    grid-area:aktuellt;
-    justify-content:center;
-    width:50vw;
-    height:100%;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    justify-content:center; /*centrerar innehållet i aktuellt*/
+    width:50vw; /*sätter bredden på aktuellt till 50vw*/
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; /*sätter en box-shadow på aktuellt*/
 }
-#index >.aktuellt >a>#aktuellt1{
-    width:100%;
-    background-image:url(../IMG/getLuckyImg.jpeg);
-    background-repeat: no-repeat;
-    background-size:100% 100%;
+#index >.aktuellt >a> img{
+    width:100%; /*sätter bredden på bilder till 100%*/
+    background-image:url(../IMG/getLuckyImg.jpeg); /*sätter bakgrundsbilden på bilder till getLuckyImg.jpeg*/
+    background-repeat: no-repeat; /*sätter background-repeat på bilder till no-repeat*/
+    background-size:100% 100%; /*sätter background-size på bilder till 100% 100%*/
 }
 #index .lektioner{
-    grid-area:lektioner;
-    width:70%;
-    height:60%;
-    overflow:hidden;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:right;
+    width:70%; /*sätter bredden på lektioner till 70%*/
+    height:60%; /*sätter höjden på lektioner till 60%*/
+    overflow:hidden; /*sätter overflow på lektioner till hidden*/
+    display:flex; /*gör lektioner till en flexbox*/
+    flex-direction:column; /*sätter flex-direction på lektioner till column*/
+    align-items:center; /*centrerar innehållet i lektioner*/
+    justify-content:right; /*placerar innehållet till höger i lektioner*/
 }
 #index .lektioner >#flexContainer{
     /*Ändrar riktningen på flex för att passa en bredare skärm*/
-    flex-direction:row;
-    width:100%;
-    gap:2vw;
+    flex-direction:row; /*sätter flex-direction på flexContainer till row*/
+    gap:2vw; /*sätter gap i flexContainer till 2vw*/
 }
 #index .lektioner > h2{
-    padding:0;
-    padding-right:80%;
+    padding:0; /*sätter padding på h2 till 0*/
+    padding-right:80%; /*sätter padding-right på h2 till 80%*/
 }
 #index .lektioner > #flexContainer > button{
-    width:50%;
+    width:50%; /*sätter bredden på knapparna till 50%*/
 }
 /*index*/
 /*hittaDinNastaLat*/
 
 #hittaDinNastaLat >#quiz{
     /*EFter som vi har mer plats på daesktop behövs inte frågan om svårhetsgrad så dräför tas den bort med en display:none*/
-    width:50%;
-    left:50%;
-    transform:translate(-50%,0);
-    display:none;
+    display:none; /*gör att quiz är osynlig*/
 }
 #hittaDinNastaLat #songContainer,#songContainer2,#songContainer3,#nivåTable{
     /*Ändrar riktningen på flex för att passa en bredare skärm*/
-   display:flex;
-   flex-direction:row;
-   gap:5vw;
+   display:flex; /*gör songContainer, songContainer2, songContainer3 och nivåTable till en flexbox*/
+   flex-direction:row; /*sätter flex-direction på songContainer, songContainer2, songContainer3 och nivåTable till row*/ 
+   gap:5vw;     /*sätter gap på songContainer, songContainer2, songContainer3 och nivåTable till 5vw*/
 }
 #hittaDinNastaLat div a{
-    width:28vw;
-    height:auto;
+    width:28vw; /*sätter bredden på a till 28vw*/
+    height:auto; /*sätter höjden på a till auto*/
 }
 #hittaDinNastaLat table{
-    font-size:2.5vw;
-}
-#hittaDinNastaLat table tr:nth-child(odd){
-    background:red;
+    font-size:2.5vw; /*sätter font-size på tabellen till 2.5vw*/
 }
 #hittaDinNastaLat >.wideClass{
     /*Osynlig på mobile så behövs sättas en display*/
-    display:block;
-    background:#1d2e3d;
-    width:auto;
-    padding:5px;
-    margin-bottom:0;
-    margin-top:10vh;
+    display:block; /*gör att wideClass är block*/
+    background:#385975;     /*sätter bakgrundsfärgen på wideClass till #385975*/
+    width:auto; /*sätter bredden på wideClass till auto*/
+    padding:5px; /*sätter padding på wideClass till 5px*/
+    margin-bottom:0; /*sätter margin-bottom på wideClass till 0*/
+    margin-top:10vh; /*sätter margin-top på wideClass till 10vh*/
 }
 
 /*HittaDInNAstaLAt*/
@@ -641,50 +608,51 @@ h1{
 
 #lektioner ul li{
     /*Ta bort tecknet från listan*/
-    display: inline-block;
-    width:25vw;
+    display: inline-block; /*gör att listan är horizontell*/
+    width:25vw; /*sätter bredden på listan till 25vw*/
 }
 #lektioner >ul >li >button >img{
-    display:block;
-    max-height:100%;
-    margin-left:35%;
-    pointer-events: none;
+    display:block; /*gör att bilden är block*/
+    max-height:100%; /*sätter maxhöjden på bilder till 100%*/
+    margin-left:35%; /*sätter margin-left på bilder till 35%*/
+    pointer-events: none; /*sätter pointer-events på bilder till none*/
 }
+
 
 /*Lektioner*/
 /*Spelrum*/
 
 /*Gör bilderna mindre eftersom vw blir väldigt mycket större*/
 #spelrum section:first-of-type img{
-    max-width:30vw;
+    max-width:30vw; /*sätter maxbredden på bilder till 30vw*/
 }
 #spelrum section:first-of-type div button:first-child{
-    margin-right:auto;
+    margin-right:auto; /*placerar knappen längst till höger*/
 }
 #spelrum section:first-of-type div button img{
-    max-width:5vw;
+    max-width:5vw; /*sätter maxbredden på bilder till 5vw*/
 }
 #spelrum section:first-of-type div p{
-    margin-right:auto;
-    font-size:3vw;
+    margin-right:auto; /*placerar texten längst till höger*/
+    font-size:3vw; /*sätter font-size på p till 3vw*/
 }
 #spelrum section:first-of-type div{
-    max-width:35vw;
+    max-width:35vw; /*sätter maxbredden på div till 35vw*/
 }
 #spelrum{
     /*Ändrar riktningen på flex för att passa en bredare skärm*/
-    display:flex;
-    flex-direction:row;
-    gap:5vw;
+    display:flex; /*gör spelrum till en flexbox*/
+    flex-direction:row; /*sätter flex-direction på spelrum till row*/
+    gap:5vw; /*sätter gap i spelrum till 5vw*/
 }
 #spelrum section:nth-of-type(2) img{
-    max-width:30vw;
+    max-width:30vw; /*sätter maxbredden på bilder till 30vw*/
 }
 #spelrum section:nth-of-type(2){
-    margin:0 auto 0 auto;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
+    margin:0 auto 0 auto; /*centrerar andra section*/
+    display:flex; /*gör andra section till en flexbox*/
+    flex-direction:column; /*sätter flex-direction på andra section till column*/
+    align-items:center; /*centrerar innehållet i andra section*/
 }
 
 /*Spelrum*/
@@ -692,56 +660,56 @@ h1{
 
 /*Gör en ny grid för att passa en större skräm, 2 spalt istället för 1 spalt*/
 #latSida{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    grid-template-rows:auto 1fr;
-    grid-column-gap:5vw;
-    grid-template-areas:
+    display:grid; /*gör latSida till en grid*/
+    grid-template-columns:1fr 1fr; /*sätter 2 kolumner i griden*/
+    grid-template-rows:auto 1fr; /*sätter 2 rader i griden*/
+    grid-column-gap:5vw; /*sätter grid-column-gap till 5vw*/
+    grid-template-areas: 
     "media info"
-    "ackord ackord";
+    "ackord ackord"; /*sätter 4 områden i griden*/
 }
 #latSida> #info{
-    grid-area:info;
+    grid-area:info; /*placerar info i info området*/
 }
 #latSida> #media{
-    grid-area:media;
+    grid-area:media; /*placerar media i media området*/
 }
 #latSida>#ackordLatSida{
-    grid-area:ackord;
-    display:flex;
-    flex-direction:column;
-    height: auto;
+    grid-area:ackord; /*placerar ackord i ackord området*/
+    display:flex; /*gör ackordLatSida till en flexbox*/
+    flex-direction:column; /*sätter flex-direction på ackordLatSida till column*/
+    height: auto; /*sätter höjden på ackordLatSida till auto*/
 }
 #latSida>#ackordLatSida button{
-    width:20vw;
-    background:rgb(74, 157, 156);
+    width:20vw; /*sätter bredden på knapparna till 20vw*/
+    background:rgb(74, 157, 156); /*sätter bakgrundsfärgen på knapparna till rgb(74, 157, 156)*/
 }
-#latSida>#ackordLatSida button:nth-of-type(2){
-    background:red ;
+#latSida>#ackordLatSida button:nth-of-type(1){
+    background:red ; /*sätter bakgrundsfärgen på första knappen till röd*/
 }
 /*LATSIDA*/
 /*allalåtar*/
 
 #allaLatar ol{
     /*Delar upp listan i två kolumner*/
-    column-count:2;
-    column-width:auto;
-    column-gap:5vw;
+    column-count:2; /*sätter column-count på listan till 2*/
+    column-width:auto; /*sätter column-width på listan till auto*/
+    column-gap:5vw; /*sätter column-gap på listan till 5vw*/
 }
 #allaLatar ol li{
-    height:30vh;
+    height:30vh; /*sätter höjden på listan till 30vh*/
     /*Ser till att en item i columen inte är på två rader*/
-    break-inside: avoid-column
+    break-inside: avoid-column; /*sätter break-inside på listan till avoid-column*/
 }
 #allaLatar ol li a{
-    height:100%;
+    height:100%; /*sätter höjden på a till 100%*/
     /*FIck inte till en högre specificitet så tvingades därför använda !important*/
-    grid-template-columns:2fr 1fr !important; 
+    grid-template-columns:2fr 1fr !important;  /*sätter 2 kolumner i griden*/
 }
 #allaLatar ol li a img{
-    max-width:90%;
-    margin-left:15px;
+    max-width:90%; /*sätter maxbredden på bilder till 90%*/
+    margin-left:15px; /*sätter margin-left på bilder till 15px*/
 }
 #allaLatar p,h3{
-    font-size:2vw;
+    font-size:2vw; /*sätter font-size på p och h3 till 2vw*/
 }}

@@ -1,73 +1,83 @@
-<!DOCTYPE html>
-<html lang="sv">
-<head>
-    <meta charset="UTF-8">
-    <title>Bättre Musik Inlärning </title>
-    <link rel="stylesheet" href="CSS/styles.css">
-    <script src="JS/script.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body id="indexHittaDinNastaLat">
-    <header>
-        <h1>Hitta din nästa låt nu!</h1>
-    </header>
-    <nav id="closedMenu">
-        <a href="index.html" id="logo">
-            <img src="IMG/logo.png" alt="Logo">
-        </a>
-        <ul id="navList" >
-            <li><a href="allaLatar.html">Alla Låtar</a></li>
-            <li><a href="lektioner.html">Lektioner</a></li>
-            <li><a href="spelrum.html">Spelrum</a></li>
-        </ul>
-        <button type="button" name="openMenu" id="openMenu"><img src="IMG/menu.png" alt="expandera menyn"></button>
-    </nav>
-    <div id="fullScreenMenu">
-        <ul>
-            <li><a class="hiddenMenuLink" href="index.html" tabindex="-1">Hem</a></li>
-            <li><a class="hiddenMenuLink" class="hittaLat" href="hittaDinNastaLat.html" tabindex="-1">Hitta en Ny Låt !</a></li>
-            <li><a class="hiddenMenuLink" href="allaLatar.html" tabindex="-1">Alla Låtar</a></li>
-            <li><a class="hiddenMenuLink" href="spelrum.html" tabindex="-1">spelrum</a></li>
-            <li><a class="hiddenMenuLink" href="lektioner.html" tabindex="-1">Lektioner</a></li>
-        </ul>
-    </div>
+<!DOCTYPE html> <!-- För att visa att det är en html sida -->
+<html lang="sv"> <!-- Html inledare och Språk för att visa att det är svenska -->
+    <head> <!-- Head för att visa att det är huvudet på sidan -->
+        <meta charset="UTF-8"> <!-- Meta för att visa att det är UTF-8 kodning -->
+        <title>Hitta din nästa låt här! </title> <!-- Title hjälper SEO och tillgänglighet -->
+        <link rel="stylesheet" href="CSS/styles.css"> <!-- Länk till styles.css för att styla sidan -->
+        <script src="JS/script.js"></script> <!-- Script för att länka till script.js -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Meta för att visa att sidan ska vara responsiv och alltid lika bred som användarens slärm -->
+    </head>
+    <body id="indexHittaDinNastaLat"> <!-- Body för att visa att det är kroppen på sidan med ett id för att gör css enklare-->
+        <header> <!-- Header för att visa att det är sidans header -->
+            <h1>Hitta din nästa låt här! </h1> <!-- H1 för att det är en huvudrubrik -->
+        </header>
+        <!-- Meny som altid är synlig
+        ul är endast synlig på breda skärmar
+        -->
+        <nav id="closedMenu"> <!-- Nav för att visa att det är en navigationsmeny -->
+            <a href="index.html" id="logo"> <!-- A för att det är en länk -->
+                <img src="IMG/logo.png" alt="Logo">     <!-- Bild för att visa en bild på loggan -->
+            </a> 
+            <ul id="navList"> <!-- Ul för att det är en oordnad lista -->
+                <li><a href="allaLatar.html">Alla Låtar</a></li> <!-- Li för att det är en punkt i listan med en länk -->
+                <li><a href="lektioner.html">Lektioner</a></li> 
+                <li><a href="spelrum.html">Spelrum</a></li>
+            </ul>
+            <button type="button" name="openMenu" id="openMenu"><img src="IMG/menu.png" alt="expandera menyn"></button> <!-- Button för att visa att det är en knapp, har en img inuti som gör att det blir en bild inuti knappen-->
+        </nav>
+        <!--Meny som expanderar, ej synlig i vanliga fall
+        -->
+        <div id="fullScreenMenu" >
+            <ul>
+                <!-- Tab index -1 eftersom denna menyn ej är synlig 
+                Ändras till 0 ifall menyn öppnas så den blir tabb bar
 
-    <main id="hittaDinNastaLat">
-        <div id='quiz'>
-            <fieldset >
-                <legend>Vilken nivå är du på ?</legend>
-                <ol>
-                    <li>
-                        <!-- Knapp med värde som anväds i js-->
-                        <input type="radio" name="niva" id="nybörjare" value="0">
-                        <label for="nybörjare">Nybörjare</label>
-                    </li>
-                    <li>
-                        <input type="radio" name="niva" id="medel" value="1">
-                        <label for="medel">Medel</label>
-                    </li>
-                    <li>
-                        <input type="radio" name="niva" id="expert" value="2">
-                        <label for="expert">Expert</label>
-                    </li>
-                        
-                </ol>
-                <!--Knapp som aktiverar funktion i js-->
-                <button type="button" name="submitButton" id="submitButton"> Confirm</button> 
+                Classnamn är inte nödvändigt men underlättar för att kunna sätta tabb index till -1
+                -->
+                <li><a class="hiddenMenuLink" href="index.html" tabindex="-1">Hem</a></li>
+                <li><a class="hiddenMenuLink hittaLat" href="hittaDinNastaLat.html" tabindex="-1">Hitta en Ny Låt !</a></li>
+                <li><a class="hiddenMenuLink" href="allaLatar.html" tabindex="-1">Alla Låtar</a></li>
+                <li><a class="hiddenMenuLink" href="spelrum.html" tabindex="-1">spelrum</a></li>
+                <li><a class="hiddenMenuLink" href="lektioner.html" tabindex="-1">Lektioner</a></li>
+            </ul>
+        </div>
+    <main id="hittaDinNastaLat"> <!-- Main för att visa att det är huvudinnehållet på sidan -->
+        <section id='quiz'> <!-- Section för att visa att det är en sektion på sidan -->
+            <form> <!-- Form för att få det semantiskt korrekt, värdern fås dock ej genom formuläret utan eventlisteners-->
+                <fieldset > <!-- Fieldset för att visa att det är en grupp av relaterade element --> 
+                    <legend>Vilken nivå är du på ?</legend> <!-- Legend för att visa att det är en titel på fältet -->
+                    <ul> <!-- ul eftersom det är en oordand lista-->
+                        <li>
+                            <!-- Knapp med värde som anväds i js-->
+                            <input type="radio" name="niva" id="nybörjare" value="0"> <!-- INput knapp där användaren kan välja mellan dem olika nivåer där value representerar dem, name gör att dem tillhör samma radio button-->
+                            <label for="nybörjare">Nybörjare</label> <!-- Label för att visa att det är en etikett för inputen -->
+                        </li>
+                        <li>
+                            <input type="radio" name="niva" id="medel" value="1">
+                            <label for="medel">Medel</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="niva" id="expert" value="2">
+                            <label for="expert">Expert</label>
+                        </li>
+                    </ul>
+                    <!--Knapp som aktiverar funktion i js-->
+                    <button type="button" name="submitButton" id="submitButton"> Confirm</button> 
             </fieldset>
-            <h2>Vet inte vilken nivå du ligger på ?</h2>
-            <table>
-                <caption>Nivåtabell</caption>
-                <thead>
-                    <tr>
-                        <th scope="col">Nivå</th>
+            </form>
+            <h2>Vet inte vilken nivå du ligger på ?</h2> <!-- H2 för att det är en underrubrik -->
+            <table> <!-- Table för att visa att det är en tabell -->
+                <caption>Nivåtabell</caption> <!-- Caption för att visa att det är en titel på tabellen -->
+                <thead> <!-- Thead för att visa att det är en tabellrubrik -->
+                    <tr> <!-- Tr för att visa att det är en rad i tabellen -->
+                        <th scope="col">Nivå</th> <!-- Th för att visa att det är en rubrik i tabellen -->
                         <th scope="col">Speltid</th>
                         <th scope="col">Hur ofta</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>Nybörjare</td>
+                <tbody> <!-- Tbody för att visa att det är en tabellkropp -->
+                    <tr> 
+                        <td>Nybörjare</td> <!-- Td för att visa att det är en cell i tabellen -->
                         <td>0-10 timmar</td>
                         <td>sällan</td>
                     </tr>
@@ -82,37 +92,36 @@
                         <td>Väldigt ofta</td>
                     </tr>
                 </tbody>
-                <tfoot>
-                    <tr>
-                        <td colspan="3">För nybörjare: Ha tålamod och håll fast vid det, spela med vänner för att lära dig spelet bättre.</td>
+                <tfoot> <!-- Tfoot för att visa att det är en tabellfot -->
+                    <tr> <!-- Tr för att visa att det är en rad i tabellen -->
+                        <td colspan="3">För nybörjare: Ha tålamod och håll fast vid det, spela med vänner för att lära dig spelet bättre.</td> <!-- Td för att visa att det är en cell i tabellen -->
                     </tr>
                 </tfoot>
             </table>
-        </div>
-        <h2>Välj låt att spela</h2>
+        </section>
+        <h2>Välj låt att spela</h2> <!-- H2 för att det är en underrubrik -->
         <!--classen wideclass används för att dem ska vara osynliga ifall det är mobile version-->
-        <h3 class="wideClass">Nybörjare</h3>
-        <div id="songContainer">
-            
-
+        <h3 class="wideClass">Nybörjare</h3> <!-- H3 för att det är en underrubrik -->
+        <div id="songContainer"> <!-- Div för att visa att det är en div på sidan, den har även id:et songContainer för att göra js enklare-->
             <!-- Placeholders ifall användaren ej har js-->
+            <!-- Länk där url parametrarna redan är förberädda-->
             <a href="latSida.html?videoUrl=https%3A%2F%2Fwww.youtube.com%2Fembed%3Fv%3D5NV6Rdv1a3I%26pp%3DygUJZ2V0IGx1Y2t5&namn=get%20lucky&gitarrAckord=IMG%2FchordsGetLuckyGuitar.jpg&pianoAckord=IMG%2FchordsPianoGetLucky.png&trummorAckord=IMG%2FchordsGetLuckyDrums.jpg&artist=Daft%20punk&beskrivning=En%20funk-%20och%20discoproduktion%20av%20den%20franska%20elektroniska%20duon%20Daft%20Punk%2C%20som%20sl%C3%A4pptes%202013.%20L%C3%A5ten%20har%20en%20retrok%C3%A4nsla%20och%20en%20upplyftande%20st%C3%A4mning%2C%20med%20Pharrell%20Williams%20och%20Nile%20Rodgers%20som%20g%C3%A4startister.&audio=Audio%2FgetLuckyAudio.mp3">
-                <section>
-                    <h2>Get lucky</h2>
-                    <img src="IMG/getLuckyImg.jpeg" alt="Bild för låt">
-                    <p> nybörjare ---- 4/5</p>
+                <section> <!-- Section för att visa att innehållet hör ihop, wrappde inom en a för att göra allt klickbart.-->
+                    <h4>Get lucky</h4> <!-- H4 för att det är en underrubrik -->
+                    <img src="IMG/getLuckyImg.jpeg" alt="Bild för låt"> <!-- Bild för att visa en bild på låten -->
+                    <p> nybörjare ---- 4/5</p> <!-- P för att visa att det är en paragraf -->
                 </section>
             </a>
             <a href="latSida.html?videoUrl=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D1k8craCGpgs&namn=Dont%20stop%20believin&gitarrAckord=IMG%2FchordsGuitarDontStopBelieving.png&pianoAckord=IMG%2FchordsPianoDontStopBelieving.png&trummorAckord=IMG%2FdontStopBelievingChordsDrums.png&artist=Journey&beskrivning=En%20klassisk%20rockl%C3%A5t%20av%20det%20amerikanska%20bandet%20Journey%2C%20sl%C3%A4ppt%201981.%20L%C3%A5ten%20%C3%A4r%20k%C3%A4nd%20f%C3%B6r%20sin%20ikoniska%20pianointro%20och%20sina%20inspirerande%20och%20motiverande%20texter%20som%20handlar%20om%20att%20beh%C3%A5lla%20hoppet%20och%20tro%20p%C3%A5%20dig%20sj%C3%A4lv.&audio=Audio%2FdontStopBelievingAudio.mp3">
                 <section>
-                    <h2>Dont stop believin</h2>
+                    <h4>Dont stop believin</h4>
                     <img src="IMG/dontStopBelievingImg.jpeg" alt="Bild för låt">
                     <p> nybörjare ---- 5/5</p>
                 </section>
             </a>
             <a href="latSida.html?videoUrl=https%3A%2F%2Fwww.youtube.com%2Fembed%2FyYcyacLRPNs%3Fsi%3DgppHjngeFRCfwsQi&namn=Tiny%20Dancer&gitarrAckord=chordsGuitarTinyDancer&pianoAckord=IMG%2FchordsPianoTinyDance.png&trummorAckord=IMG%2FchordsDrumsTinyDancer.webp&artist=Elton%20John&beskrivning=En%20s%C3%A5ng%20av%20den%20brittiske%20artisten%20Elton%20John%2C%20fr%C3%A5n%20hans%20album%20%22Madman%20Across%20the%20Water%22%20som%20sl%C3%A4pptes%201971.%20L%C3%A5ten%20anses%20vara%20en%20av%20Elton%20Johns%20signaturl%C3%A5tar%20och%20hyllas%20f%C3%B6r%20sina%20poetiska%20texter%20och%20melodi%C3%B6sa%20arrangemang.&audio=Audio%2FtinyDancer.mp3">
                 <section>
-                    <h2>Tiny Dancer</h2>
+                    <h4>Tiny Dancer</h4>
                     <img src="IMG/tinyDancerImg.png" alt="Bild för låt">
                     <p> nybörjare ---- 3/5</p>
                 </section>
@@ -122,21 +131,21 @@
         <div id="songContainer2">
             <a href="latSida.html?videoUrl=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DRBumgq5yVrA&namn=Let%20her%20go&gitarrAckord=IMG%2FchordsGuitarLetHerGo.png&pianoAckord=IMG%2FchordsPianoLetHerGo.png&trummorAckord=IMG%2FletHerGoAckordDrums.png&artist=Passenger&beskrivning=En%20l%C3%A5t%20av%20den%20brittiska%20singer-songwritern%20Passenger%2C%20utgiven%202012.%20L%C3%A5ten%20%C3%A4r%20k%C3%A4nd%20f%C3%B6r%20sin%20enkla%20gitarrackompanjemang%20och%20gripande%20texter%20som%20handlar%20om%20f%C3%B6rlust%20och%20saknad%20av%20en%20%C3%A4lskad%20person.&audio=Audio%2FletHerGoaudi.mp3">
                 <section>
-                    <h2>Let her go</h2>
+                    <h4>Let her go</h4>
                     <img src="IMG/letHerGoImg.jpeg" alt="Bild för låt">
                     <p> medel ---- 3/5</p>
                 </section>
             </a>
             <a href="latSida.html?videoUrl=https%3A%2F%2Fwww.youtube.com%2Fembed%2FxNRaDavYo1M%3Fsi%3Dk4j37kufZfYo5H3G&namn=Wanted%20Dead%20Or%20Alive.&gitarrAckord=IMG%2FchordsPianoWantedDeadOrAlive.svg&pianoAckord=IMG%2FchordsGuitarWantedDeadOrAlive.png&trummorAckord=IMG%2FchordsDrumsWantedDeadOrAlive.jpeg&artist=Bon%20Jovi&beskrivning=En%20l%C3%A5t%20av%20det%20amerikanska%20rockbandet%20Bon%20Jovi%2C%20utgiven%201986.%20L%C3%A5ten%20har%20en%20kraftfull%20countryrock-stil%20och%20texter%20som%20handlar%20om%20livet%20p%C3%A5%20v%C3%A4garna%20och%20k%C3%A4nslan%20av%20att%20vara%20en%20%22lagl%C3%B6s%20cowboy%22.&audio=Audio%2FwantedDeadOrAlive.mp3">
                 <section>
-                    <h2>Wanted dead or alive</h2>
+                    <h4>Wanted dead or alive</h4>
                     <img src="IMG/wantedDeadOrAliveImg.jpeg" alt="Bild för låt">
                     <p> medel ---- 4/5</p>
                 </section>
             </a>
             <a href="latSida.html?videoUrl=https%3A%2F%2Fwww.youtube.com%2Fembed%2FfJ9rUzIMcZQ%3Fsi%3DqwWuaJQ0XeazmjYR&namn=Bohemian%20Rhapsody&gitarrAckord=IMG%2FchordsGuitarBohemianRhapsody.jpeg&pianoAckord=IMG%2FchordsPianoBohemianRhapsody.jpeg&trummorAckord=IMG%2FchordsDrumsBohemianRhapsody.webp&artist=queen&beskrivning=En%20episk%20l%C3%A5t%20av%20det%20brittiska%20rockbandet%20Queen%2C%20sl%C3%A4ppt%201975.%20L%C3%A5ten%20%C3%A4r%20k%C3%A4nd%20f%C3%B6r%20sin%20unika%20struktur%2C%20som%20kombinerar%20rock%2C%20opera%20och%20ballad%2C%20samt%20dess%20komplexa%20arrangemang%20och%20djupa%20texter.&audio=Audio%2FbohemianRapsody.mp3">
                 <section>
-                    <h2>Bohemian Rhapsody</h2>
+                    <h4>Bohemian Rhapsody</h4>
                     <img src="IMG/bohemianRhapsodyImg.jpeg" alt="Bild för låt">
                     <p> medel ---- 5/5</p>
                 </section>
@@ -146,35 +155,35 @@
         <div id="songContainer3">
             <a href="latSida.html?videoUrl=https%3A%2F%2Fwww.youtube.com%2Fembed%2FI57nIP0vc44%3Fsi%3DMhTVQVig1uWSXric&namn=Fool%20In%20The%20Rain&gitarrAckord=IMG%2FchordsGuitarFoolInTheRain.png&pianoAckord=IMG%2FchordsPianoFoolInTheRain.png&trummorAckord=IMG%2FchordsDrumsFoolInTheRain.png&artist=Led%20Zeppelin&beskrivning=En%20l%C3%A5t%20av%20det%20brittiska%20rockbandet%20Led%20Zeppelin%2C%20sl%C3%A4ppt%201979.%20L%C3%A5ten%20har%20en%20funkig%20k%C3%A4nsla%20och%20karakt%C3%A4riseras%20av%20sitt%20livliga%20rytmspel%20och%20jazzinfluerade%20arrangemang.&audio=Audio%2FfoolInTheRain.mp3">
                 <section>
-                    <h2>Fool In The Rain</h2>
+                    <h4>Fool In The Rain</h4>
                     <img src="IMG/foolInTheRainImg.jpeg" alt="BIld för låten">
                     <p> Expert ---- 4/5</p>
                 </section>
             </a>
             <a href="latSida.html?videoUrl=https%3A%2F%2Fwww.youtube.com%2Fembed%2F0jgrCKhxE1s%3Fsi%3DbHRWO50sxVqytHQ-&namn=Through%20the%20Fire%20and%20Flames&gitarrAckord=IMG%2FchordsGuitarThroughFireAndFlames.png&pianoAckord=IMG%2FchordsPianoThroughFireAndFlames.png&trummorAckord=IMG%2FchordsDrumsThroughFireAndFlames.svg&artist=Dragonforce&beskrivning=En%20l%C3%A5t%20av%20det%20brittiska%20power%20metal-bandet%20DragonForce%2C%20fr%C3%A5n%20deras%20album%20%22Inhuman%20Rampage%22%20som%20sl%C3%A4pptes%202006.%20L%C3%A5ten%20%C3%A4r%20k%C3%A4nd%20f%C3%B6r%20sin%20snabba%20tempo%20och%20tekniska%20sv%C3%A5righeter%20p%C3%A5%20gitarr%2C%20och%20betraktas%20som%20en%20av%20de%20sv%C3%A5raste%20l%C3%A5tarna%20att%20spela%20p%C3%A5%20Guitar%20Hero-videospelserien.&audio=Audio%2FthroughFireAndFlames.mp3">
                 <section>
-                    <h2>Through the Fire and Flames</h2>
+                    <h4>Through the Fire and Flames</h4>
                     <img src="IMG/throughFireAndFlamesImg.jpeg" alt="<Bild för låten>">
                     <p> Expert ---- 3/5</p>
                 </section>
             </a>
             <a href="latSida.html?videoUrl=https%3A%2F%2Fwww.youtube.com%2Fembed%2FAcMUULoT_jk%3Fsi%3DTMB5hpTRRJKhPEMv&namn=satellit&gitarrAckord=IMG%2FchordsGuitarSatellit.jpeg&pianoAckord=IMG%2FchordsPianoSatellit.jpeg&trummorAckord=IMG%2FchordsDrumsSatellit.png&artist=Ted%20G%C3%A4rdestad&beskrivning=%22Satellit%22%20%C3%A4r%20en%20tidl%C3%B6s%20popl%C3%A5t%20skriven%20och%20framf%C3%B6rd%20av%20den%20svenska%20musikern%20Ted%20G%C3%A4rdestad.%20Sl%C3%A4ppt%20%C3%A5r%201979%2C%20l%C3%A5ter%20denna%20melodiska%20och%20k%C3%A4nslosamma%20s%C3%A5ng%20lyssnaren%20dr%C3%B6mma%20sig%20bort%20till%20avl%C3%A4gsna%20platser%20och%20tidl%C3%B6sa%20%C3%A4ventyr.%20Med%20sin%20poetiska%20text%20och%20G%C3%A4rdestads%20karakteristiska%20r%C3%B6st%20bjuder%20l%C3%A5ten%20in%20till%20en%20resa%20genom%20melodins%20rymd%2C%20fylld%20med%20l%C3%A4ngtan%20och%20hopp%20om%20en%20ljusare%20framtid.&audio=Audio%2Fsatellit.mp3">
                 <section>
-                    <h2>Satellit</h2>
+                    <h4>Satellit</h4>
                     <img src="IMG/satellitImg.jpeg" alt="Bild för låt">
                     <p> Expert ---- 5/5</p>
                 </section>
             </a>
            
         </div>
-        <section id="nivåTable">
-        <h2>Vet du inte vilke nivå du ligger på ?</h2>
-        <table>
-            <caption>Nivåtabell</caption>
-            <thead>
-                <tr>
-                    <th scope="col">Nivå</th>
-                    <th scope="col">Speltid</th>
+        <section id="nivåTable"> <!-- Section för att visa att det är en sektion på sidan -->
+        <h2>Vet du inte vilke nivå du ligger på ?</h2> <!-- H2 för att det är en underrubrik -->
+        <table> <!-- Table för att visa att det är en tabell -->
+            <caption>Nivåtabell</caption> <!-- Caption för att visa att det är en titel på tabellen -->
+            <thead> <!-- Thead för att visa att det är en tabellrubrik -->
+                <tr> <!-- Tr för att visa att det är en rad i tabellen -->
+                    <th scope="col">Nivå</th> <!-- Th för att visa att det är en rubrik i tabellen  och scope col för att vosa att det är em column rubrik -->
+                    <th scope="col">Speltid</th> 
                     <th scope="col">Hur ofta</th>
                 </tr>
             </thead>
@@ -197,12 +206,12 @@
             </tbody>
             <tfoot>
                 <tr>
-                    <td colspan="3">För nybörjare: Ha tålamod och håll fast vid det, spela med vänner för att lära dig spelet bättre.</td>
+                    <td colspan="3">För nybörjare: Ha tålamod och håll fast vid det, spela med vänner för att lära dig spelet bättre.</td> <!-- Td för att visa att det är en cell i tabellen , colspan 3 för att visa upp den över 3 columner-->
                 </tr>
             </tfoot>
         </table>
         </section>
-        <a href="hittaDinNastaLat.html">Ändra nivå</a>
+        <a href="hittaDinNastaLat.html">Ändra nivå</a> <!-- A för att det är en länk som laddar om sidan och ifall användaren har mobil enhetet och väljer svårighets grad kan användaren byta svårighetsgrad här -->
     </main>
     <footer>
         Bättre musik inlärning
