@@ -274,9 +274,6 @@ max-width:30ch /*sätter maxbredden på bilden till 30ch*/
     /*BIlden ska enbart vara synlig på desktop*/
     display:none; /*gör att bilden är osynlig*/
 }
-#lektioner  >ul>li>#gitarrLektioner{
-    background:#FF3D3D; /*sätter bakgrundsfärgen på gitarrLektioner till #FF3D3D*/
-}
 #lektioner>ul>li button{
     background:hsl(180, 79%, 24%); /*sätter bakgrundsfärgen på knapparna till hsl(180, 79%, 24%)*/
 }

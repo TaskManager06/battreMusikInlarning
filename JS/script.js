@@ -133,7 +133,7 @@ var lektionerLista = [
 		"IMG/pianoHardLektion.jpg",
 	],
 	[
-		"IMG/TrummorEnkelLektion.png",
+		"IMG/trummorEnkelLektion.png",
 		"IMG/trummorMedelLektion.png",
 		"IMG/trummorSvårLektion.png",
 	],
@@ -265,6 +265,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				});
 		}
 	} else if (activeWindow.id == "indexLektioner") {
+		var firstTimeLoading = true;
         //börjar med att hämta urlen och den imformation som skickas där
         //Gitarr är även default ifall man går via menyn
 		var urlParams = new URLSearchParams(window.location.search);
@@ -279,7 +280,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		for (let i = 0; i < id.length; i++) {
 			document.getElementById(id[i]).src = lektionerLista[value][i];
 		}
-
         //skapar ny lsita med ids för knapparna på sidan
 		var buttonsLektioner = [
 			"gitarrLektioner",
@@ -300,12 +300,20 @@ document.addEventListener("DOMContentLoaded", function(event) {
 						document.getElementById(buttonsLektioner[i]).style.backgroundColor =
 							"#0D6E6E";
 					}
-					event.target.style.backgroundColor = "#FF3D3D";
+					
+					if(!firstTimeLoading){
+						event.target.style.backgroundColor = "#FF3D3D";
+					}
 					for (let i = 0; i < id.length; i++) {
 						document.getElementById(id[i]).src =
 							lektionerLista[event.target.value][i];
 					}
 				});
+		}
+		if(firstTimeLoading){
+			console.log(document.getElementById(buttonsLektioner[value]))
+			document.getElementById(buttonsLektioner[value]).style.backgroundColor = "#FF3D3D";
+			firstTimeLoading = !firstTimeLoading;
 		}
 	} else if (activeWindow.id == "indexHittaDinNastaLat") {
         //"form" för att se vilken svårighets grad användaren vill ha 
