@@ -307,7 +307,7 @@ max-width:30ch /*sätter maxbredden på bilden till 30ch*/
     position:absolute; /*sätter position på quiz till absolute*/
     width:90vw; /*sätter bredden på quiz till 90vw*/
     height:auto; /*sätter höjden på quiz till auto*/
-    background:white; /*sätter bakgrundsfärgen på quiz till vit*/
+    background-image:linear-gradient(to right,	#354656,#0066cc); /*skapar en gradient bakgrund*/
     /*Viktigt att denna kommer överst*/
     z-index:1; /*sätter z-index på quiz till 1*/
     left:0; /*sätter left på quiz till 0*/
