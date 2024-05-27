@@ -31,10 +31,10 @@ var database = [
             "Tiny Dancer",
             "https://www.youtube.com/embed/yYcyacLRPNs?si=gppHjngeFRCfwsQi",
             "IMG/tinyDancerImg.png",
-            "IMG/chordsDrumsTinyDancer.webp",
+            "IMG/chordsGuitarTinyDancer.jpeg",
             "IMG/chordsPianoTinyDance.png",
             "nybörjare ---- 3/5",
-            //ej konsekvent indrag pga " tecken i strängen
+            //ej konsekvent indrag pga " tecken i strängen och därför används '
             'En sång av den brittiske artisten Elton John, från hans album "Madman Across the Water" som släpptes 1971. Låten anses vara en av Elton Johns signaturlåtar och hyllas för sina poetiska texter och melodiösa arrangemang.',
             "Elton John",
             "IMG/chordsDrumsTinyDancer.webp",
